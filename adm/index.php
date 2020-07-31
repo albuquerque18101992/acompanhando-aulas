@@ -5,6 +5,7 @@ $seguranca = true; //Segurança para não consiguir acessar páginas direto na U
 include_once './config/config.php'; // Arquivo de endereço do servidos.
 include_once './config/conexao.php'; // Incluindo código de conexão com p banco de dados.
 include_once './lib/lib_valida.php'; // Função para limpar a URL de caracteres especiais.
+include_once './lib/lib_permissao.php'; //incluir validação de permissão de aparecer btn.
 
 $url = filter_input(INPUT_GET, 'url', FILTER_SANITIZE_STRING);
 $url_limpa = limparUrl($url);

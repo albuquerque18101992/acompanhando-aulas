@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 29-Jul-2020 às 03:51
+-- Tempo de geração: 31-Jul-2020 às 04:01
 -- Versão do servidor: 10.4.11-MariaDB
 -- versão do PHP: 7.4.1
 
@@ -105,7 +105,12 @@ INSERT INTO `adms_nivacs_pgs` (`id`, `permissao`, `ordem`, `dropdown`, `lib_menu
 (3, 1, 3, 1, 1, 2, 1, 6, '2020-07-25 00:00:00', NULL),
 (4, 1, 4, 1, 1, 3, 1, 7, '2020-07-27 00:00:00', NULL),
 (5, 1, 5, 1, 1, 3, 1, 8, '2020-07-27 00:00:00', NULL),
-(6, 1, 6, 2, 1, 4, 1, 4, '2020-07-27 00:00:00', NULL);
+(6, 1, 6, 2, 1, 4, 1, 4, '2020-07-27 00:00:00', NULL),
+(7, 1, 7, 2, 2, 2, 1, 9, '2020-07-30 00:00:00', NULL),
+(8, 1, 8, 2, 2, 2, 1, 10, '2020-07-30 00:00:00', NULL),
+(9, 1, 9, 2, 2, 2, 1, 11, '2020-07-30 00:00:00', NULL),
+(10, 1, 10, 2, 2, 2, 1, 12, '2020-07-30 00:00:00', NULL),
+(11, 1, 11, 2, 2, 2, 1, 13, '2020-07-30 21:59:59', NULL);
 
 -- --------------------------------------------------------
 
@@ -126,10 +131,11 @@ CREATE TABLE `adms_niveis_acessos` (
 --
 
 INSERT INTO `adms_niveis_acessos` (`id`, `nome`, `ordem`, `created`, `modified`) VALUES
-(1, 'Super Administrador', 1, '2020-07-24 00:00:00', NULL),
+(1, 'Super Administrador', 1, '2020-07-24 00:00:00', '2020-07-30 20:54:00'),
 (2, 'Administrador', 2, '2020-07-24 00:00:00', NULL),
 (3, 'Colaborador', 3, '2020-07-24 00:00:00', NULL),
-(4, 'Cliente', 4, '2020-07-24 00:00:00', NULL);
+(4, 'Cliente', 4, '2020-07-24 00:00:00', NULL),
+(5, 'Manga Lisa', 5, '2020-07-30 22:57:32', NULL);
 
 -- --------------------------------------------------------
 
@@ -167,7 +173,12 @@ INSERT INTO `adms_paginas` (`id`, `nome_pagina`, `endereco`, `obs`, `keywords`, 
 (5, 'Usuários', 'listar/list_usuario', 'Página para listar usuários', 'listar usuários', 'listar usuários', 'Paulo Albuquerque', 'adms', 2, 'fas fa-users', 0, 4, 1, '2020-07-25 00:00:00', NULL),
 (6, 'Niveis de acesso', 'listar/list_niv_aces', 'Página para listar Niveis de acesso', 'Listar Niveis de acesso', 'Listar Niveis de acesso', 'Paulo Albuquerque', 'adms', 2, 'fas fa-address-card', 0, 4, 1, '2020-07-25 00:00:00', NULL),
 (7, 'Paginas', 'listar/list_pagina', 'Pagina para listar as paginas do ADM', 'listar pagina', 'listar pagina', 'Paulo Albuquerque', 'adms', 2, 'fas fa-file-alt', 0, 4, 1, '2020-07-27 00:00:00', NULL),
-(8, 'Menu', 'listar/list_menu', 'Pagina para listar os itens do menu', 'Pagina para listar os itens do menu', 'Pagina para listar os itens do menu', 'Paulo Albuquerque', 'adms', 2, 'fab fa-elementor', 0, 4, 1, '2020-07-27 00:00:00', NULL);
+(8, 'Menu', 'listar/list_menu', 'Pagina para listar os itens do menu', 'Pagina para listar os itens do menu', 'Pagina para listar os itens do menu', 'Paulo Albuquerque', 'adms', 2, 'fab fa-elementor', 0, 4, 1, '2020-07-27 00:00:00', NULL),
+(9, 'Nivel de Acesso', 'cadastrar/cad_niv_aces', 'Nivel de Acesso', 'Nivel de Acesso', 'Nivel de Acesso', 'Paulo Albuquerque', 'adms', 2, NULL, 0, 4, 1, '2020-07-30 00:00:00', NULL),
+(10, 'Visualizar nivel de acesso', 'visualizar/vis_niv_aces', 'Visualizar nivel de acesso', 'Visualizar nivel de acesso', 'Visualizar nivel de acesso', 'Paulo Albuquerque', 'adms', 2, NULL, 0, 4, 1, '2020-07-30 00:00:00', NULL),
+(11, 'Editar nivel de acesso', 'editar/edit_niv_aces', 'Editar nivel de acesso', 'Editar nivel de acesso', 'Editar nivel de acesso', 'Paulo Albuquerque', 'adms', 2, NULL, 0, 4, 1, '2020-07-30 00:00:00', NULL),
+(12, 'Apagar nivel de acesso', 'processa/apagar_niv_aces', 'Apagar nivel de acesso', 'Apagar nivel de acesso', 'Apagar nivel de acesso', 'Paulo Albuquerque', 'adms', 2, NULL, 0, 4, 1, '2020-07-30 00:00:00', NULL),
+(13, 'Processa o formulario nivel de acesso', 'processa/proc_cad_niv_aces', 'Processa o formulario nivel de acesso', 'Processa o formulario nivel de acesso', 'Processa o formulario nivel de acesso', 'Paulo Albuquerque', 'adms', 2, NULL, 9, 4, 1, '2020-07-30 21:59:18', NULL);
 
 -- --------------------------------------------------------
 
@@ -377,19 +388,19 @@ ALTER TABLE `adms_menus`
 -- AUTO_INCREMENT de tabela `adms_nivacs_pgs`
 --
 ALTER TABLE `adms_nivacs_pgs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de tabela `adms_niveis_acessos`
 --
 ALTER TABLE `adms_niveis_acessos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de tabela `adms_paginas`
 --
 ALTER TABLE `adms_paginas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de tabela `adms_robots`
