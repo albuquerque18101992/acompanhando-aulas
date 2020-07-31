@@ -48,7 +48,11 @@ include_once 'app/adms/include/head.php';
 
                 //Calcular o inicio visualização
                 $inicio = ($qnt_result_pg * $pagina) - $qnt_result_pg;
-                $resul_niv_aces = "SELECT * FROM adms_niveis_acessos WHERE ordem >= '" . $_SESSION['ordem'] . "' ORDER BY ordem ASC LIMIT $inicio, $qnt_result_pg";
+				if($_SESSION['adms_niveis_acesso_id'] == 1){
+					$resul_niv_aces = "SELECT * FROM adms_niveis_acessos ORDER BY ordem ASC LIMIT $inicio, $qnt_result_pg";
+				}else{
+					$resul_niv_aces = "SELECT * FROM adms_niveis_acessos WHERE ordem > '" . $_SESSION['ordem'] . "' ORDER BY ordem ASC LIMIT $inicio, $qnt_result_pg";
+				}
                 $resultado_niv_aces = mysqli_query($conn, $resul_niv_aces);
                 if (($resultado_niv_aces) AND ( $resultado_niv_aces->num_rows != 0)) {
                     ?>

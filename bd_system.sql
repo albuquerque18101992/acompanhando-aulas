@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.2
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 31-Jul-2020 às 04:01
+-- Tempo de geração: 31-Jul-2020 às 21:02
 -- Versão do servidor: 10.4.11-MariaDB
--- versão do PHP: 7.4.1
+-- versão do PHP: 7.2.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -110,7 +110,18 @@ INSERT INTO `adms_nivacs_pgs` (`id`, `permissao`, `ordem`, `dropdown`, `lib_menu
 (8, 1, 8, 2, 2, 2, 1, 10, '2020-07-30 00:00:00', NULL),
 (9, 1, 9, 2, 2, 2, 1, 11, '2020-07-30 00:00:00', NULL),
 (10, 1, 10, 2, 2, 2, 1, 12, '2020-07-30 00:00:00', NULL),
-(11, 1, 11, 2, 2, 2, 1, 13, '2020-07-30 21:59:59', NULL);
+(11, 1, 11, 2, 2, 2, 1, 13, '2020-07-30 21:59:59', NULL),
+(12, 1, 1, 2, 1, 1, 3, 1, '2020-07-31 14:04:15', NULL),
+(13, 1, 2, 1, 1, 2, 3, 5, '2020-07-31 14:04:15', NULL),
+(14, 1, 3, 1, 1, 2, 3, 6, '2020-07-31 14:04:15', NULL),
+(15, 2, 4, 1, 1, 3, 3, 7, '2020-07-31 14:04:15', NULL),
+(16, 2, 5, 1, 1, 3, 3, 8, '2020-07-31 14:04:15', NULL),
+(17, 1, 6, 2, 1, 4, 3, 4, '2020-07-31 14:04:15', NULL),
+(18, 1, 7, 2, 2, 2, 3, 9, '2020-07-31 14:04:15', NULL),
+(19, 1, 8, 2, 2, 2, 3, 10, '2020-07-31 14:04:15', NULL),
+(20, 1, 9, 2, 2, 2, 3, 11, '2020-07-31 14:04:15', NULL),
+(21, 1, 10, 2, 2, 2, 3, 12, '2020-07-31 14:04:15', NULL),
+(22, 1, 11, 2, 2, 2, 3, 13, '2020-07-31 14:04:15', NULL);
 
 -- --------------------------------------------------------
 
@@ -134,8 +145,7 @@ INSERT INTO `adms_niveis_acessos` (`id`, `nome`, `ordem`, `created`, `modified`)
 (1, 'Super Administrador', 1, '2020-07-24 00:00:00', '2020-07-30 20:54:00'),
 (2, 'Administrador', 2, '2020-07-24 00:00:00', NULL),
 (3, 'Colaborador', 3, '2020-07-24 00:00:00', NULL),
-(4, 'Cliente', 4, '2020-07-24 00:00:00', NULL),
-(5, 'Manga Lisa', 5, '2020-07-30 22:57:32', NULL);
+(4, 'Cliente', 4, '2020-07-24 00:00:00', NULL);
 
 -- --------------------------------------------------------
 
@@ -302,7 +312,8 @@ CREATE TABLE `adms_usuarios` (
 --
 
 INSERT INTO `adms_usuarios` (`id`, `nome`, `apelido`, `email`, `usuario`, `senha`, `recuperar_senha`, `chave_descadastro`, `imagem`, `adms_niveis_acesso_id`, `adms_sits_usuario_id`, `created`, `modified`) VALUES
-(1, 'Paulo Albuquerque', 'Paulo', 'albuquerque.18101992@gmail.com', 'paulo', '$2y$10$ykmaQ7RRZEtL0MjnrEaHveNm1A4W9ZaE2Ik6R1YbZEI/5FL34D5Wa', NULL, NULL, 'imagem.jpg', 1, 1, '2020-07-23 00:00:00', NULL);
+(1, 'Paulo Albuquerque', 'Paulo', 'albuquerque.18101992@gmail.com', 'paulo', '$2y$10$ykmaQ7RRZEtL0MjnrEaHveNm1A4W9ZaE2Ik6R1YbZEI/5FL34D5Wa', NULL, NULL, 'imagem.jpg', 1, 1, '2020-07-23 00:00:00', NULL),
+(2, 'willians', 'will', 'willians@willians.com.br', 'willians', '$2y$10$ykmaQ7RRZEtL0MjnrEaHveNm1A4W9ZaE2Ik6R1YbZEI/5FL34D5Wa', NULL, NULL, NULL, 3, 1, '2020-07-31 13:29:50', NULL);
 
 --
 -- Índices para tabelas despejadas
@@ -388,13 +399,13 @@ ALTER TABLE `adms_menus`
 -- AUTO_INCREMENT de tabela `adms_nivacs_pgs`
 --
 ALTER TABLE `adms_nivacs_pgs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT de tabela `adms_niveis_acessos`
 --
 ALTER TABLE `adms_niveis_acessos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de tabela `adms_paginas`
@@ -430,7 +441,7 @@ ALTER TABLE `adms_sits_usuarios`
 -- AUTO_INCREMENT de tabela `adms_usuarios`
 --
 ALTER TABLE `adms_usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
