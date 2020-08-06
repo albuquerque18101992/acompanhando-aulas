@@ -7,7 +7,7 @@ if (!isset($seguranca)) {
 
 $servidor = "localhost";
 $usuario = "root";
-$senha = "";
+$senha = "root";
 $dbname = "bd_system";
 
 $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);

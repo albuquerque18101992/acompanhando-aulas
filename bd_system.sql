@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.1
+-- version 4.9.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 31-Jul-2020 às 21:02
+-- Tempo de geração: 06-Ago-2020 às 03:22
 -- Versão do servidor: 10.4.11-MariaDB
--- versão do PHP: 7.2.28
+-- versão do PHP: 7.4.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -121,7 +121,8 @@ INSERT INTO `adms_nivacs_pgs` (`id`, `permissao`, `ordem`, `dropdown`, `lib_menu
 (19, 1, 8, 2, 2, 2, 3, 10, '2020-07-31 14:04:15', NULL),
 (20, 1, 9, 2, 2, 2, 3, 11, '2020-07-31 14:04:15', NULL),
 (21, 1, 10, 2, 2, 2, 3, 12, '2020-07-31 14:04:15', NULL),
-(22, 1, 11, 2, 2, 2, 3, 13, '2020-07-31 14:04:15', NULL);
+(22, 1, 11, 2, 2, 2, 3, 13, '2020-07-31 14:04:15', NULL),
+(23, 1, 12, 2, 2, 2, 1, 14, '2020-07-31 00:00:00', NULL);
 
 -- --------------------------------------------------------
 
@@ -142,10 +143,11 @@ CREATE TABLE `adms_niveis_acessos` (
 --
 
 INSERT INTO `adms_niveis_acessos` (`id`, `nome`, `ordem`, `created`, `modified`) VALUES
-(1, 'Super Administrador', 1, '2020-07-24 00:00:00', '2020-07-30 20:54:00'),
-(2, 'Administrador', 2, '2020-07-24 00:00:00', NULL),
-(3, 'Colaborador', 3, '2020-07-24 00:00:00', NULL),
-(4, 'Cliente', 4, '2020-07-24 00:00:00', NULL);
+(1, 'Super Administrador', 1, '2020-08-04 18:55:02', '2020-08-05 22:18:33'),
+(2, 'Administrador', 2, '2020-08-05 20:28:34', '2020-08-05 22:19:42'),
+(3, 'Colaborador', 3, '2020-08-04 19:31:54', '2020-08-05 20:20:51'),
+(4, 'Cliente', 4, '2020-08-05 21:20:40', '2020-08-05 22:18:54'),
+(5, 'Diretoria', 5, '2020-08-05 21:33:56', '2020-08-05 22:20:14');
 
 -- --------------------------------------------------------
 
@@ -188,7 +190,8 @@ INSERT INTO `adms_paginas` (`id`, `nome_pagina`, `endereco`, `obs`, `keywords`, 
 (10, 'Visualizar nivel de acesso', 'visualizar/vis_niv_aces', 'Visualizar nivel de acesso', 'Visualizar nivel de acesso', 'Visualizar nivel de acesso', 'Paulo Albuquerque', 'adms', 2, NULL, 0, 4, 1, '2020-07-30 00:00:00', NULL),
 (11, 'Editar nivel de acesso', 'editar/edit_niv_aces', 'Editar nivel de acesso', 'Editar nivel de acesso', 'Editar nivel de acesso', 'Paulo Albuquerque', 'adms', 2, NULL, 0, 4, 1, '2020-07-30 00:00:00', NULL),
 (12, 'Apagar nivel de acesso', 'processa/apagar_niv_aces', 'Apagar nivel de acesso', 'Apagar nivel de acesso', 'Apagar nivel de acesso', 'Paulo Albuquerque', 'adms', 2, NULL, 0, 4, 1, '2020-07-30 00:00:00', NULL),
-(13, 'Processa o formulario nivel de acesso', 'processa/proc_cad_niv_aces', 'Processa o formulario nivel de acesso', 'Processa o formulario nivel de acesso', 'Processa o formulario nivel de acesso', 'Paulo Albuquerque', 'adms', 2, NULL, 9, 4, 1, '2020-07-30 21:59:18', NULL);
+(13, 'Processa o formulario nivel de acesso', 'processa/proc_cad_niv_aces', 'Processa o formulario nivel de acesso', 'Processa o formulario nivel de acesso', 'Processa o formulario nivel de acesso', 'Paulo Albuquerque', 'adms', 2, NULL, 9, 4, 1, '2020-07-30 21:59:18', NULL),
+(14, 'processa o formulario editar nivel de acesso', 'processa/proc_edit_niv_aces', NULL, 'processa o formulario editar nivel de acesso', 'processa o formulario editar nivel de acesso', 'Paulo Albuquerque', 'adms', 2, NULL, 11, 4, 1, '2020-07-31 00:00:00', NULL);
 
 -- --------------------------------------------------------
 
@@ -399,19 +402,19 @@ ALTER TABLE `adms_menus`
 -- AUTO_INCREMENT de tabela `adms_nivacs_pgs`
 --
 ALTER TABLE `adms_nivacs_pgs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT de tabela `adms_niveis_acessos`
 --
 ALTER TABLE `adms_niveis_acessos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de tabela `adms_paginas`
 --
 ALTER TABLE `adms_paginas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de tabela `adms_robots`

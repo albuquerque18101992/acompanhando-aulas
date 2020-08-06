@@ -12,11 +12,11 @@ include_once 'app/adms/include/head.php';
     <?php
     include_once 'app/adms/include/header.php';
     $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
-	if($_SESSION['adms_niveis_acesso_id'] == 1){
-		$result_niv_aces = "SELECT * FROM adms_niveis_acessos WHERE ordem >= '" . $_SESSION['ordem'] . "' AND id=$id ORDER BY ordem ASC LIMIT 1";
-	}else {
-		 $result_niv_aces = "SELECT * FROM adms_niveis_acessos WHERE id=$id ORDER BY ordem ASC LIMIT 1";
-	}
+    if ($_SESSION['adms_niveis_acesso_id'] == 1) {
+        $result_niv_aces = "SELECT * FROM adms_niveis_acessos WHERE ordem >= '" . $_SESSION['ordem'] . "' AND id=$id ORDER BY ordem ASC LIMIT 1";
+    } else {
+        $result_niv_aces = "SELECT * FROM adms_niveis_acessos WHERE id=$id ORDER BY ordem ASC LIMIT 1";
+    }
     $resultado_niv_aces = mysqli_query($conn, $result_niv_aces);
     $row_niv_aces = mysqli_fetch_assoc($resultado_niv_aces);
     ?>
@@ -44,7 +44,7 @@ include_once 'app/adms/include/head.php';
                             }
                             $btn_apagar = carregar_btn('processa/apagar_niv_aces', $conn);
                             if ($btn_apagar) {
-                                echo "<a href='" . pg . "/processa/apagar_niv_aces' class='btn btn-outline-danger btn-sm' data-toggle='modal' data-target='#apagarRegistro'>Apagar</a> ";
+                                echo "<a href='" . pg . "/processa/apagar_niv_aces?id=" . $row_niv_aces['id'] . "' class='btn btn-outline-danger btn-sm' data-confirm='VOCÊ TEM CERTEZA QUE QUER EXCLUÍR O ITEM SELECIONADO?'>Apagar</a> ";
                             }
                             ?>
                         </span>
@@ -61,7 +61,7 @@ include_once 'app/adms/include/head.php';
                                     echo "<a class='dropdown-item' href='" . pg . "/editar/list_niv_aces?id=" . $row_niv_aces['id'] . "'>Editar</a> ";
                                 }
                                 if ($btn_apagar) {
-                                    echo "<a class='dropdown-item' href=''" . pg . "/processa/apagar_niv_aces' data-toggle='modal' data-target='#apagarRegistro'>Apagar</a> ";
+                                    echo "<a class='dropdown-item' href='" . pg . "/processa/apagar_niv_aces?id=" . $row_niv_aces['id'] . "'data-confirm='VOCÊ TEM CERTEZA QUE QUER EXCLUÍR O ITEM SELECIONADO?'>Apagar</a> ";
                                 }
                                 ?>
                             </div>
