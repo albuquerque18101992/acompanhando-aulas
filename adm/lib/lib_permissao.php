@@ -7,7 +7,7 @@ if (!isset($seguranca)) {
 
 //Função para limpar a URL nome da Função intuitiva
 function carregar_btn($endereco, $conn) {
-    $result_btn = "SELECT pg.id id_pg, pg.tp_pagina, pg.endereco
+    $result_btn = "SELECT pg.id id_pg, pg.endereco
     FROM adms_paginas pg
     LEFT JOIN adms_nivacs_pgs nivpg ON nivpg.adms_pagina_id=pg.id 
     WHERE pg.endereco='" . $endereco . "'
