@@ -40,19 +40,19 @@ if ($SendEditPg) {
         header("Location: $url_destino");
     } else {
         $result_pg_up = "UPDATE adms_paginas SET
-            nome_pagina '" . $dados_validos['nome_pagina'] . "',
-            endereco '" . $dados_validos['endereco'] . "',
-            obs '" . $dados_obs . "',
-            keywords '" . $dados_validos['keywords'] . "',
-            description '" . $dados_validos['description'] . "',
-            author '" . $dados_validos['author'] . "',
-            lib_pub '" . $dados_validos['lib_pub'] . "',
-            icone '" . $dados_icone . "',
-            depend_pg '" . $dados_validos['depend_pg'] . "',
-            adms_grps_pg_id '" . $dados_validos['adms_grps_pg_id'] . "',
-            adms_tps_pg_id '" . $dados_validos['adms_tps_pg_id'] . "',
-            adms_robot_id '" . $dados_validos['adms_robot_id'] . "',
-            adms_sits_pg_id '" . $dados_validos['adms_sits_pg_id'] . "',
+            nome_pagina = '" . $dados_validos['nome_pagina'] . "',
+            endereco = '" . $dados_validos['endereco'] . "',
+            obs = '" . $dados_obs . "',
+            keywords = '" . $dados_validos['keywords'] . "',
+            description = '" . $dados_validos['description'] . "',
+            author = '" . $dados_validos['author'] . "',
+            lib_pub = '" . $dados_validos['lib_pub'] . "',
+            icone = '" . $dados_icone . "',
+            depend_pg = '" . $dados_validos['depend_pg'] . "',
+            adms_grps_pg_id = '" . $dados_validos['adms_grps_pg_id'] . "',
+            adms_tps_pg_id = '" . $dados_validos['adms_tps_pg_id'] . "',
+            adms_robot_id = '" . $dados_validos['adms_robot_id'] . "',
+            adms_sits_pg_id ='" . $dados_validos['adms_sits_pg_id'] . "',
             modified=NOW()
             WHERE id='" . $dados_validos['id'] . "'";
         mysqli_query($conn, $result_pg_up);
