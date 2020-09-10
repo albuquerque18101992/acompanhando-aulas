@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 20-Ago-2020 às 01:01
+-- Tempo de geração: 11-Set-2020 às 00:15
 -- Versão do servidor: 10.4.11-MariaDB
 -- versão do PHP: 7.4.1
 
@@ -151,7 +151,23 @@ INSERT INTO `adms_nivacs_pgs` (`id`, `permissao`, `ordem`, `dropdown`, `lib_menu
 (22, 1, 11, 2, 2, 2, 3, 13, '2020-07-31 14:04:15', NULL),
 (23, 1, 12, 2, 2, 2, 1, 14, '2020-07-31 00:00:00', NULL),
 (24, 1, 13, 1, 2, 2, 1, 15, '2020-08-06 00:00:00', NULL),
-(25, 1, 14, 1, 2, 3, 1, 16, '2020-08-10 00:00:00', NULL);
+(25, 1, 14, 1, 2, 3, 1, 16, '2020-08-10 00:00:00', NULL),
+(26, 1, 15, 2, 2, 3, 1, 17, '2020-09-07 00:00:00', NULL),
+(27, 1, 16, 1, 2, 3, 1, 18, '2020-09-07 10:08:45', NULL),
+(28, 2, 1, 1, 2, 3, 2, 18, '2020-09-07 10:08:46', NULL),
+(29, 2, 12, 1, 2, 3, 3, 18, '2020-09-07 10:08:46', NULL),
+(30, 1, 17, 1, 2, 3, 1, 19, '2020-09-07 10:20:05', NULL),
+(31, 2, 2, 1, 2, 3, 2, 19, '2020-09-07 10:20:05', NULL),
+(32, 2, 13, 1, 2, 3, 3, 19, '2020-09-07 10:20:05', NULL),
+(33, 1, 18, 1, 2, 3, 1, 20, '2020-09-07 14:44:22', NULL),
+(34, 2, 3, 1, 2, 3, 2, 20, '2020-09-07 14:44:22', NULL),
+(35, 2, 14, 1, 2, 3, 3, 20, '2020-09-07 14:44:22', NULL),
+(36, 1, 19, 1, 2, 3, 1, 21, '2020-09-07 15:18:56', NULL),
+(37, 2, 4, 1, 2, 3, 2, 21, '2020-09-07 15:18:57', NULL),
+(38, 2, 15, 1, 2, 3, 3, 21, '2020-09-07 15:18:57', NULL),
+(39, 1, 20, 1, 2, 3, 1, 22, '2020-09-07 20:36:34', NULL),
+(40, 2, 5, 1, 2, 3, 2, 22, '2020-09-07 20:36:34', NULL),
+(41, 2, 16, 1, 2, 3, 3, 22, '2020-09-07 20:36:34', NULL);
 
 -- --------------------------------------------------------
 
@@ -222,7 +238,12 @@ INSERT INTO `adms_paginas` (`id`, `nome_pagina`, `endereco`, `obs`, `keywords`, 
 (14, 'processa o formulario editar nivel de acesso', 'processa/proc_edit_niv_aces', NULL, 'processa o formulario editar nivel de acesso', 'processa o formulario editar nivel de acesso', 'Paulo Albuquerque', 2, NULL, 11, 3, '1', 4, 1, '2020-07-31 00:00:00', NULL),
 (15, 'Alterar ordem do nível de acesso', 'processa/proc_ordem_niv_aces', 'Alterar ordem do nível de acesso', 'Alterar ordem do nível de acesso', 'Alterar ordem do nível de acesso', 'Paulo Albuquerque', 2, NULL, 0, 6, '1', 4, 1, '2020-08-06 00:00:00', NULL),
 (16, 'Cadastrar páginas', 'cadastrar/cad_pagina', 'Cadastrar páginas', 'Cadastrar páginas', 'Cadastrar páginas', 'Paulo Albuquerque', 2, NULL, 0, 2, '1', 4, 1, '2020-08-10 00:00:00', NULL),
-(17, 'Processar o formulário cadastrar página ', 'processa/proc_cad_pagina', 'Processar o formulário cadastrar página ', 'Processar o formulário cadastrar página ', 'Processar o formulário cadastrar página ', 'Paulo Albuquerque', 2, NULL, 16, 2, '1', 4, 1, '2020-08-17 00:00:00', NULL);
+(17, 'Processar o formulário cadastrar página', 'processa/proc_cad_pagina', 'Processar o formulário cadastrar página', 'Processar o formulário cadastrar página', 'Processar o formulário cadastrar página', 'Paulo Albuquerque', 2, NULL, 16, 2, '1', 4, 1, '2020-09-07 00:00:00', NULL),
+(18, 'Apagar Página', 'processa/apagar_pagina', 'Apagar Página', 'Apagar página', 'Apagar página', 'Paulo ALbuquerque', 2, '', 0, 4, '1', 4, 1, '2020-09-07 10:08:45', NULL),
+(19, 'Visualizar Página', 'visualizar/vis_pagina', 'Página para visualizar detalhes da página', 'Visualizar Página', 'Visualizar Página', 'Paulo ALbuquerque', 2, '', 0, 5, '1', 4, 1, '2020-09-07 10:20:05', NULL),
+(20, 'Editar Página', 'editar/edit_pagina', 'Formulário para editar página', 'Editar Página', 'Editar Página', 'Paulo ALbuquerque', 2, '', 0, 3, '1', 4, 1, '2020-09-07 14:44:22', NULL),
+(21, 'Teste página', 'editar/editar_paginaTeste página', 'Teste página', 'Teste página', 'Teste página', 'Paulo ALbuquerque Teste página', 2, '', 0, 3, '1', 4, 1, '2020-09-07 15:18:56', NULL),
+(22, 'Processa form editar página', 'processa/proc_edit_pagina', 'Página pra procecessar o formulário edutar a página', 'Processa form editar página', 'Processa form editar página', 'Paulo ALbuquerque', 2, '', 0, 3, '1', 4, 1, '2020-09-07 20:36:34', NULL);
 
 -- --------------------------------------------------------
 
@@ -293,7 +314,7 @@ CREATE TABLE `adms_sits_pgs` (
 INSERT INTO `adms_sits_pgs` (`id`, `nome`, `cor`, `created`, `modified`) VALUES
 (1, 'Ativo', 'success', '2020-07-22 00:00:00', NULL),
 (2, 'Inativo', 'danger', '2020-07-22 00:00:00', NULL),
-(3, 'Analise', 'primary', '2020-07-22 00:00:00', NULL);
+(3, 'Analise', 'warning', '2020-07-22 00:00:00', NULL);
 
 -- --------------------------------------------------------
 
@@ -340,8 +361,7 @@ CREATE TABLE `adms_tps_pgs` (
 --
 
 INSERT INTO `adms_tps_pgs` (`id`, `tipo`, `nome`, `obs`, `ordem`, `created`, `modified`) VALUES
-(1, 'adms', 'Administrativo', 'Administrativo', 1, '2020-08-10 00:00:00', NULL),
-(2, 'Multi Empresa', 'Multi Empresa', 'Multi Empresa', 2, '2020-08-18 00:00:00', NULL);
+(1, 'adms', 'Administrativo', 'Administrativo', 1, '2020-08-10 00:00:00', NULL);
 
 -- --------------------------------------------------------
 
@@ -475,19 +495,19 @@ ALTER TABLE `adms_menus`
 -- AUTO_INCREMENT de tabela `adms_nivacs_pgs`
 --
 ALTER TABLE `adms_nivacs_pgs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT de tabela `adms_niveis_acessos`
 --
 ALTER TABLE `adms_niveis_acessos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `adms_paginas`
 --
 ALTER TABLE `adms_paginas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT de tabela `adms_robots`
@@ -517,7 +537,7 @@ ALTER TABLE `adms_sits_usuarios`
 -- AUTO_INCREMENT de tabela `adms_tps_pgs`
 --
 ALTER TABLE `adms_tps_pgs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `adms_usuarios`
