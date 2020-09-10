@@ -16,7 +16,7 @@ include_once 'app/adms/include/head.php';
     <div class="d-flex">
         <?php
         include_once 'app/adms/include/menu.php';
-        echo "Listar MENU";
+        echo "Listar MENU em construção ...";
         include_once 'app/adms/include/rodape_lib.php';
         ?>
     </div>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 11-Ago-2020 às 02:24
+-- Tempo de geração: 20-Ago-2020 às 01:01
 -- Versão do servidor: 10.4.11-MariaDB
 -- versão do PHP: 7.4.1
 
@@ -74,8 +74,8 @@ INSERT INTO `adms_grps_pgs` (`id`, `nome`, `ordem`, `created`, `modified`) VALUE
 (3, 'Editar', 3, '2020-08-10 00:00:00', NULL),
 (4, 'Apagar', 4, '2020-08-10 00:00:00', NULL),
 (5, 'Visualizar', 5, '2020-08-10 00:00:00', NULL),
-(6, 'Outros', 6, '2020-08-10 00:00:00', NULL),
-(7, 'Acesso', 7, '2020-08-10 00:00:00', NULL);
+(6, 'Acesso', 7, '2020-08-10 00:00:00', NULL),
+(7, 'Outros', 6, '2020-08-10 00:00:00', NULL);
 
 -- --------------------------------------------------------
 
@@ -173,8 +173,8 @@ CREATE TABLE `adms_niveis_acessos` (
 
 INSERT INTO `adms_niveis_acessos` (`id`, `nome`, `ordem`, `created`, `modified`) VALUES
 (1, 'Super Administrador', 1, '2020-08-04 18:55:02', '2020-08-10 21:06:50'),
-(2, 'Administrador', 2, '2020-08-05 20:28:34', '2020-08-10 19:29:22'),
-(3, 'Colaborador', 3, '2020-08-04 19:31:54', '2020-08-10 19:29:24');
+(2, 'Administrador', 2, '2020-08-05 20:28:34', '2020-08-17 18:01:00'),
+(3, 'Colaborador', 3, '2020-08-04 19:31:54', '2020-08-17 18:01:00');
 
 -- --------------------------------------------------------
 
@@ -221,7 +221,8 @@ INSERT INTO `adms_paginas` (`id`, `nome_pagina`, `endereco`, `obs`, `keywords`, 
 (13, 'Processa o formulario nivel de acesso', 'processa/proc_cad_niv_aces', 'Processa o formulario nivel de acesso', 'Processa o formulario nivel de acesso', 'Processa o formulario nivel de acesso', 'Paulo Albuquerque', 2, NULL, 9, 2, '1', 4, 1, '2020-07-30 21:59:18', NULL),
 (14, 'processa o formulario editar nivel de acesso', 'processa/proc_edit_niv_aces', NULL, 'processa o formulario editar nivel de acesso', 'processa o formulario editar nivel de acesso', 'Paulo Albuquerque', 2, NULL, 11, 3, '1', 4, 1, '2020-07-31 00:00:00', NULL),
 (15, 'Alterar ordem do nível de acesso', 'processa/proc_ordem_niv_aces', 'Alterar ordem do nível de acesso', 'Alterar ordem do nível de acesso', 'Alterar ordem do nível de acesso', 'Paulo Albuquerque', 2, NULL, 0, 6, '1', 4, 1, '2020-08-06 00:00:00', NULL),
-(16, 'Cadastrar páginas', 'cadastrar/cad_pagina', 'Cadastrar páginas', 'Cadastrar páginas', 'Cadastrar páginas', 'Paulo Albuquerque', 2, NULL, 0, 2, '1', 4, 1, '2020-08-10 00:00:00', NULL);
+(16, 'Cadastrar páginas', 'cadastrar/cad_pagina', 'Cadastrar páginas', 'Cadastrar páginas', 'Cadastrar páginas', 'Paulo Albuquerque', 2, NULL, 0, 2, '1', 4, 1, '2020-08-10 00:00:00', NULL),
+(17, 'Processar o formulário cadastrar página ', 'processa/proc_cad_pagina', 'Processar o formulário cadastrar página ', 'Processar o formulário cadastrar página ', 'Processar o formulário cadastrar página ', 'Paulo Albuquerque', 2, NULL, 16, 2, '1', 4, 1, '2020-08-17 00:00:00', NULL);
 
 -- --------------------------------------------------------
 
@@ -339,7 +340,8 @@ CREATE TABLE `adms_tps_pgs` (
 --
 
 INSERT INTO `adms_tps_pgs` (`id`, `tipo`, `nome`, `obs`, `ordem`, `created`, `modified`) VALUES
-(1, 'adms', 'Administrativo', 'Administrativo', 1, '2020-08-10 00:00:00', NULL);
+(1, 'adms', 'Administrativo', 'Administrativo', 1, '2020-08-10 00:00:00', NULL),
+(2, 'Multi Empresa', 'Multi Empresa', 'Multi Empresa', 2, '2020-08-18 00:00:00', NULL);
 
 -- --------------------------------------------------------
 
@@ -461,7 +463,7 @@ ALTER TABLE `adms_cors`
 -- AUTO_INCREMENT de tabela `adms_grps_pgs`
 --
 ALTER TABLE `adms_grps_pgs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
 
 --
 -- AUTO_INCREMENT de tabela `adms_menus`
@@ -473,19 +475,19 @@ ALTER TABLE `adms_menus`
 -- AUTO_INCREMENT de tabela `adms_nivacs_pgs`
 --
 ALTER TABLE `adms_nivacs_pgs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT de tabela `adms_niveis_acessos`
 --
 ALTER TABLE `adms_niveis_acessos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de tabela `adms_paginas`
 --
 ALTER TABLE `adms_paginas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT de tabela `adms_robots`
@@ -515,7 +517,7 @@ ALTER TABLE `adms_sits_usuarios`
 -- AUTO_INCREMENT de tabela `adms_tps_pgs`
 --
 ALTER TABLE `adms_tps_pgs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `adms_usuarios`

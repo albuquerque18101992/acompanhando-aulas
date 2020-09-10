@@ -26,3 +26,8 @@ $(document).ready(function(){
        return false;
     });
 });
+
+//Apresentar o tooltip do bootstrap na pagina de cadastro de novas paginas .
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip();
+});
