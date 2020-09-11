@@ -90,7 +90,12 @@ include_once 'app/adms/include/head.php';
                                                     }
                                                 }
                                                 $qnt_linhas_exe ++;
-                                                
+
+                                                $btn_list_permissao = carregar_btn('listar/list_permissao', $conn);
+                                                if ($btn_list_permissao) {
+                                                    echo "<a href='" . pg . "/listar/list_permissao?id=" . $row_niv_aces['id'] . "' class='btn btn-outline-dark btn-sm'>Permissões</a> ";
+                                                }
+
                                                 $btn_vis = carregar_btn('visualizar/vis_niv_aces', $conn);
                                                 if ($btn_vis) {
                                                     echo "<a href='" . pg . "/visualizar/vis_niv_aces?id=" . $row_niv_aces['id'] . "' class='btn btn-outline-primary btn-sm'>Visualizar</a> ";

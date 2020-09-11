@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 11-Set-2020 às 00:15
+-- Tempo de geração: 11-Set-2020 às 03:30
 -- Versão do servidor: 10.4.11-MariaDB
 -- versão do PHP: 7.4.1
 
@@ -167,7 +167,10 @@ INSERT INTO `adms_nivacs_pgs` (`id`, `permissao`, `ordem`, `dropdown`, `lib_menu
 (38, 2, 15, 1, 2, 3, 3, 21, '2020-09-07 15:18:57', NULL),
 (39, 1, 20, 1, 2, 3, 1, 22, '2020-09-07 20:36:34', NULL),
 (40, 2, 5, 1, 2, 3, 2, 22, '2020-09-07 20:36:34', NULL),
-(41, 2, 16, 1, 2, 3, 3, 22, '2020-09-07 20:36:34', NULL);
+(41, 2, 16, 1, 2, 3, 3, 22, '2020-09-07 20:36:34', NULL),
+(42, 1, 21, 1, 2, 3, 1, 23, '2020-09-10 21:41:18', NULL),
+(43, 2, 6, 1, 2, 3, 2, 23, '2020-09-10 21:41:18', NULL),
+(44, 2, 17, 1, 2, 3, 3, 23, '2020-09-10 21:41:18', NULL);
 
 -- --------------------------------------------------------
 
@@ -239,11 +242,11 @@ INSERT INTO `adms_paginas` (`id`, `nome_pagina`, `endereco`, `obs`, `keywords`, 
 (15, 'Alterar ordem do nível de acesso', 'processa/proc_ordem_niv_aces', 'Alterar ordem do nível de acesso', 'Alterar ordem do nível de acesso', 'Alterar ordem do nível de acesso', 'Paulo Albuquerque', 2, NULL, 0, 6, '1', 4, 1, '2020-08-06 00:00:00', NULL),
 (16, 'Cadastrar páginas', 'cadastrar/cad_pagina', 'Cadastrar páginas', 'Cadastrar páginas', 'Cadastrar páginas', 'Paulo Albuquerque', 2, NULL, 0, 2, '1', 4, 1, '2020-08-10 00:00:00', NULL),
 (17, 'Processar o formulário cadastrar página', 'processa/proc_cad_pagina', 'Processar o formulário cadastrar página', 'Processar o formulário cadastrar página', 'Processar o formulário cadastrar página', 'Paulo Albuquerque', 2, NULL, 16, 2, '1', 4, 1, '2020-09-07 00:00:00', NULL),
-(18, 'Apagar Página', 'processa/apagar_pagina', 'Apagar Página', 'Apagar página', 'Apagar página', 'Paulo ALbuquerque', 2, '', 0, 4, '1', 4, 1, '2020-09-07 10:08:45', NULL),
+(18, 'Apagar página', 'processa/apagar_pagina', 'Apagar Página', 'Apagar Página', 'Apagar página', 'Paulo ALbuquerque', 2, '', 0, 4, '1', 4, 1, '2020-09-07 10:08:45', '2020-09-10 20:39:53'),
 (19, 'Visualizar Página', 'visualizar/vis_pagina', 'Página para visualizar detalhes da página', 'Visualizar Página', 'Visualizar Página', 'Paulo ALbuquerque', 2, '', 0, 5, '1', 4, 1, '2020-09-07 10:20:05', NULL),
 (20, 'Editar Página', 'editar/edit_pagina', 'Formulário para editar página', 'Editar Página', 'Editar Página', 'Paulo ALbuquerque', 2, '', 0, 3, '1', 4, 1, '2020-09-07 14:44:22', NULL),
-(21, 'Teste página', 'editar/editar_paginaTeste página', 'Teste página', 'Teste página', 'Teste página', 'Paulo ALbuquerque Teste página', 2, '', 0, 3, '1', 4, 1, '2020-09-07 15:18:56', NULL),
-(22, 'Processa form editar página', 'processa/proc_edit_pagina', 'Página pra procecessar o formulário edutar a página', 'Processa form editar página', 'Processa form editar página', 'Paulo ALbuquerque', 2, '', 0, 3, '1', 4, 1, '2020-09-07 20:36:34', NULL);
+(22, 'Processa form editar página', 'processa/proc_edit_pagina', 'Página pra procecessar o formulário edutar a página', 'Processa form editar página', 'Processa form editar página', 'Paulo ALbuquerque', 2, '', 0, 3, '1', 4, 1, '2020-09-07 20:36:34', NULL),
+(23, 'Permissões', 'listar/list_permissao', 'Página para listar as Permissões .', 'Permissões', 'Permissões', 'Paulo Albuquerque', 2, '', 0, 1, '1', 4, 1, '2020-09-10 21:41:18', NULL);
 
 -- --------------------------------------------------------
 
@@ -495,7 +498,7 @@ ALTER TABLE `adms_menus`
 -- AUTO_INCREMENT de tabela `adms_nivacs_pgs`
 --
 ALTER TABLE `adms_nivacs_pgs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT de tabela `adms_niveis_acessos`
@@ -507,7 +510,7 @@ ALTER TABLE `adms_niveis_acessos`
 -- AUTO_INCREMENT de tabela `adms_paginas`
 --
 ALTER TABLE `adms_paginas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT de tabela `adms_robots`
