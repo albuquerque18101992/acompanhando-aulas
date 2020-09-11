@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.2
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 11-Set-2020 às 03:30
+-- Tempo de geração: 11-Set-2020 às 21:44
 -- Versão do servidor: 10.4.11-MariaDB
--- versão do PHP: 7.4.1
+-- versão do PHP: 7.2.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -101,7 +101,8 @@ INSERT INTO `adms_menus` (`id`, `nome`, `icone`, `ordem`, `adms_sit_id`, `create
 (1, 'Dashboard', 'fas fa-tachometer-alt', 1, 1, '2020-07-25 00:00:00', NULL),
 (2, 'Usuário', 'fas fa-user', 2, 1, '2020-07-25 00:00:00', NULL),
 (3, 'Menu', 'fas fa-list-ol', 3, 1, '2020-07-25 00:00:00', NULL),
-(4, 'Sair', 'fa fa-times', 4, 1, '2020-07-25 00:00:00', NULL);
+(4, 'Sair', 'fa fa-times', 5, 1, '2020-07-25 00:00:00', NULL),
+(5, 'Unidades', 'fas fa-clinic-medical', 4, 1, '2020-09-11 16:05:29', NULL);
 
 -- --------------------------------------------------------
 
@@ -140,7 +141,7 @@ INSERT INTO `adms_nivacs_pgs` (`id`, `permissao`, `ordem`, `dropdown`, `lib_menu
 (11, 1, 11, 2, 2, 2, 1, 13, '2020-07-30 21:59:59', NULL),
 (12, 1, 1, 2, 1, 1, 3, 1, '2020-07-31 14:04:15', NULL),
 (13, 1, 2, 1, 1, 2, 3, 5, '2020-07-31 14:04:15', NULL),
-(14, 1, 3, 1, 1, 2, 3, 6, '2020-07-31 14:04:15', NULL),
+(14, 2, 3, 1, 1, 2, 3, 6, '2020-07-31 14:04:15', NULL),
 (15, 2, 4, 1, 1, 3, 3, 7, '2020-07-31 14:04:15', NULL),
 (16, 2, 5, 1, 1, 3, 3, 8, '2020-07-31 14:04:15', NULL),
 (17, 1, 6, 2, 1, 4, 3, 4, '2020-07-31 14:04:15', NULL),
@@ -170,7 +171,10 @@ INSERT INTO `adms_nivacs_pgs` (`id`, `permissao`, `ordem`, `dropdown`, `lib_menu
 (41, 2, 16, 1, 2, 3, 3, 22, '2020-09-07 20:36:34', NULL),
 (42, 1, 21, 1, 2, 3, 1, 23, '2020-09-10 21:41:18', NULL),
 (43, 2, 6, 1, 2, 3, 2, 23, '2020-09-10 21:41:18', NULL),
-(44, 2, 17, 1, 2, 3, 3, 23, '2020-09-10 21:41:18', NULL);
+(44, 2, 17, 1, 2, 3, 3, 23, '2020-09-10 21:41:18', NULL),
+(45, 1, 22, 2, 1, 5, 1, 24, '2020-09-11 15:59:09', NULL),
+(46, 1, 7, 1, 2, 3, 2, 24, '2020-09-11 15:59:09', NULL),
+(47, 1, 18, 1, 2, 3, 3, 24, '2020-09-11 15:59:09', NULL);
 
 -- --------------------------------------------------------
 
@@ -192,8 +196,8 @@ CREATE TABLE `adms_niveis_acessos` (
 
 INSERT INTO `adms_niveis_acessos` (`id`, `nome`, `ordem`, `created`, `modified`) VALUES
 (1, 'Super Administrador', 1, '2020-08-04 18:55:02', '2020-08-10 21:06:50'),
-(2, 'Administrador', 2, '2020-08-05 20:28:34', '2020-08-17 18:01:00'),
-(3, 'Colaborador', 3, '2020-08-04 19:31:54', '2020-08-17 18:01:00');
+(2, 'Administrador', 3, '2020-08-05 20:28:34', '2020-09-11 11:08:34'),
+(3, 'Colaborador', 2, '2020-08-04 19:31:54', '2020-09-11 11:08:34');
 
 -- --------------------------------------------------------
 
@@ -228,7 +232,7 @@ INSERT INTO `adms_paginas` (`id`, `nome_pagina`, `endereco`, `obs`, `keywords`, 
 (1, 'Home', 'visualizar/home', 'Pagina home', 'home', 'pagina home', 'Paulo Albuquerque', 2, 'fas fa-tachometer-alt', 0, 5, '1', 4, 1, '2020-07-22 00:00:00', NULL),
 (2, 'login', 'acesso/login', 'pagina de login do adm', 'pagina login', 'pagina login', 'Paulo Albuquerque', 1, NULL, 0, 7, '1', 1, 1, '2020-07-22 00:00:00', NULL),
 (3, 'Validar Login', 'acesso/valida', 'Validar login', 'Validar login', 'Validar login', 'Paulo Albuquerque', 1, NULL, 2, 7, '1', 4, 1, '2020-07-23 00:00:00', NULL),
-(4, 'sair', 'acesso/sair', 'botao de sair do adm', 'sair do adm', 'sair do adm', 'Paulo Albuquerque', 1, 'fa fa-times', 0, 7, '1', 4, 1, '2020-07-24 00:00:00', NULL),
+(4, 'Sair', 'acesso/sair', 'botao de sair do adm', 'sair do adm', 'sair do adm', 'Paulo Albuquerque', 1, 'fa fa-times', 0, 7, '1', 4, 2, '2020-07-24 00:00:00', '2020-09-11 11:50:11'),
 (5, 'Usuários', 'listar/list_usuario', 'Página para listar usuários', 'listar usuários', 'listar usuários', 'Paulo Albuquerque', 2, 'fas fa-users', 0, 1, '1', 4, 1, '2020-07-25 00:00:00', NULL),
 (6, 'Niveis de acesso', 'listar/list_niv_aces', 'Página para listar Niveis de acesso', 'Listar Niveis de acesso', 'Listar Niveis de acesso', 'Paulo Albuquerque', 2, 'fas fa-address-card', 0, 1, '1', 4, 1, '2020-07-25 00:00:00', NULL),
 (7, 'Paginas', 'listar/list_pagina', 'Pagina para listar as paginas do ADM', 'listar pagina', 'listar pagina', 'Paulo Albuquerque', 2, 'fas fa-file-alt', 0, 1, '1', 4, 1, '2020-07-27 00:00:00', NULL),
@@ -246,7 +250,8 @@ INSERT INTO `adms_paginas` (`id`, `nome_pagina`, `endereco`, `obs`, `keywords`, 
 (19, 'Visualizar Página', 'visualizar/vis_pagina', 'Página para visualizar detalhes da página', 'Visualizar Página', 'Visualizar Página', 'Paulo ALbuquerque', 2, '', 0, 5, '1', 4, 1, '2020-09-07 10:20:05', NULL),
 (20, 'Editar Página', 'editar/edit_pagina', 'Formulário para editar página', 'Editar Página', 'Editar Página', 'Paulo ALbuquerque', 2, '', 0, 3, '1', 4, 1, '2020-09-07 14:44:22', NULL),
 (22, 'Processa form editar página', 'processa/proc_edit_pagina', 'Página pra procecessar o formulário edutar a página', 'Processa form editar página', 'Processa form editar página', 'Paulo ALbuquerque', 2, '', 0, 3, '1', 4, 1, '2020-09-07 20:36:34', NULL),
-(23, 'Permissões', 'listar/list_permissao', 'Página para listar as Permissões .', 'Permissões', 'Permissões', 'Paulo Albuquerque', 2, '', 0, 1, '1', 4, 1, '2020-09-10 21:41:18', NULL);
+(23, 'Permissões', 'listar/list_permissao', 'Página para listar as Permissões .', 'Permissões', 'Permissões', 'Paulo Albuquerque', 2, '', 0, 1, '1', 4, 1, '2020-09-10 21:41:18', NULL),
+(24, 'Unidades', 'listar/list_unidades', '', 'Unidades', 'Unidades', 'Paulo Albuquerque', 2, '', 0, 1, '1', 4, 1, '2020-09-11 15:59:08', '2020-09-11 16:01:06');
 
 -- --------------------------------------------------------
 
@@ -365,6 +370,69 @@ CREATE TABLE `adms_tps_pgs` (
 
 INSERT INTO `adms_tps_pgs` (`id`, `tipo`, `nome`, `obs`, `ordem`, `created`, `modified`) VALUES
 (1, 'adms', 'Administrativo', 'Administrativo', 1, '2020-08-10 00:00:00', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `adms_unidades`
+--
+
+CREATE TABLE `adms_unidades` (
+  `id_unidade` int(11) NOT NULL,
+  `nome_da_unidade` varchar(55) NOT NULL,
+  `nome_gerente` varchar(55) NOT NULL,
+  `cnes` int(55) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `adms_unidades`
+--
+
+INSERT INTO `adms_unidades` (`id_unidade`, `nome_da_unidade`, `nome_gerente`, `cnes`) VALUES
+(1, ' OS - COORDENAÇÃO', 'Carlos Uehara', 1),
+(2, 'AD - ASSISTENCIA DOMICILIAR', 'Nívio', 6703607),
+(3, 'AMA ESPECIALIDADES VILA CONSTANCIA', 'Zaira', 6415415),
+(4, 'AMA/UBS INT. JD. MIRIAM I', 'Dilene', 2787601),
+(5, 'AMA/UBS INT. PARQUE DOROTEIA', 'Samia', 2788292),
+(6, 'AMA/UBS INT. VILA IMPERIO', 'Ana Paula', 5731143),
+(7, 'AMA/UBS INT. VILA JOANIZA', 'Arlete', 2751828),
+(8, 'AMA/UBS INTEGRADA V. MISSIONARIA', 'Janice', 2789078),
+(9, 'APD SANTO AMARO', 'Renata Takebayachi', 2),
+(10, 'CAPS ADULTO II CIDADE ADEMAR', 'Edson Roberto', 5731194),
+(11, 'CAPS INFANTO/JUVENIL CIDADE ADEMAR', 'Andreia Camargo', 6646581),
+(12, 'CEO II / LRPD DR. HUMBERTO NASTARI', 'Maíra Caracas', 2786621),
+(13, 'CERIII - CENTRO ESP EM REABILITACAO', 'Vanessa Nakamura', 7706332),
+(14, 'PAI CIDADE ADEMAR', 'Eliana Yagi', 3),
+(15, 'REDE HORA CERTA CIDADE ADEMAR', 'Ronald', 2751925),
+(16, 'SRT CIDADE ADEMAR I', 'Julliana Polastrini', 4),
+(17, 'SRT CIDADE ADEMAR II', 'Maria Pacheco', 5),
+(18, 'SRT SANTO AMARO', 'Rosy Ellen', 6),
+(19, 'SRT SANTO AMARO II', 'Denise Martins', 7),
+(20, 'SRT SANTO AMARO III', '', 8),
+(21, 'UBS CAMPO GRANDE', 'Maria de Lourdes', 3452689),
+(22, 'UBS INT. JARDIM MIRIAM II', 'Josiane', 2787911),
+(23, 'UBS JD. UMUARAMA', 'Miriam', 2787911),
+(24, 'UBS VILA ARRIETE', 'Heloisa Handa', 2788748),
+(25, 'UBS VILA CONSTANCIA', 'Paulo', 2788799),
+(26, 'UBS/ESF CIDADE JULIA', 'Ana', 2786893),
+(27, 'UBS/ESF JD. APURA', 'Jussara', 2787180),
+(28, 'UBS/ESF JD. NITEROI', 'Mirela Gomes', 2787652),
+(29, 'UBS/ESF JD. NOVO PANTANAL', 'Ivanir', 7357761),
+(30, 'UBS/ESF JD. SAO CARLOS', '', 3074544),
+(31, 'UBS/ESF JARDIM SELMA - CIDADE ADEMAR', 'Laura', 10),
+(32, 'UBS/ESF LARANJEIRAS', 'Vladimir', 2788039),
+(33, 'UBS/ESF MAR PAULISTA', 'Maria Cristina', 2766000),
+(34, 'UBS/ESF MATA VIRGEM', 'Regiane', 2788098),
+(35, 'UBS/ESF SAO JORGE', 'Leandro', 3996115),
+(36, 'UBS/ESF VILA APARECIDA', 'Juliana', 2788705),
+(37, 'UBS/ESF VILA GUACURI', 'Andrezza Carpentieri', 2788934),
+(38, 'UBS/ESF VILA IMPERIO II', 'Marcia', 2788977),
+(39, 'UPA PEDREIRA', 'Roberval', 6133460),
+(40, 'UPA SANTO AMARO', 'Patricia Vieira', 2752107),
+(41, 'URSI CIDADE ADEMAR', 'Patricia Sirianni', 5599881),
+(42, 'UBS SANTO AMARO', 'Jacqueline Yuri Mitsuyuki', 2788640),
+(43, 'UBS JARDIM AEROPORTO', 'Liz Carvalho', 2787156),
+(44, 'UBS CHÁCARA SANTO ANTÔNIO', 'Eliete Almeida', 2765993);
 
 -- --------------------------------------------------------
 
@@ -492,13 +560,13 @@ ALTER TABLE `adms_grps_pgs`
 -- AUTO_INCREMENT de tabela `adms_menus`
 --
 ALTER TABLE `adms_menus`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de tabela `adms_nivacs_pgs`
 --
 ALTER TABLE `adms_nivacs_pgs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- AUTO_INCREMENT de tabela `adms_niveis_acessos`
@@ -510,7 +578,7 @@ ALTER TABLE `adms_niveis_acessos`
 -- AUTO_INCREMENT de tabela `adms_paginas`
 --
 ALTER TABLE `adms_paginas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT de tabela `adms_robots`
