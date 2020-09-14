@@ -38,7 +38,9 @@ include_once 'app/adms/include/head.php';
                 ?>
 
                 <form method="POST" action="<?php echo pg; ?>/processa/proc_cad_unidade">
-                    <div class="form-row">
+
+                <div class="row">
+                    
                         <div class="form-group col-md-4">
                             <label>
                                 <span tabindex="0" data-toggle="tooltip" title="Nome da página que vai ser apresentado no menu ou no listar página" data-placement="top">
@@ -47,7 +49,7 @@ include_once 'app/adms/include/head.php';
                                 <span class="text-danger">*</span>
                                 Nome da Unidade
                             </label>
-                            <input name="nome_da_unidade" text="text" class="form-control" id="nome" placeholder="Nome da página" value="<?php
+                            <input name="nome_da_unidade" text="text" class="form-control" id="nome" placeholder="Nome da unidade" value="<?php
                             if (isset($_SESSION['dados']['nome_da_unidade'])) {
                                 echo $_SESSION['dados']['nome_da_unidade'];
                             }
@@ -61,7 +63,7 @@ include_once 'app/adms/include/head.php';
                                 <span class="text-danger">*</span>
                                 Nome do gerente da Unidade
                             </label>
-                            <input name="nome_gerente" type="text" class="form-control" id="email" placeholder="Endereço da página, ex: listar/list_pagina" value="<?php
+                            <input name="nome_gerente" type="text" class="form-control" id="email" placeholder="Nome do responsável da unidade" value="<?php
                             if (isset($_SESSION['dados']['nome_gerente'])) {
                                 echo $_SESSION['dados']['nome_gerente'];
                             }
@@ -74,16 +76,18 @@ include_once 'app/adms/include/head.php';
                                 </span>
                                 CNES da unidade
                             </label>
-                            <input name="cnes" type="text" class="form-control" id="email" placeholder="Ícone da página" value="<?php
+                            <input name="cnes" type="text" class="form-control" id="email" placeholder="CNES" value="<?php
                             if (isset($_SESSION['dados']['cnes'])) {
                                 echo $_SESSION['dados']['cnes'];
                             }
                             ?>">
                         </div>
-                    </div>
 
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
+                        </div>
+                    
+
+                    <div class="row">
+                        <div class="form-group col-md-8">
                             <label>
                                 <span tabindex="0" data-toggle="tooltip" title="Nome da página que vai ser apresentado no menu ou no listar página" data-placement="top">
                                     <i class="fa fa-question-circle" aria-hidden="true"></i>
@@ -96,22 +100,8 @@ include_once 'app/adms/include/head.php';
                             }
                             ?>">
                         </div>
-                        <div class="form-group col-md-6">
-                            <label>
-                                <span tabindex="0" data-toggle="tooltip" title="Nome da página que vai ser apresentado no menu ou no listar página" data-placement="top">
-                                    <i class="fa fa-question-circle" aria-hidden="true"></i>
-                                </span>
-                                <span class="text-danger">*</span> Telefones da Unidade
-                            </label>
-                            <input name="telefone" type="text" class="form-control" id="email" placeholder="Os numeros da unidade" value="<?php
-                            if (isset($_SESSION['dados']['telefone'])) {
-                                echo $_SESSION['dados']['telefone'];
-                            }
-                            ?>">
-                        </div>
 
-                    </div>
-                    <div class="form-row">
+
                         <div class="form-group col-md-4">
                             <label>
                                 <span tabindex="0" data-toggle="tooltip" title="Nome da página que vai ser apresentado no menu ou no listar página" data-placement="top">
@@ -119,12 +109,55 @@ include_once 'app/adms/include/head.php';
                                 </span>
                                 <span class="text-danger">*</span> CNPJ
                             </label>
-                            <input name="cnpj" type="text" class="form-control" id="email" placeholder="Desenvolvedor" value="<?php
+                            <input name="cnpj" type="text" class="form-control" id="email" placeholder="CNPJ" value="<?php
                             if (isset($_SESSION['dados']['cnpj'])) {
                                 echo $_SESSION['dados']['cnpj'];
                             }
                             ?>">
+                        </div>                        
+                    </div>
+
+                    <div class="row">
+
+                    <div class="form-group col-md-3" id="formulario">
+                                <label>
+                                    <span tabindex="0" data-toggle="tooltip" title="Nome da página que vai ser apresentado no menu ou no listar página" data-placement="top">
+                                        <i class="fa fa-question-circle" aria-hidden="true"></i>
+                                    </span>
+                                    <span class="text-danger">*</span> Telefones da Unidade
+                                </label>
+                            <div class="input-group mb-6">
+                                <input name="telefone" type="text" class="form-control" id="email" placeholder="Os numeros da unidade" value="<?php
+                                if (isset($_SESSION['dados']['telefone'])) {
+                                    echo $_SESSION['dados']['telefone'];
+                                }
+                                ?>">
+                                     <div class="input-group-append">
+                                        <button class="btn btn-outline-secondary" type="button" id="add-campo">+</button>
+                                    </div>
+                            </div>
                         </div>
+
+                        <div class="form-group col-md-5" id="formulario2">
+                            <label>
+                                <span tabindex="0" data-toggle="tooltip" title="Nome da página que vai ser apresentado no menu ou no listar página" data-placement="top">
+                                    <i class="fa fa-question-circle" aria-hidden="true"></i>
+                                </span>
+                                <span class="text-danger">*</span> Email
+                            </label>
+                            <div class="input-group mb-6">
+                            <input name="email" type="text" class="form-control" id="email" placeholder="Email" value="<?php
+                            if (isset($_SESSION['dados']['email'])) {
+                                echo $_SESSION['dados']['email'];
+                            }
+                            ?>">
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary" type="button" id="add-campo2">+</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        
                         <div class="form-group col-md-4">
                             <label>
                                 <span tabindex="0" data-toggle="tooltip" title="Nome da página que vai ser apresentado no menu ou no listar página" data-placement="top">
@@ -132,26 +165,17 @@ include_once 'app/adms/include/head.php';
                                 </span>
                                 <span class="text-danger">*</span> Razão Social
                             </label>
-                            <input name="razao_social" type="text" class="form-control" id="email" placeholder="Desenvolvedor" value="<?php
+                            <input name="razao_social" type="text" class="form-control" id="email" placeholder="Razão Social" value="<?php
                             if (isset($_SESSION['dados']['razao_social'])) {
                                 echo $_SESSION['dados']['razao_social'];
                             }
                             ?>">
                         </div>
-                        <div class="form-group col-md-4">
-                            <label>
-                                <span tabindex="0" data-toggle="tooltip" title="Nome da página que vai ser apresentado no menu ou no listar página" data-placement="top">
-                                    <i class="fa fa-question-circle" aria-hidden="true"></i>
-                                </span>
-                                <span class="text-danger">*</span> email
-                            </label>
-                            <input name="email" type="text" class="form-control" id="email" placeholder="Desenvolvedor" value="<?php
-                            if (isset($_SESSION['dados']['email'])) {
-                                echo $_SESSION['dados']['email'];
-                            }
-                            ?>">
+
+
+
                         </div>
-                    </div>
+                    
 
                     <p>
                         <span class="text-danger">* </span>Campos Obrigatório
@@ -164,6 +188,5 @@ include_once 'app/adms/include/head.php';
         unset($_SESSION['dados']);
         include_once 'app/adms/include/rodape_lib.php';
         ?>
-
     </div>
 </body>

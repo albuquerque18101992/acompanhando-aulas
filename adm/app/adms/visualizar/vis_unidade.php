@@ -30,9 +30,9 @@ if (!empty($id)) {
                             <div class="p-2">
                                 <span class="d-none d-md-block">
                                     <?php
-                                    $btn_list = carregar_btn('listar/list_pagina', $conn);
+                                    $btn_list = carregar_btn('listar/list_unidades', $conn);
                                     if ($btn_list) {
-                                        echo "<a href='" . pg . "/listar/list_pagina' class='btn btn-outline-info btn-sm'>Listar</a> ";
+                                        echo "<a href='" . pg . "/listar/list_unidades' class='btn btn-outline-info btn-sm'>Listar</a> ";
                                     }
                                     $btn_edit = carregar_btn('editar/edit_pagina', $conn);
                                     if ($btn_edit) {
@@ -51,7 +51,7 @@ if (!empty($id)) {
                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="acoesListar">
                                         <?php
                                         if ($btn_list) {
-                                            echo "<a class='dropdown-item' href='" . pg . "/listar/list_pagina?id=" . $row_pag_vis['id'] . "'>Listar</a> ";
+                                            echo "<a class='dropdown-item' href='" . pg . "/listar/list_unidades?id=" . $row_pag_vis['id'] . "'>Listar</a> ";
                                         }
                                         if ($btn_edit) {
                                             echo "<a class='dropdown-item' href='" . pg . "/editar/list_npagina?id=" . $row_pag_vis['id'] . "'>Editar</a> ";
