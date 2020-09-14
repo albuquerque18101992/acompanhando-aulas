@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.1
+-- version 4.9.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 11-Set-2020 às 21:44
+-- Tempo de geração: 14-Set-2020 às 12:11
 -- Versão do servidor: 10.4.11-MariaDB
--- versão do PHP: 7.2.28
+-- versão do PHP: 7.4.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -174,7 +174,16 @@ INSERT INTO `adms_nivacs_pgs` (`id`, `permissao`, `ordem`, `dropdown`, `lib_menu
 (44, 2, 17, 1, 2, 3, 3, 23, '2020-09-10 21:41:18', NULL),
 (45, 1, 22, 2, 1, 5, 1, 24, '2020-09-11 15:59:09', NULL),
 (46, 1, 7, 1, 2, 3, 2, 24, '2020-09-11 15:59:09', NULL),
-(47, 1, 18, 1, 2, 3, 3, 24, '2020-09-11 15:59:09', NULL);
+(47, 1, 18, 1, 2, 3, 3, 24, '2020-09-11 15:59:09', NULL),
+(48, 1, 23, 1, 2, 3, 1, 25, '2020-09-11 18:08:45', NULL),
+(49, 2, 8, 1, 2, 3, 2, 25, '2020-09-11 18:08:45', NULL),
+(50, 2, 19, 1, 2, 3, 3, 25, '2020-09-11 18:08:45', NULL),
+(51, 1, 24, 1, 2, 3, 1, 26, '2020-09-11 20:33:52', NULL),
+(52, 2, 9, 1, 2, 3, 2, 26, '2020-09-11 20:33:52', NULL),
+(53, 2, 20, 1, 2, 3, 3, 26, '2020-09-11 20:33:52', NULL),
+(54, 1, 25, 1, 2, 3, 1, 27, '2020-09-11 20:54:51', NULL),
+(55, 2, 10, 1, 2, 3, 2, 27, '2020-09-11 20:54:52', NULL),
+(56, 2, 21, 1, 2, 3, 3, 27, '2020-09-11 20:54:52', NULL);
 
 -- --------------------------------------------------------
 
@@ -251,7 +260,10 @@ INSERT INTO `adms_paginas` (`id`, `nome_pagina`, `endereco`, `obs`, `keywords`, 
 (20, 'Editar Página', 'editar/edit_pagina', 'Formulário para editar página', 'Editar Página', 'Editar Página', 'Paulo ALbuquerque', 2, '', 0, 3, '1', 4, 1, '2020-09-07 14:44:22', NULL),
 (22, 'Processa form editar página', 'processa/proc_edit_pagina', 'Página pra procecessar o formulário edutar a página', 'Processa form editar página', 'Processa form editar página', 'Paulo ALbuquerque', 2, '', 0, 3, '1', 4, 1, '2020-09-07 20:36:34', NULL),
 (23, 'Permissões', 'listar/list_permissao', 'Página para listar as Permissões .', 'Permissões', 'Permissões', 'Paulo Albuquerque', 2, '', 0, 1, '1', 4, 1, '2020-09-10 21:41:18', NULL),
-(24, 'Unidades', 'listar/list_unidades', '', 'Unidades', 'Unidades', 'Paulo Albuquerque', 2, '', 0, 1, '1', 4, 1, '2020-09-11 15:59:08', '2020-09-11 16:01:06');
+(24, 'Unidades', 'listar/list_unidades', '', 'Unidades', 'Unidades', 'Paulo Albuquerque', 2, '', 0, 1, '1', 4, 1, '2020-09-11 15:59:08', '2020-09-11 16:01:06'),
+(25, 'Visualizar Unidades', 'visualizar/vis_unidade', 'Visualizar detalhes das Unidades como endereço telefones emails etc ...', 'Visualizar Unidades', 'Visualizar Unidades', 'Paulo Albuquerque', 2, '', 0, 5, '1', 4, 1, '2020-09-11 18:08:45', NULL),
+(26, 'Cadastrar Unidade', 'cadastrar/cad_unidade', 'Cadastrar a undiade', 'Cadastrar Unidade', 'Cadastrar Unidade', 'Paulo Albuquerque', 2, '', 0, 2, '1', 4, 1, '2020-09-11 20:33:52', NULL),
+(27, 'Processa cad Unidade', 'processa/proc_cad_unidade', 'Processar o cadastro de unidade', 'processa cad unidade', 'processa cad unidade', 'Paulo Aalbuquerque', 2, '', 26, 2, '1', 4, 1, '2020-09-11 20:54:51', '2020-09-11 22:49:30');
 
 -- --------------------------------------------------------
 
@@ -378,61 +390,28 @@ INSERT INTO `adms_tps_pgs` (`id`, `tipo`, `nome`, `obs`, `ordem`, `created`, `mo
 --
 
 CREATE TABLE `adms_unidades` (
-  `id_unidade` int(11) NOT NULL,
-  `nome_da_unidade` varchar(55) NOT NULL,
-  `nome_gerente` varchar(55) NOT NULL,
-  `cnes` int(55) NOT NULL
+  `id` int(11) NOT NULL,
+  `nome_da_unidade` varchar(220) NOT NULL,
+  `nome_gerente` varchar(220) NOT NULL,
+  `cnes` int(120) NOT NULL,
+  `endereco` varchar(220) NOT NULL,
+  `telefone` varchar(120) NOT NULL,
+  `cnpj` varchar(120) NOT NULL,
+  `razao_social` varchar(220) NOT NULL,
+  `email` text NOT NULL,
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Extraindo dados da tabela `adms_unidades`
 --
 
-INSERT INTO `adms_unidades` (`id_unidade`, `nome_da_unidade`, `nome_gerente`, `cnes`) VALUES
-(1, ' OS - COORDENAÇÃO', 'Carlos Uehara', 1),
-(2, 'AD - ASSISTENCIA DOMICILIAR', 'Nívio', 6703607),
-(3, 'AMA ESPECIALIDADES VILA CONSTANCIA', 'Zaira', 6415415),
-(4, 'AMA/UBS INT. JD. MIRIAM I', 'Dilene', 2787601),
-(5, 'AMA/UBS INT. PARQUE DOROTEIA', 'Samia', 2788292),
-(6, 'AMA/UBS INT. VILA IMPERIO', 'Ana Paula', 5731143),
-(7, 'AMA/UBS INT. VILA JOANIZA', 'Arlete', 2751828),
-(8, 'AMA/UBS INTEGRADA V. MISSIONARIA', 'Janice', 2789078),
-(9, 'APD SANTO AMARO', 'Renata Takebayachi', 2),
-(10, 'CAPS ADULTO II CIDADE ADEMAR', 'Edson Roberto', 5731194),
-(11, 'CAPS INFANTO/JUVENIL CIDADE ADEMAR', 'Andreia Camargo', 6646581),
-(12, 'CEO II / LRPD DR. HUMBERTO NASTARI', 'Maíra Caracas', 2786621),
-(13, 'CERIII - CENTRO ESP EM REABILITACAO', 'Vanessa Nakamura', 7706332),
-(14, 'PAI CIDADE ADEMAR', 'Eliana Yagi', 3),
-(15, 'REDE HORA CERTA CIDADE ADEMAR', 'Ronald', 2751925),
-(16, 'SRT CIDADE ADEMAR I', 'Julliana Polastrini', 4),
-(17, 'SRT CIDADE ADEMAR II', 'Maria Pacheco', 5),
-(18, 'SRT SANTO AMARO', 'Rosy Ellen', 6),
-(19, 'SRT SANTO AMARO II', 'Denise Martins', 7),
-(20, 'SRT SANTO AMARO III', '', 8),
-(21, 'UBS CAMPO GRANDE', 'Maria de Lourdes', 3452689),
-(22, 'UBS INT. JARDIM MIRIAM II', 'Josiane', 2787911),
-(23, 'UBS JD. UMUARAMA', 'Miriam', 2787911),
-(24, 'UBS VILA ARRIETE', 'Heloisa Handa', 2788748),
-(25, 'UBS VILA CONSTANCIA', 'Paulo', 2788799),
-(26, 'UBS/ESF CIDADE JULIA', 'Ana', 2786893),
-(27, 'UBS/ESF JD. APURA', 'Jussara', 2787180),
-(28, 'UBS/ESF JD. NITEROI', 'Mirela Gomes', 2787652),
-(29, 'UBS/ESF JD. NOVO PANTANAL', 'Ivanir', 7357761),
-(30, 'UBS/ESF JD. SAO CARLOS', '', 3074544),
-(31, 'UBS/ESF JARDIM SELMA - CIDADE ADEMAR', 'Laura', 10),
-(32, 'UBS/ESF LARANJEIRAS', 'Vladimir', 2788039),
-(33, 'UBS/ESF MAR PAULISTA', 'Maria Cristina', 2766000),
-(34, 'UBS/ESF MATA VIRGEM', 'Regiane', 2788098),
-(35, 'UBS/ESF SAO JORGE', 'Leandro', 3996115),
-(36, 'UBS/ESF VILA APARECIDA', 'Juliana', 2788705),
-(37, 'UBS/ESF VILA GUACURI', 'Andrezza Carpentieri', 2788934),
-(38, 'UBS/ESF VILA IMPERIO II', 'Marcia', 2788977),
-(39, 'UPA PEDREIRA', 'Roberval', 6133460),
-(40, 'UPA SANTO AMARO', 'Patricia Vieira', 2752107),
-(41, 'URSI CIDADE ADEMAR', 'Patricia Sirianni', 5599881),
-(42, 'UBS SANTO AMARO', 'Jacqueline Yuri Mitsuyuki', 2788640),
-(43, 'UBS JARDIM AEROPORTO', 'Liz Carvalho', 2787156),
-(44, 'UBS CHÁCARA SANTO ANTÔNIO', 'Eliete Almeida', 2765993);
+INSERT INTO `adms_unidades` (`id`, `nome_da_unidade`, `nome_gerente`, `cnes`, `endereco`, `telefone`, `cnpj`, `razao_social`, `email`, `created`, `modified`) VALUES
+(1, 'Coordenação', 'Carlos André Uehara', 1, 'Av Nossa Senhora do Sábara N°1555 CEP - 0000-0000', '5343-1352', '6519651656-556/66615', 'OSACSC', 'osacsc@osacsc.com.br', '2020-09-11 00:00:00', NULL),
+(2, 'APD Santo Amaro', 'Renata Takebayachi', 8756785, 'Av. Miguel Yunes, 491 - CEP: 04444-000', '5041-7582', '60.922.168/0026-34', 'ASSOCIAÇÃO  CONGREGAÇÃO DE SANTA CATARINA', 'apd.santoamaro@ossantacatarina.org.br ', '2020-09-11 00:00:00', NULL),
+(3, 'AD - ASSISTÊNCIA DOMICILIAR', 'Nivio', 45678, 'Rua Dr. Nestor Sampaio Penteado, 181-189 - Vila Império - CEP:04459-110 ', '5622-1988 / 5612-6901', '60.922.168/0026-34', 'ASSOCIAÇÃO  CONGREGAÇÃO DE SANTA CATARINA', 'assistenciadomiciliar@ossantacatarina.org.br\r\n\r\nnivio.bertolazzi@ossantacatarina.org.br', '2020-09-11 00:00:00', NULL),
+(4, 'AMA ESPECIALIDADE VILA CONSTÂNCIA', 'Zaira', 4165, 'Rua Hermenegildo MartiniNº 21.500 / 100 S/N - CEP: 04438-280', '5565-1069 / 5562-6957  / 5562-6944 / 5562-7034 / 5565-7061', '60.922.168/0026-34 ', 'ASSOCIAÇÃO  CONGREGAÇÃO DE SANTA CATARINA', 'vilaconstancia.amaespecialidades@ossantacatarina.org.br\r\n\r\nzaira.goncalves@ossantacatarina.org.br \r\n\r\nerineide.campos@ossantacatarina.org.br', '2020-09-11 20:26:45', NULL);
 
 -- --------------------------------------------------------
 
@@ -535,6 +514,12 @@ ALTER TABLE `adms_tps_pgs`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Índices para tabela `adms_unidades`
+--
+ALTER TABLE `adms_unidades`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Índices para tabela `adms_usuarios`
 --
 ALTER TABLE `adms_usuarios`
@@ -566,7 +551,7 @@ ALTER TABLE `adms_menus`
 -- AUTO_INCREMENT de tabela `adms_nivacs_pgs`
 --
 ALTER TABLE `adms_nivacs_pgs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
 -- AUTO_INCREMENT de tabela `adms_niveis_acessos`
@@ -578,7 +563,7 @@ ALTER TABLE `adms_niveis_acessos`
 -- AUTO_INCREMENT de tabela `adms_paginas`
 --
 ALTER TABLE `adms_paginas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT de tabela `adms_robots`
@@ -609,6 +594,12 @@ ALTER TABLE `adms_sits_usuarios`
 --
 ALTER TABLE `adms_tps_pgs`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT de tabela `adms_unidades`
+--
+ALTER TABLE `adms_unidades`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de tabela `adms_usuarios`

@@ -27,9 +27,9 @@ include_once 'app/adms/include/head.php';
                     </div>
                     <div class="p-2">
                         <?php
-                        $btn_cad = carregar_btn('cadastrar/cad_pagina', $conn);
-                        if ($btn_cad) {
-                            echo "<a href='" . pg . "/cadastrar/cad_pagina' class='btn btn-outline-success btn-sm'>Cadastrar</a>";
+                        $btn_cad_unidade = carregar_btn('cadastrar/cad_unidade', $conn);
+                        if ($btn_cad_unidade) {
+                            echo "<a href='" . pg . "/cadastrar/cad_unidade' class='btn btn-outline-success btn-sm'>Cadastrar unidade</a>";
                         }
                         ?>
                     </div>
@@ -50,7 +50,7 @@ include_once 'app/adms/include/head.php';
                 //Calcular o inicio visualização
                 $inicio = ($qnt_result_pg * $pagina) - $qnt_result_pg;
                 if ($_SESSION['adms_niveis_acesso_id'] == 1) {
-                    $resul_pg = "SELECT pg.id, pg.nome_pagina, pg.endereco, tpg.tipo FROM adms_paginas pg INNER JOIN adms_tps_pgs tpg ON tpg.id=pg.adms_tps_pg_id ORDER BY id ASC LIMIT $inicio, $qnt_result_pg";
+                    $resul_pg = "SELECT * FROM adms_unidades";
                 } /* else {
                   $resul_niv_aces = "SELECT * FROM adms_niveis_acessos WHERE ordem > '" . $_SESSION['ordem'] . "' ORDER BY ordem ASC LIMIT $inicio, $qnt_result_pg";
                   } */
@@ -58,13 +58,13 @@ include_once 'app/adms/include/head.php';
                 if (($resultado_pg) and ($resultado_pg->num_rows != 0)) {
                 ?>
                     <div class="table-responsive">
-                        <table class="table table-striped table-hover table-bordered">
+                        <table class="table table-hover table-hover table-bordered">
                             <thead>
                                 <tr>
                                     <th>ID</th>
                                     <th>Unidade</th>
                                     <th class="d-none d-sm-table-cell">Gerente Unidade </th>
-                                    <th class="d-none d-sm-table-cell">Tipo Página</th>
+                                    <th class="d-none d-sm-table-cell">CNES</th>
                                     <th class="text-center">Ações</th>
                                 </tr>
                             </thead>
@@ -74,15 +74,15 @@ include_once 'app/adms/include/head.php';
                                 ?>
                                     <tr>
                                         <th><?php echo $row_pg['id']; ?></th>
-                                        <td><?php echo $row_pg['nome_pagina']; ?></td>
-                                        <td><?php echo $row_pg['endereco']; ?></td>
-                                        <td class="d-none d-sm-table-cell"><?php echo $row_pg['tipo']; ?></td>
+                                        <td><?php echo $row_pg['nome_da_unidade']; ?></td>
+                                        <td><?php echo $row_pg['nome_gerente']; ?></td>
+                                        <td class="d-none d-sm-table-cell"><?php echo $row_pg['cnes']; ?></td>
                                         <td class="text-center">
                                             <span class="d-none d-md-block">
                                                 <?php
-                                                $btn_vis = carregar_btn('visualizar/vis_pagina', $conn);
+                                                $btn_vis = carregar_btn('visualizar/vis_unidade', $conn);
                                                 if ($btn_vis) {
-                                                    echo "<a href='" . pg . "/visualizar/vis_pagina?id=" . $row_pg['id'] . "' class='btn btn-outline-primary btn-sm'>Visualizar</a> ";
+                                                    echo "<a href='" . pg . "/visualizar/vis_unidade?id=" . $row_pg['id'] . "' class='btn btn-outline-primary btn-sm'>Visualizar</a> ";
                                                 }
                                                 $btn_edit = carregar_btn('editar/edit_pagina', $conn);
                                                 if ($btn_edit) {
@@ -101,7 +101,7 @@ include_once 'app/adms/include/head.php';
                                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="acoesListar">
                                                     <?php
                                                     if ($btn_vis) {
-                                                        echo "<a class='dropdown-item' href='" . pg . "/visualizar/vis_pagina?id=" . $row_niv_aces['id'] . "'>Visualizar</a> ";
+                                                        echo "<a class='dropdown-item' href='" . pg . "/visualizar/vis_unidade?id=" . $row_niv_aces['id'] . "'>Visualizar</a> ";
                                                     }
                                                     if ($btn_edit) {
                                                         echo "<a class='dropdown-item' href='" . pg . "/editar/list_pagina?id=" . $row_niv_aces['id'] . "'>Editar</a> ";
