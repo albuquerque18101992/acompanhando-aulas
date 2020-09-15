@@ -34,9 +34,9 @@ if (!empty($id)) {
                                     if ($btn_list) {
                                         echo "<a href='" . pg . "/listar/list_unidades' class='btn btn-outline-info btn-sm'>Listar</a> ";
                                     }
-                                    $btn_edit = carregar_btn('editar/edit_pagina', $conn);
+                                    $btn_edit = carregar_btn('editar/edit_unidade', $conn);
                                     if ($btn_edit) {
-                                        echo "<a href='" . pg . "/editar/edit_pagina?id=" . $row_pag_vis['id'] . "' class='btn btn-outline-warning btn-sm'>Editar </a> ";
+                                        echo "<a href='" . pg . "/editar/edit_unidade?id=" . $row_pag_vis['id'] . "' class='btn btn-outline-warning btn-sm'>Editar </a> ";
                                     }
                                     $btn_apagar = carregar_btn('processa/apagar_pagina', $conn);
                                     if ($btn_apagar) {

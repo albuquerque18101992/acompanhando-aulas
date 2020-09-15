@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.2
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 15-Set-2020 às 03:31
+-- Tempo de geração: 15-Set-2020 às 20:49
 -- Versão do servidor: 10.4.11-MariaDB
--- versão do PHP: 7.4.1
+-- versão do PHP: 7.2.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -183,7 +183,10 @@ INSERT INTO `adms_nivacs_pgs` (`id`, `permissao`, `ordem`, `dropdown`, `lib_menu
 (53, 2, 20, 1, 2, 3, 3, 26, '2020-09-11 20:33:52', NULL),
 (54, 1, 25, 1, 2, 3, 1, 27, '2020-09-11 20:54:51', NULL),
 (55, 2, 10, 1, 2, 3, 2, 27, '2020-09-11 20:54:52', NULL),
-(56, 2, 21, 1, 2, 3, 3, 27, '2020-09-11 20:54:52', NULL);
+(56, 2, 21, 1, 2, 3, 3, 27, '2020-09-11 20:54:52', NULL),
+(57, 1, 26, 1, 2, 3, 1, 28, '2020-09-15 11:20:25', NULL),
+(58, 2, 11, 1, 2, 3, 2, 28, '2020-09-15 11:20:25', NULL),
+(59, 2, 22, 1, 2, 3, 3, 28, '2020-09-15 11:20:25', NULL);
 
 -- --------------------------------------------------------
 
@@ -263,7 +266,8 @@ INSERT INTO `adms_paginas` (`id`, `nome_pagina`, `endereco`, `obs`, `keywords`, 
 (24, 'Unidades', 'listar/list_unidades', '', 'Unidades', 'Unidades', 'Paulo Albuquerque', 2, '', 0, 1, '1', 4, 1, '2020-09-11 15:59:08', '2020-09-11 16:01:06'),
 (25, 'Visualizar Unidades', 'visualizar/vis_unidade', 'Visualizar detalhes das Unidades como endereço telefones emails etc ...', 'Visualizar Unidades', 'Visualizar Unidades', 'Paulo Albuquerque', 2, '', 0, 5, '1', 4, 1, '2020-09-11 18:08:45', NULL),
 (26, 'Cadastrar Unidade', 'cadastrar/cad_unidade', 'Cadastrar a undiade', 'Cadastrar Unidade', 'Cadastrar Unidade', 'Paulo Albuquerque', 2, '', 0, 2, '1', 4, 1, '2020-09-11 20:33:52', NULL),
-(27, 'Processa cad Unidade', 'processa/proc_cad_unidade', 'Processar o cadastro de unidade', 'processa cad unidade', 'processa cad unidade', 'Paulo Aalbuquerque', 2, '', 26, 2, '1', 4, 1, '2020-09-11 20:54:51', '2020-09-11 22:49:30');
+(27, 'Processa cad Unidade', 'processa/proc_cad_unidade', 'Processar o cadastro de unidade', 'processa cad unidade', 'processa cad unidade', 'Paulo Aalbuquerque', 2, '', 26, 2, '1', 4, 1, '2020-09-11 20:54:51', '2020-09-11 22:49:30'),
+(28, 'Editar Unidade', 'editar/edit_unidade', 'Editar Unidade', 'Editar Unidade', 'Editar Unidade', 'Paulo Albuquerque', 2, '', 0, 3, '1', 4, 1, '2020-09-15 11:20:25', NULL);
 
 -- --------------------------------------------------------
 
@@ -433,7 +437,7 @@ INSERT INTO `adms_unidades` (`id`, `nome_da_unidade`, `nome_gerente`, `cnes`, `e
 (23, 'UBS JD. UMUARAMA', 'Miriam', 2787911, '', '', '', '', '', '2020-09-14 00:00:00', NULL),
 (24, 'UBS VILA ARRIETE', 'Heloisa Handa', 2788748, '', '', '', '', '', '2020-09-14 00:00:00', NULL),
 (25, 'UBS VILA CONSTANCIA', 'Paulo', 2788799, '', '', '', '', '', '2020-09-14 00:00:00', NULL),
-(26, 'UBS/ESF CIDADE JULIA', '', 2786893, '', '', '', '', '', '2020-09-14 00:00:00', NULL),
+(26, 'UBS/ESF CIDADE JULIA', 'Lisia', 2786893, '', '', '', '', '', '2020-09-14 00:00:00', NULL),
 (27, 'UBS/ESF JD. APURA', 'Jussara', 2787180, '', '', '', '', '', '2020-09-14 00:00:00', NULL),
 (28, 'UBS/ESF JD. NITEROI', 'Mirela', 2787652, '', '', '', '', '', '2020-09-14 00:00:00', NULL),
 (29, 'UBS/ESF JD. NOVO PANTANAL', 'Ivanir', 7357761, '', '', '', '', '', '2020-09-14 00:00:00', NULL),
@@ -591,7 +595,7 @@ ALTER TABLE `adms_menus`
 -- AUTO_INCREMENT de tabela `adms_nivacs_pgs`
 --
 ALTER TABLE `adms_nivacs_pgs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 
 --
 -- AUTO_INCREMENT de tabela `adms_niveis_acessos`
@@ -603,7 +607,7 @@ ALTER TABLE `adms_niveis_acessos`
 -- AUTO_INCREMENT de tabela `adms_paginas`
 --
 ALTER TABLE `adms_paginas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT de tabela `adms_robots`

@@ -84,9 +84,9 @@ include_once 'app/adms/include/head.php';
                                                 if ($btn_vis) {
                                                     echo "<a href='" . pg . "/visualizar/vis_unidade?id=" . $row_pg['id'] . "' class='btn btn-outline-primary btn-sm'>Visualizar</a> ";
                                                 }
-                                                $btn_edit = carregar_btn('editar/edit_pagina', $conn);
+                                                $btn_edit = carregar_btn('editar/edit_unidade', $conn);
                                                 if ($btn_edit) {
-                                                    echo "<a href='" . pg . "/editar/edit_pagina?id=" . $row_pg['id'] . "' class='btn btn-outline-warning btn-sm'>Editar </a> ";
+                                                    echo "<a href='" . pg . "/editar/edit_unidade?id=" . $row_pg['id'] . "' class='btn btn-outline-warning btn-sm'>Editar </a> ";
                                                 }
                                                 $btn_apagar = carregar_btn('processa/apagar_pagina', $conn);
                                                 if ($btn_apagar) {

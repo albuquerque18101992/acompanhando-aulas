@@ -79,92 +79,76 @@ if (!empty($id)) {
                         </div>
                         <hr>
                         <dl class="row">
-                            <dt class="col-sm-3">ID</dt>
-                            <dd class="col-sm-4"><?php echo $row_pag_vis['id']; ?></dd>
-                            <dd class="col-sm-5" > Campo ID da página cadastrada no banco de dados. </dd>
+                            <dt class="col-sm-6">ID</dt>
+                            <dd class="col-sm-6"><?php echo $row_pag_vis['id']; ?></dd>
 
-                            <dt class="col-sm-3">Nome Página</dt>
-                            <dd class="col-sm-4"><?php echo $row_pag_vis['nome_pagina']; ?></dd>
-                            <dd class="col-sm-5" > Neste campo como o nome já mostra temos o nome da página. </dd>
+                            <dt class="col-sm-6">Nome Página</dt>
+                            <dd class="col-sm-6"><?php echo $row_pag_vis['nome_pagina']; ?></dd>
 
-                            <dt class="col-sm-3">Endereço Página</dt>
-                            <dd class="col-sm-4"><?php echo $row_pag_vis['endereco']; ?></dd>
-                            <dd class="col-sm-5" > Caminho do arquivo. </dd>
+                            <dt class="col-sm-6">Endereço Página</dt>
+                            <dd class="col-sm-6"><?php echo $row_pag_vis['endereco']; ?></dd>
 
-                            <dt class="col-sm-3">Observações da Página</dt>
-                            <dd class="col-sm-4"><?php echo $row_pag_vis['obs']; ?></dd>
-                            <dd class="col-sm-5" > Observações feita pelo Desenvolvedor. </dd>
+                            <dt class="col-sm-6">Observações da Página</dt>
+                            <dd class="col-sm-6"><?php echo $row_pag_vis['obs']; ?></dd>
 
-                            <dt class="col-sm-3">Chaves de Identificação</dt>
-                            <dd class="col-sm-4"><?php echo $row_pag_vis['keywords']; ?></dd>
-                            <dd class="col-sm-5" > Palavras chaves para os robos do google. </dd>
+                            <dt class="col-sm-6">Chaves de Identificação</dt>
+                            <dd class="col-sm-6"><?php echo $row_pag_vis['keywords']; ?></dd>
 
-                            <dt class="col-sm-3">Descrições</dt>
-                            <dd class="col-sm-4"><?php echo $row_pag_vis['description']; ?></dd>
-                            <dd class="col-sm-5" > Neste campo como o nome já mostra temos o nome da página. </dd>
+                            <dt class="col-sm-6">Descrições</dt>
+                            <dd class="col-sm-6"><?php echo $row_pag_vis['description']; ?></dd>
 
-                            <dt class="col-sm-3">Desenvolvedor da Página</dt>
-                            <dd class="col-sm-4"><?php echo $row_pag_vis['author']; ?></dd>
-                            <dd class="col-sm-5" > Programador, Desenvolvedor ou Equipe do projeto. </dd>
+                            <dt class="col-sm-6">Desenvolvedor da Página</dt>
+                            <dd class="col-sm-6"><?php echo $row_pag_vis['author']; ?></dd>
 
-                            <dt class="col-sm-3">Liberação ao Público </dt>
-                            <dd class="col-sm-4"><?php
+                            <dt class="col-sm-6">Liberação ao Público </dt>
+                            <dd class="col-sm-6"><?php
                                 if ($row_pag_vis['lib_pub'] == 1) {
                                     echo "<span class='badge badge-success'>Sim, liberado ao público</span>";
                                 } else {
                                     echo "<span class='badge badge-danger'>Não, liberado ao público</span>";
                                 }
                                 ?></dd>
-                            <dd class="col-sm-5" > Liberação ao público. </dd>
 
-                            <dt class="col-sm-3">Descriçaõ do Ícone </dt>
-                            <dd class="col-sm-4"><?php
+                            <dt class="col-sm-6">Descriçaõ do Ícone </dt>
+                            <dd class="col-sm-6"><?php
                                 if (!empty($row_pag_vis['icone'])) {
                                     echo "<i class = '" . $row_pag_vis['icone'] . "'></i> : " . $row_pag_vis['icone'];
                                 } else {
                                     echo "Não contém ícone";
                                 }
                                 ?></dd>
-                            <dd class="col-sm-5" > Campo com o nome do ícone mostrado na página. </dd>
 
-                            <dt class="col-sm-3">Dependências de outras Páginas</dt>
-                            <dd class="col-sm-4"><?php
+                            <dt class="col-sm-6">Dependências de outras Páginas</dt>
+                            <dd class="col-sm-6"><?php
                                 if ($row_pag_vis['nome_depg'] != 0) {
                                     echo "<a href = '" . pg . "/visualizar/vis_pagina?id=" . $row_pag_vis['id_depg'] . "'>" . $row_pag_vis['nome_depg'] . "</a>";
                                 } else {
                                     echo "<span class='badge badge-danger'>Não depende de outras páginas</span>";
                                 }
                                 ?></dd>
-                            <dd class="col-sm-5" > Caso a página dependa de outra página teremos aqui o ID na página. </dd>
 
-                            <dt class="col-sm-3">Grupo</dt>
-                            <dd class="col-sm-4"><?php echo $row_pag_vis['nome_grpg']; ?></dd>
-                            <dd class="col-sm-5" > Qual grupo a página pertence. </dd>
+                            <dt class="col-sm-6">Grupo</dt>
+                            <dd class="col-sm-6"><?php echo $row_pag_vis['nome_grpg']; ?></dd>
 
-                            <dt class="col-sm-3">Projeto</dt>
-                            <dd class="col-sm-4"><?php echo $row_pag_vis['tipo_tpg'] . " - " . $row_pag_vis['nome_tpg']; ?></dd>
-                            <dd class="col-sm-5" > Qual o diretório/projeto. </dd>
+                            <dt class="col-sm-6">Projeto</dt>
+                            <dd class="col-sm-6"><?php echo $row_pag_vis['tipo_tpg'] . " - " . $row_pag_vis['nome_tpg']; ?></dd>
 
-                            <dt class="col-sm-3">Indexar ou não</dt>
-                            <dd class="col-sm-4"><?php
+                            <dt class="col-sm-6">Indexar ou não</dt>
+                            <dd class="col-sm-6"><?php
                                 echo $row_pag_vis['tipo_rb'] . " - " . $row_pag_vis['nome_rb'];
                                 ?></dd>
-                            <dd class="col-sm-5" > Caso queira indexar suas páginas aos robos do google. </dd>
 
-                            <dt class="col-sm-3">Situação da página</dt>
-                            <dd class="col-sm-4"><?php
+                            <dt class="col-sm-6">Situação da página</dt>
+                            <dd class="col-sm-6"><?php
                                 echo "<span class='badge badge-" . $row_pag_vis['cor'] . "'>" . $row_pag_vis['nome_sitpg'] . "</span>";
                                 ?></dd>
-                            <dd class = "col-sm-5" > Situação da página. </dd>
 
-                            <dt class = "col-sm-3 text-truncate">Data do cadastro</dt>
-                            <dd class = "col-sm-4"><?php echo date('d/m/Y - H:i:s', strtotime($row_pag_vis['created']));
+                            <dt class = "col-sm-6 text-truncate">Data do cadastro</dt>
+                            <dd class = "col-sm-6"><?php echo date('d/m/Y - H:i:s', strtotime($row_pag_vis['created']));
                                 ?></dd>
-                            <dd class="col-sm-5" > Data de inserção/criação do dado. </dd>
 
-                            <dt class="col-sm-3 text-truncate">Data do alteração</dt>
-                            <dd class="col-sm-4">
-                            <dd class="col-sm-5" > Qualquer mudança de informação na página ficará registrado a data do acontecimento. </dd>
+                            <dt class="col-sm-6 text-truncate">Data do alteração</dt>
+                            <dd class="col-sm-6">
                             <?php
                             if (!empty($row_pag_vis['modified'])) {
                                 echo date('d/m/Y - H:i:s', strtotime($row_pag_vis['modified']));
