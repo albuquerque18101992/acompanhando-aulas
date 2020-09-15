@@ -47,7 +47,11 @@ include_once 'app/adms/include/head.php';
                                 <span class="text-danger">*</span>
                                 Nome da Unidade
                             </label>
-                            <input name="nome_da_unidade" text="text" class="form-control" id="nome" placeholder="Nome da unidade">
+                            <input name="nome_da_unidade" text="text" class="form-control" id="nome" placeholder="Nome da unidade" value="<?php
+                            if (isset($_SESSION['dados']['nome_da_unidade'])) {
+                                echo $_SESSION['dados']['nome_da_unidade'];
+                            }
+                            ?>">
                         </div>
                         <div class="form-group col-md-4">
                             <label>
@@ -57,7 +61,11 @@ include_once 'app/adms/include/head.php';
                                 <span class="text-danger">*</span>
                                 Nome do gerente da Unidade
                             </label>
-                            <input name="nome_gerente" type="text" class="form-control" id="gerente_da_unidade" placeholder="Nome do responsável da unidade">
+                            <input name="nome_gerente" type="text" class="form-control" id="gerente_da_unidade" placeholder="Nome do responsável da unidade" value="<?php
+                            if (isset($_SESSION['dados']['nome_gerente'])) {
+                                echo $_SESSION['dados']['nome_gerente'];
+                            }
+                            ?>">
                         </div>
                         <div class="form-group col-md-4">
                             <label>
@@ -66,9 +74,15 @@ include_once 'app/adms/include/head.php';
                                 </span>
                                 CNES da unidade
                             </label>
-                            <input name="cnes" type="text" class="form-control" id="cnes" placeholder="CNES">
+                            <input name="cnes" type="text" class="form-control" id="cnes" placeholder="CNES" value="<?php
+                            if (isset($_SESSION['dados']['cnes'])) {
+                                echo $_SESSION['dados']['cnes'];
+                            }
+                            ?>">
                         </div>
+
                     </div>
+
 
                     <div class="row">
                         <div class="form-group col-md-8">
@@ -78,7 +92,11 @@ include_once 'app/adms/include/head.php';
                                 </span>
                                 <span class="text-danger">*</span> Endereço da Unidade
                             </label>
-                            <input name="endereco" text="text" class="form-control" id="nome" placeholder="EXEMPLO: AV:UM, N°:DOIS, BAIRRO:TRÊS CEP:00000-000">
+                            <input name="endereco" text="text" class="form-control" id="nome" placeholder="EXEMPLO: AV:UM, N°:DOIS, BAIRRO:TRÊS CEP:00000-000" value="<?php
+                            if (isset($_SESSION['dados']['endereco'])) {
+                                echo $_SESSION['dados']['endereco'];
+                            }
+                            ?>">
                         </div>
 
 
@@ -89,7 +107,11 @@ include_once 'app/adms/include/head.php';
                                 </span>
                                 <span class="text-danger">*</span> CNPJ
                             </label>
-                            <input name="cnpj" type="text" class="form-control" id="cnpj" placeholder="CNPJ">
+                            <input name="cnpj" type="text" class="form-control" id="cnpj" placeholder="CNPJ" value="<?php
+                            if (isset($_SESSION['dados']['cnpj'])) {
+                                echo $_SESSION['dados']['cnpj'];
+                            }
+                            ?>">
                         </div>                        
                     </div>
 
@@ -101,34 +123,14 @@ include_once 'app/adms/include/head.php';
                                 </span>
                                 <span class="text-danger">*</span> Razão Social
                             </label>
-                            <input name="razao_social" type="text" class="form-control" id="razao_social" placeholder="Razão Social">
+                            <input name="razao_social" type="text" class="form-control" id="razao_social" placeholder="Razão Social" value="<?php
+                            if (isset($_SESSION['dados']['razao_social'])) {
+                                echo $_SESSION['dados']['razao_social'];
+                            }
+                            ?>">
                         </div>
 
-                        <div class="form-group col-md-4">
-                            <label>
-                                <span tabindex="0" data-toggle="tooltip" title="Numero do Ramal do telefone VOIP da unidade" data-placement="top">
-                                    <i class="fa fa-question-circle" aria-hidden="true"></i>
-                                </span>
-                                <span class="text-danger">*</span> Ramal VOIP
-                            </label>
-                            <input name="ramal" type="text" class="form-control" id="razao_social" placeholder="Ramal da unidade">
-                        </div>
-
-                        <div class="form-group col-md-4">
-                            <label>
-                                <span tabindex="0" data-toggle="tooltip" title="Decidindo..." data-placement="top">
-                                    <i class="fa fa-question-circle" aria-hidden="true"></i>
-                                </span>
-                                <span class="text-danger">*</span> Decidindo
-                            </label>
-                            <input name="Decidindo" type="text" class="form-control" id="razao_social" placeholder="Decidindo">
-                        </div>
-
-
-                    </div>
-
-                    <div class="row">
-                        <div class="form-group col-md-6" id="telefone">
+                        <div class="form-group col-md-4" id="telefone">
                             <label>
                                 <span tabindex="0" data-toggle="tooltip" title="Se tiver mais de um telefone da unidade,clique no botão de mais assim podera adicionar mais telefones" data-placement="top">
                                     <i class="fa fa-question-circle" aria-hidden="true"></i>
@@ -142,7 +144,7 @@ include_once 'app/adms/include/head.php';
                                 </div>
                             </div>
 
-                            <div class="form-group col-md-6" id="email">
+                            <div class="form-group col-md-4" id="email">
                                 <label>
                                     <span tabindex="0" data-toggle="tooltip" title="Se tiver mais de um email da unidade,clique no botão de mais assim podera adicionar mais emails" data-placement="top">
                                         <i class="fa fa-question-circle" aria-hidden="true"></i>
@@ -155,7 +157,6 @@ include_once 'app/adms/include/head.php';
                                         <button class="btn btn-outline-secondary" type="button" id="addEmail">+</button>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
 

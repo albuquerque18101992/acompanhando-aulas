@@ -33,7 +33,7 @@ $prim_nome = $nome[0];
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown" id="navbarDropdownMenuLink">
                     <a class="dropdown-item" href="#"> <i class="fas fa-user"></i> Perfil</a>
-                    <a class="dropdown-item" href="<?php echo pg; ?> /acesso/sair"> <i class="fas fa-external-link-alt"></i> Sair</a> 
+                    <a class="dropdown-item" href="<?php echo pg; ?> /acesso/sair"> <i class="fa fa-power-off"></i> Sair</a> 
                 </div>
             </li>
         </ul>

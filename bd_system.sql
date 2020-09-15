@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 14-Set-2020 às 12:11
+-- Tempo de geração: 15-Set-2020 às 03:31
 -- Versão do servidor: 10.4.11-MariaDB
 -- versão do PHP: 7.4.1
 
@@ -101,7 +101,7 @@ INSERT INTO `adms_menus` (`id`, `nome`, `icone`, `ordem`, `adms_sit_id`, `create
 (1, 'Dashboard', 'fas fa-tachometer-alt', 1, 1, '2020-07-25 00:00:00', NULL),
 (2, 'Usuário', 'fas fa-user', 2, 1, '2020-07-25 00:00:00', NULL),
 (3, 'Menu', 'fas fa-list-ol', 3, 1, '2020-07-25 00:00:00', NULL),
-(4, 'Sair', 'fa fa-times', 5, 1, '2020-07-25 00:00:00', NULL),
+(4, 'Sair', 'fa fa-power-off', 5, 1, '2020-07-25 00:00:00', NULL),
 (5, 'Unidades', 'fas fa-clinic-medical', 4, 1, '2020-09-11 16:05:29', NULL);
 
 -- --------------------------------------------------------
@@ -408,10 +408,50 @@ CREATE TABLE `adms_unidades` (
 --
 
 INSERT INTO `adms_unidades` (`id`, `nome_da_unidade`, `nome_gerente`, `cnes`, `endereco`, `telefone`, `cnpj`, `razao_social`, `email`, `created`, `modified`) VALUES
-(1, 'Coordenação', 'Carlos André Uehara', 1, 'Av Nossa Senhora do Sábara N°1555 CEP - 0000-0000', '5343-1352', '6519651656-556/66615', 'OSACSC', 'osacsc@osacsc.com.br', '2020-09-11 00:00:00', NULL),
-(2, 'APD Santo Amaro', 'Renata Takebayachi', 8756785, 'Av. Miguel Yunes, 491 - CEP: 04444-000', '5041-7582', '60.922.168/0026-34', 'ASSOCIAÇÃO  CONGREGAÇÃO DE SANTA CATARINA', 'apd.santoamaro@ossantacatarina.org.br ', '2020-09-11 00:00:00', NULL),
-(3, 'AD - ASSISTÊNCIA DOMICILIAR', 'Nivio', 45678, 'Rua Dr. Nestor Sampaio Penteado, 181-189 - Vila Império - CEP:04459-110 ', '5622-1988 / 5612-6901', '60.922.168/0026-34', 'ASSOCIAÇÃO  CONGREGAÇÃO DE SANTA CATARINA', 'assistenciadomiciliar@ossantacatarina.org.br\r\n\r\nnivio.bertolazzi@ossantacatarina.org.br', '2020-09-11 00:00:00', NULL),
-(4, 'AMA ESPECIALIDADE VILA CONSTÂNCIA', 'Zaira', 4165, 'Rua Hermenegildo MartiniNº 21.500 / 100 S/N - CEP: 04438-280', '5565-1069 / 5562-6957  / 5562-6944 / 5562-7034 / 5565-7061', '60.922.168/0026-34 ', 'ASSOCIAÇÃO  CONGREGAÇÃO DE SANTA CATARINA', 'vilaconstancia.amaespecialidades@ossantacatarina.org.br\r\n\r\nzaira.goncalves@ossantacatarina.org.br \r\n\r\nerineide.campos@ossantacatarina.org.br', '2020-09-11 20:26:45', NULL);
+(1, 'COORDENAÇÃO', 'Carlos Uehara', 1, 'Avenida Nossa Senhora do Sabará, 4029 - Cidade Ademar CEP - 04447-021', '(11) 5613-4444', '60.922.168/0007-71', 'ASSOCIAÇÃO  CONGREGAÇÃO DE SANTA CATARINA', 'www.ossantacatarina.org.br', '2020-09-11 00:00:00', NULL),
+(2, 'APD Santo Amaro', 'Renata Takebayachi', 2, 'Av. Miguel Yunes, 491 - CEP: 04444-000', '5041-7582', '60.922.168/0026-34', 'ASSOCIAÇÃO  CONGREGAÇÃO DE SANTA CATARINA', 'apd.santoamaro@ossantacatarina.org.br ', '2020-09-11 00:00:00', NULL),
+(3, 'AD - ASSISTÊNCIA DOMICILIAR', 'Nivio', 6703607, 'Rua Dr. Nestor Sampaio Penteado, 181-189 - Vila Império - CEP:04459-110 ', '5622-1988 / 5612-6901', '60.922.168/0026-34', 'ASSOCIAÇÃO  CONGREGAÇÃO DE SANTA CATARINA', 'assistenciadomiciliar@ossantacatarina.org.br\r\n\r\nnivio.bertolazzi@ossantacatarina.org.br', '2020-09-11 00:00:00', NULL),
+(4, 'AMA ESPECIALIDADE VILA CONSTÂNCIA', 'Zaira', 6415415, 'Rua Hermenegildo MartiniNº 21.500 / 100 S/N - CEP: 04438-280', '5565-1069 / 5562-6957  / 5562-6944 / 5562-7034 / 5565-7061', '60.922.168/0026-34 ', 'ASSOCIAÇÃO  CONGREGAÇÃO DE SANTA CATARINA', 'vilaconstancia.amaespecialidades@ossantacatarina.org.br\r\n\r\nzaira.goncalves@ossantacatarina.org.br \r\n\r\nerineide.campos@ossantacatarina.org.br', '2020-09-11 20:26:45', NULL),
+(5, 'AMA/UBS INT. JD. MIRIAM I', 'Dilene', 2787601, '', '', '', '', '', NULL, NULL),
+(6, 'AMA/UBS INT. PARQUE DOROTEIA', 'Samia', 2788292, '', '', '', '', '', '2020-09-14 00:00:00', NULL),
+(7, 'AMA/UBS INT. VILA IMPERIO', 'Ana Paula', 5731143, '', '', '', '', '', '2020-09-14 00:00:00', NULL),
+(8, 'AMA/UBS INT. VILA JOANIZA', 'Arlete', 2751828, '', '', '', '', '', '2020-09-14 00:00:00', NULL),
+(9, 'AMA/UBS INTEGRADA V. MISSIONARIA', 'Janise', 2789078, '', '', '', '', '', '2020-09-14 00:00:00', NULL),
+(10, 'CAPS ADULTO II CIDADE ADEMAR', 'Edson', 5731194, '', '', '', '', '', '2020-09-14 00:00:00', NULL),
+(11, 'CAPS INFANTO/JUVENIL CIDADE ADEMAR', 'Andrea', 6646581, '', '', '', '', '', '2020-09-14 00:00:00', NULL),
+(12, 'CEO II / LRPD DR. HUMBERTO NASTARI', 'Maira Caracas', 2786621, '', '', '', '', '', '2020-09-14 00:00:00', NULL),
+(13, 'CERIII - CENTRO ESP EM REABILITACAO', 'Nakamura', 7706332, '', '', '', '', '', '2020-09-14 00:00:00', NULL),
+(14, 'PAI CIDADE ADEMAR', '', 3, '', '', '', '', '', '2020-09-14 00:00:00', NULL),
+(15, 'REDE HORA CERTA CIDADE ADEMAR', 'Arnold', 2751925, '', '', '', '', '', '2020-09-14 00:00:00', NULL),
+(16, 'SRT CIDADE ADEMAR I', 'Juliana Polastrini', 4, '', '', '', '', '', '2020-09-14 00:00:00', NULL),
+(17, 'SRT CIDADE ADEMAR II', '', 5, '', '', '', '', '', '2020-09-14 00:00:00', NULL),
+(18, 'SRT SANTO AMARO', 'Carla Nascimento', 6, '', '', '', '', '', '2020-09-14 00:00:00', NULL),
+(19, 'SRT SANTO AMARO II', '', 7, '', '', '', '', '', '2020-09-14 00:00:00', NULL),
+(20, 'SRT SANTO AMARO III', '', 8, '', '', '', '', '', '2020-09-14 00:00:00', NULL),
+(21, 'UBS CAMPO GRANDE', 'Maria de Lourdes', 3452689, '', '', '', '', '', '2020-09-14 00:00:00', NULL),
+(22, 'UBS INT. JARDIM MIRIAM II', 'Josiane', 2787911, '', '', '', '', '', '2020-09-14 00:00:00', NULL),
+(23, 'UBS JD. UMUARAMA', 'Miriam', 2787911, '', '', '', '', '', '2020-09-14 00:00:00', NULL),
+(24, 'UBS VILA ARRIETE', 'Heloisa Handa', 2788748, '', '', '', '', '', '2020-09-14 00:00:00', NULL),
+(25, 'UBS VILA CONSTANCIA', 'Paulo', 2788799, '', '', '', '', '', '2020-09-14 00:00:00', NULL),
+(26, 'UBS/ESF CIDADE JULIA', '', 2786893, '', '', '', '', '', '2020-09-14 00:00:00', NULL),
+(27, 'UBS/ESF JD. APURA', 'Jussara', 2787180, '', '', '', '', '', '2020-09-14 00:00:00', NULL),
+(28, 'UBS/ESF JD. NITEROI', 'Mirela', 2787652, '', '', '', '', '', '2020-09-14 00:00:00', NULL),
+(29, 'UBS/ESF JD. NOVO PANTANAL', 'Ivanir', 7357761, '', '', '', '', '', '2020-09-14 00:00:00', NULL),
+(30, 'UBS/ESF JD. SAO CARLOS', 'Ana Paula', 3074544, '', '', '', '', '', '2020-09-14 00:00:00', NULL),
+(31, 'UBS/ESF JARDIM SELMA - CIDADE ADEMAR', 'Laura', 10, '', '', '', '', '', '2020-09-14 00:00:00', NULL),
+(32, 'UBS/ESF LARANJEIRAS', 'Vladimir', 2788039, '', '', '', '', '', '2020-09-14 00:00:00', NULL),
+(33, 'UBS/ESF MAR PAULISTA', 'Maria Cristina', 2766000, '', '', '', '', '', '2020-09-14 00:00:00', NULL),
+(34, 'UBS/ESF MATA VIRGEM', 'Regiana', 2788098, '', '', '', '', '', '2020-09-14 00:00:00', NULL),
+(35, 'UBS/ESF SAO JORGE', 'Leandro', 3996115, '', '', '', '', '', '2020-09-14 00:00:00', NULL),
+(36, 'UBS/ESF VILA APARECIDA', 'Juliane', 2788705, '', '', '', '', '', '2020-09-14 00:00:00', NULL),
+(37, 'UBS/ESF VILA GUACURI', 'Andrezza Carpentieri', 2788934, '', '', '', '', '', '2020-09-14 00:00:00', NULL),
+(38, 'UBS/ESF VILA IMPERIO II', 'Marcia', 2788977, '', '', '', '', '', '2020-09-14 00:00:00', NULL),
+(39, 'UPA PEDREIRA', 'Roberval', 6133460, '', '', '', '', '', '2020-09-14 00:00:00', NULL),
+(40, 'UPA SANTO AMARO', 'Patricia Vieira', 2752107, '', '', '', '', '', '2020-09-14 00:00:00', NULL),
+(41, 'URSI CIDADE ADEMAR', 'Patricia Sirianni', 5599881, '', '', '', '', '', '2020-09-14 00:00:00', NULL),
+(42, 'UBS SANTO AMARO', 'Jacqueline Yuri Mitsuyuki', 2788640, '', '', '', '', '', '2020-09-14 00:00:00', NULL),
+(43, 'UBS JARDIM AEROPORTO', 'Liz Carvalho', 2787156, '', '', '', '', '', '2020-09-14 00:00:00', NULL),
+(44, 'UBS CHÁCARA SANTO ANTÔNIO', 'Cristina', 2765993, '', '', '', '', '', '2020-09-14 00:00:00', NULL);
 
 -- --------------------------------------------------------
 
@@ -599,7 +639,7 @@ ALTER TABLE `adms_tps_pgs`
 -- AUTO_INCREMENT de tabela `adms_unidades`
 --
 ALTER TABLE `adms_unidades`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT de tabela `adms_usuarios`

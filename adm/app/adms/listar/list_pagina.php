@@ -73,7 +73,7 @@ include_once 'app/adms/include/head.php';
                                     <tr>
                                         <th><?php echo $row_pg['id']; ?></th>
                                         <td><?php echo $row_pg['nome_pagina']; ?></td>
-                                        <td><?php echo $row_pg['endereco']; ?></td>
+                                        <td class="d-none d-sm-table-cell"><?php echo $row_pg['endereco']; ?></td>
                                         <td class="d-none d-sm-table-cell"><?php echo $row_pg['tipo']; ?></td>
                                         <td class="text-center">
                                             <span class="d-none d-md-block">
@@ -99,13 +99,13 @@ include_once 'app/adms/include/head.php';
                                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="acoesListar">
                                                     <?php
                                                     if ($btn_vis) {
-                                                        echo "<a class='dropdown-item' href='" . pg . "/visualizar/vis_pagina?id=" . $row_niv_aces['id'] . "'>Visualizar</a> ";
+                                                        echo "<a class='dropdown-item' href='" . pg . "/visualizar/vis_pagina?id=" . $row_pg['id'] . "'>Visualizar</a> ";
                                                     }
                                                     if ($btn_edit) {
-                                                        echo "<a class='dropdown-item' href='" . pg . "/editar/list_pagina?id=" . $row_niv_aces['id'] . "'>Editar</a> ";
+                                                        echo "<a class='dropdown-item' href='" . pg . "/editar/edit_pagina?id=" . $row_pg['id'] . "'>Editar</a> ";
                                                     }
                                                     if ($btn_apagar) {
-                                                        echo "<a class='dropdown-item' href='" . pg . "/processa/apagar_pagina?id=" . $row_niv_aces['id'] . "' data-confirm='VOCÊ TEM CERTEZA QUE QUER EXCLUÍR O ITEM SELECIONADO?'>Apagar</a> ";
+                                                        echo "<a class='dropdown-item' href='" . pg . "/processa/apagar_pagina?id=" . $row_pg['id'] . "' data-confirm='VOCÊ TEM CERTEZA QUE QUER EXCLUÍR O ITEM SELECIONADO?'>Apagar</a> ";
                                                     }
                                                     ?>
                                                 </div>
