@@ -5,29 +5,29 @@ if (!isset($seguranca)) {
     exit;
 }
 
-$SendCadPg = filter_input(INPUT_POST, 'SendCadPg', FILTER_SANITIZE_STRING);
-if ($SendCadPg) {
+$SendCadUnidade = filter_input(INPUT_POST, 'SendCadUnidade', FILTER_SANITIZE_STRING);
+if ($SendCadUnidade) {
     $dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 
-    //Retirar campo da validação vazio
-    $dados_obs = $dados['obs'];
-    $dados_icone = $dados['icone'];
-    unset($dados['obs'], $dados['icone']);
+    //Retirar a necessidade de ser preenchido campo de validação.
+    $dados_obs = $dados['telefone'];
+    $dados_icone = $dados['email'];
+    unset($dados['telefone'], $dados['email']);
 
-    //Validar nenhum campo vazio.
+    //Não deixar salvar, estando vazio.
     $erro = false;
     include_once 'lib\lib_vazio.php';
     $dados_validos = vazio($dados);
     if (!$dados_validos) {
         $erro = true;
-        $_SESSION['msg_de_erro'] = "<div class='alert alert-danger'>Necessário preencher todos os campos para cadastrar a página!</div>";
+        $_SESSION['msg_de_erro'] = "<div class='alert alert-danger'>Necessário preencher todos os campos para cadastrar a unidade!</div>";
     } else {
         //Proibir cadastro de página duplicado
-        $result_paginas = "SELECT id FROM adms_paginas WHERE endereco='" . $dados_validos['endereco'] . "' AND adms_tps_pg_id='" . $dados_validos['adms_tps_pg_id'] . "'";
+        $result_paginas = "SELECT id FROM adms_unidades WHERE cnes='" . $dados_validos['cnes'] . "' AND adms_tps_pg_id='" . $dados_validos['adms_tps_pg_id'] . "'";
         $resultado_paginas = mysqli_query($conn, $result_paginas);
         if (($resultado_paginas)AND ( $resultado_paginas->num_rows != 0)) {
             $erro = true;
-            $_SESSION['msg_de_erro'] = "<div class='alert alert-danger'>Este endereço já esta cadastrado!</div>";
+            $_SESSION['msg_de_erro'] = "<div class='alert alert-danger'>Este CNES já esta cadastrado!</div>";
         }
     }
 
@@ -36,23 +36,22 @@ if ($SendCadPg) {
         $dados['obs'] = trim($dados_obs);
         $dados['icone'] = $dados_icone;
         $_SESSION['dados'] = $dados;
-        $url_destino = pg . '/cadastrar/cad_pagina';
+        $url_destino = pg . '/cadastrar/cad_unidade';
         header("Location: $url_destino");
     } else {
-        $result_cad_pg = "INSERT INTO adms_paginas (nome_pagina, endereco, obs, keywords, description, author, lib_pub, icone, depend_pg, adms_grps_pg_id, adms_tps_pg_id, adms_robot_id, adms_sits_pg_id, created) VALUES (
-                '" . $dados_validos['nome_pagina'] . "',
+
+
+        $result_cad_pg = "INSERT INTO adms_unidades (nome_da_unidade, nome_gerente, cnes, endereco, cnpj, razao_social, ramal_voip, funcionamento, telefone, email, created) VALUES (
+                '" . $dados_validos['nome_da_unidade'] . "',
+                '" . $dados_validos['nome_gerente'] . "',
+                '" . $dados_validos['cnes'] . "',
                 '" . $dados_validos['endereco'] . "',
-                '$dados_obs',
-                '" . $dados_validos['keywords'] . "',
-                '" . $dados_validos['description'] . "',
-                '" . $dados_validos['author'] . "',
-                '" . $dados_validos['lib_pub'] . "',
-                '$dados_icone',
-                '" . $dados_validos['depend_pg'] . "',
-                '" . $dados_validos['adms_grps_pg_id'] . "',
-                '" . $dados_validos['adms_tps_pg_id'] . "',
-                '" . $dados_validos['adms_robot_id'] . "',
-                '" . $dados_validos['adms_sits_pg_id'] . "',
+                '" . $dados_validos['cnpj'] . "',
+                '" . $dados_validos['razao_social'] . "',
+                '" . $dados_validos['ramal_voip'] . "',
+                '" . $dados_validos['funcionamento'] . "',
+                '" . $dados_validos['telefone'] . "',
+                '" . $dados_validos['email'] . "',
                 NOW())";
 
         mysqli_query($conn, $result_cad_pg);
@@ -89,19 +88,19 @@ if ($SendCadPg) {
                         '" . $row_niv_acesso ['id'] . "',
                         '$pagina_id',
                         NOW())";
-                
+
                 mysqli_query($conn, $result_cad_pagina);
             }
 
-            $_SESSION['msg_de_erro'] = "<div class='alert alert-success'>Página cadastrada!</div>";
-            $url_destino = pg . '/listar/list_pagina';
+            $_SESSION['msg_de_erro'] = "<div class='alert alert-success'>Unidade cadastrada!</div>";
+            $url_destino = pg . '/listar/list_unidades';
             header("Location: $url_destino");
         } else {
             $dados['obs'] = trim($dados_obs);
             $dados['icone'] = $dados_icone;
             $_SESSION['dados'] = $dados;
-            $_SESSION['msg_de_erro'] = "<div class='alert alert-danger'>Página não cadastrada!</div>";
-            $url_destino = pg . '/cadastrar/cad_pagina';
+            $_SESSION['msg_de_erro'] = "<div class='alert alert-danger'>Unidade não cadastrada!</div>";
+            $url_destino = pg . '/cadastrar/unidade';
             header("Location: $url_destino");
         }
     }

@@ -55,3 +55,15 @@ $('form').on('click', '.btn-deletar', function () {
     var button_id_emails = $(this).attr("id");
     $('#campoEmails' + button_id_emails + '').remove();
 });
+
+
+
+//Salvando no banco de dados .
+
+$("#SendCadUnidade").click(function () {
+    //Recebendo dados do formulario 
+    var dados = $("#add-unidade").serialize();
+    $.post("proc_cad_unidade.php", dados, function (retorna) {
+        $("#msg").html(cadastrar/cad_unidade);
+    });
+});

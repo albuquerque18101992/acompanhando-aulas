@@ -37,7 +37,7 @@ include_once 'app/adms/include/head.php';
                 }
                 ?>
 
-                <form method="POST" action="<?php echo pg; ?>/processa/proc_cad_unidade" autocomplete="off">
+                <form id="add-unidade" method="POST" action="<?php echo pg; ?>/processa/proc_cad_unidade" autocomplete="off">
                     <div class="row">
                         <div class="form-group col-md-4">
                             <label>
@@ -111,17 +111,17 @@ include_once 'app/adms/include/head.php';
                                 </span>
                                 <span class="text-danger">*</span> Ramal VOIP
                             </label>
-                            <input name="ramal" type="text" class="form-control" id="razao_social" placeholder="Ramal da unidade">
+                            <input name="ramal_voip" type="text" class="form-control" id="razao_social" placeholder="Ramal da unidade">
                         </div>
 
                         <div class="form-group col-md-4">
                             <label>
-                                <span tabindex="0" data-toggle="tooltip" title="Decidindo..." data-placement="top">
+                                <span tabindex="0" data-toggle="tooltip" title="Informe aqui horário de funcionamento da unidade" data-placement="top">
                                     <i class="fa fa-question-circle" aria-hidden="true"></i>
                                 </span>
-                                <span class="text-danger">*</span> Decidindo
+                                <span class="text-danger">*</span> Horário de funcionamento
                             </label>
-                            <input name="Decidindo" type="text" class="form-control" id="razao_social" placeholder="Decidindo">
+                            <input name="funcionamento" type="text" class="form-control" id="razao_social" placeholder="Exemplo: 8:00 ás 17:00">
                         </div>
 
 
@@ -136,7 +136,7 @@ include_once 'app/adms/include/head.php';
                                 <span class="text-danger">*</span> Telefones da Unidade
                             </label>
                             <div class="input-group mb-6">
-                                <input name="telefone" type="text" class="form-control" placeholder="Telefones da unidade" 
+                                <input name="telefone[]" type="text" class="form-control" placeholder="Telefones da unidade" 
                                        <div class="input-group-append">
                                     <button class="btn btn-outline-secondary" type="button" id="addTelefone">+</button>
                                 </div>
@@ -150,26 +150,25 @@ include_once 'app/adms/include/head.php';
                                     <span class="text-danger">*</span> Email
                                 </label>
                                 <div class="input-group mb-6">
-                                    <input name="email" type="text" class="form-control" placeholder="Email"
+                                    <input name="email[]" type="text" class="form-control" placeholder="Email"
                                            <div class="input-group-append">
                                         <button class="btn btn-outline-secondary" type="button" id="addEmail">+</button>
                                     </div>
                                 </div>
 
                             </div>
+                            <p>
+                                <span class="text-danger">* </span>Campos Obrigatório
+                            </p>
+
+                            <input name="SendCadUnidade" id="SendCadUnidade" type="submit" class="btn btn-success" value="Cadastrar">
                         </div>
-
-                        <p>
-                            <span class="text-danger">* </span>Campos Obrigatório
-                        </p>
-
-                        <input name="SendCadUnidade" type="submit" class="btn btn-success" value="Cadastrar">
-                        </form>
-                    </div>
+                </form>
             </div>
-            <?php
-            unset($_SESSION['dados']);
-            include_once 'app/adms/include/rodape_lib.php';
-            ?>
         </div>
+        <?php
+        unset($_SESSION['dados']);
+        include_once 'app/adms/include/rodape_lib.php';
+        ?>
+    </div>
 </body>

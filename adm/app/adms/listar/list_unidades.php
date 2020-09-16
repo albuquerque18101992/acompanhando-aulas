@@ -88,9 +88,9 @@ include_once 'app/adms/include/head.php';
                                                 if ($btn_edit) {
                                                     echo "<a href='" . pg . "/editar/edit_unidade?id=" . $row_pg['id'] . "' class='btn btn-outline-warning btn-sm'>Editar </a> ";
                                                 }
-                                                $btn_apagar = carregar_btn('processa/apagar_pagina', $conn);
+                                                $btn_apagar = carregar_btn('processa/apagar_unidade', $conn);
                                                 if ($btn_apagar) {
-                                                    echo "<a href='" . pg . "/processa/apagar_pagina?id=" . $row_pg['id'] . "' class='btn btn-outline-danger btn-sm' data-confirm='VOCÊ TEM CERTEZA QUE QUER EXCLUÍR O ITEM SELECIONADO?'>Apagar</a> ";
+                                                    echo "<a href='" . pg . "/processa/apagar_unidade?id=" . $row_pg['id'] . "' class='btn btn-outline-danger btn-sm' data-confirm='VOCÊ TEM CERTEZA QUE QUER EXCLUÍR O ITEM SELECIONADO?'>Apagar</a> ";
                                                 }
                                                 ?>
                                             </span>
@@ -107,7 +107,7 @@ include_once 'app/adms/include/head.php';
                                                         echo "<a class='dropdown-item' href='" . pg . "/editar/list_pagina?id=" . $row_pg['id'] . "'>Editar</a> ";
                                                     }
                                                     if ($btn_apagar) {
-                                                        echo "<a class='dropdown-item' href='" . pg . "/processa/apagar_pagina?id=" . $row_pg['id'] . "' data-confirm='VOCÊ TEM CERTEZA QUE QUER EXCLUÍR O ITEM SELECIONADO?'>Apagar</a> ";
+                                                        echo "<a class='dropdown-item' href='" . pg . "/processa/apagar_unidade?id=" . $row_pg['id'] . "' data-confirm='VOCÊ TEM CERTEZA QUE QUER EXCLUÍR O ITEM SELECIONADO?'>Apagar</a> ";
                                                     }
                                                     ?>
                                                 </div>
