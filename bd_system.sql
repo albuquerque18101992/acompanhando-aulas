@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 16-Set-2020 às 03:50
+-- Tempo de geração: 19-Set-2020 às 16:07
 -- Versão do servidor: 10.4.11-MariaDB
 -- versão do PHP: 7.4.1
 
@@ -190,9 +190,9 @@ INSERT INTO `adms_nivacs_pgs` (`id`, `permissao`, `ordem`, `dropdown`, `lib_menu
 (63, 1, 28, 1, 2, 3, 1, 29, '2020-09-15 22:06:18', NULL),
 (64, 2, 13, 1, 2, 3, 2, 29, '2020-09-15 22:06:19', NULL),
 (65, 2, 24, 1, 2, 3, 3, 29, '2020-09-15 22:06:19', NULL),
-(66, 1, 29, 1, 2, 3, 1, 46, '2020-09-15 22:09:09', NULL),
-(67, 2, 14, 1, 2, 3, 2, 46, '2020-09-15 22:09:09', NULL),
-(68, 2, 25, 1, 2, 3, 3, 46, '2020-09-15 22:09:09', NULL);
+(78, 1, 30, 1, 2, 3, 1, 30, '2020-09-17 18:58:25', NULL),
+(79, 2, 15, 1, 2, 3, 2, 30, '2020-09-17 18:58:25', NULL),
+(80, 2, 26, 1, 2, 3, 3, 30, '2020-09-17 18:58:25', NULL);
 
 -- --------------------------------------------------------
 
@@ -274,7 +274,8 @@ INSERT INTO `adms_paginas` (`id`, `nome_pagina`, `endereco`, `obs`, `keywords`, 
 (26, 'Cadastrar Unidade', 'cadastrar/cad_unidade', 'Cadastrar a undiade', 'Cadastrar Unidade', 'Cadastrar Unidade', 'Paulo Albuquerque', 2, '', 0, 2, '1', 4, 1, '2020-09-11 20:33:52', NULL),
 (27, 'Processa cad Unidade', 'processa/proc_cad_unidade', 'Processar o cadastro de unidade', 'processa cad unidade', 'processa cad unidade', 'Paulo Aalbuquerque', 2, '', 26, 2, '1', 4, 1, '2020-09-11 20:54:51', '2020-09-11 22:49:30'),
 (28, 'Editar Unidade', 'editar/edit_unidade', 'Editar Unidade', 'Editar Unidade', 'Editar Unidade', 'Paulo Albuquerque', 2, '', 0, 3, '1', 4, 1, '2020-09-15 11:20:25', NULL),
-(29, 'Apagar Unidade', 'processa/apagar_unidade', 'Página para poder pagar unidade.', 'Apagar Unidade', 'Apagar Unidade', 'Paulo Albuquerque', 2, '', 24, 4, '1', 4, 1, '2020-09-15 22:06:18', NULL);
+(29, 'Apagar Unidade', 'processa/apagar_unidade', 'Página para poder pagar unidade.', 'Apagar Unidade', 'Apagar Unidade', 'Paulo Albuquerque', 2, '', 24, 4, '1', 4, 1, '2020-09-15 22:06:18', NULL),
+(30, 'Processar liberar pemissão', 'processa/proc_lib_per', 'Processar liberar pemissão', 'Processar liberar pemissão', 'Processar liberar pemissão', 'Paulo Albuquerque', 2, '', 0, 3, '1', 4, 1, '2020-09-17 18:58:25', NULL);
 
 -- --------------------------------------------------------
 
@@ -423,8 +424,8 @@ CREATE TABLE `adms_unidades` (
 INSERT INTO `adms_unidades` (`id`, `nome_da_unidade`, `nome_gerente`, `cnes`, `endereco`, `cnpj`, `razao_social`, `ramal_voip`, `funcionamento`, `telefone`, `email`, `created`, `modified`) VALUES
 (1, 'COORDENAÇÃO', 'Carlos Uehara', 1, 'Avenida Nossa Senhora do Sabará, 4029 - Cidade Ademar CEP - 04447-021', '60.922.168/0007-71', 'ASSOCIAÇÃO  CONGREGAÇÃO DE SANTA CATARINA', 0, '', '(11) 5613-4444', 'www.ossantacatarina.org.br', '2020-09-11 00:00:00', NULL),
 (2, 'APD Santo Amaro', 'Renata Takebayachi', 2, 'Av. Miguel Yunes, 491 - CEP: 04444-000', '60.922.168/0026-34', 'ASSOCIAÇÃO  CONGREGAÇÃO DE SANTA CATARINA', 0, '', '5041-7582', 'apd.santoamaro@ossantacatarina.org.br ', '2020-09-11 00:00:00', NULL),
-(3, 'AD - ASSISTÊNCIA DOMICILIAR', 'Nivio', 6703607, 'Rua Dr. Nestor Sampaio Penteado, 181-189 - Vila Império - CEP:04459-110 ', '60.922.168/0026-34', 'ASSOCIAÇÃO  CONGREGAÇÃO DE SANTA CATARINA', 0, '', '5622-1988 / 5612-6901', 'assistenciadomiciliar@ossantacatarina.org.br\r\n\r\nnivio.bertolazzi@ossantacatarina.org.br', '2020-09-11 00:00:00', NULL),
-(4, 'AMA ESPECIALIDADE VILA CONSTÂNCIA', 'Zaira', 6415415, 'Rua Hermenegildo MartiniNº 21.500 / 100 S/N - CEP: 04438-280', '60.922.168/0026-34 ', 'ASSOCIAÇÃO  CONGREGAÇÃO DE SANTA CATARINA', 0, '', '5565-1069 / 5562-6957  / 5562-6944 / 5562-7034 / 5565-7061', 'vilaconstancia.amaespecialidades@ossantacatarina.org.br\r\n\r\nzaira.goncalves@ossantacatarina.org.br \r\n\r\nerineide.campos@ossantacatarina.org.br', '2020-09-11 20:26:45', NULL),
+(3, 'AD - ASSISTÊNCIA DOMICILIAR', 'Nivio', 6703607, 'Rua Dr. Nestor Sampaio Penteado, 181-189 - Vila Império - CEP:04459-110 ', '60.922.168/0026-34', 'ASSOCIAÇÃO  CONGREGAÇÃO DE SANTA CATARINA', 1034, '08:00 ás 17:00', '5622-1988 / 5612-6901', 'assistenciadomiciliar@ossantacatarina.org.br\r\n\r\nnivio.bertolazzi@ossantacatarina.org.br', '2020-09-11 00:00:00', NULL),
+(4, 'AMA ESPECIALIDADE VILA CONSTÂNCIA', 'Zaira', 6415415, 'Rua Hermenegildo MartiniNº 21.500 / 100 S/N - CEP: 04438-280', '60.922.168/0026-34 ', 'ASSOCIAÇÃO  CONGREGAÇÃO DE SANTA CATARINA', 1018, '', '5565-1069 / 5562-6957  / 5562-6944 / 5562-7034 / 5565-7061', 'vilaconstancia.amaespecialidades@ossantacatarina.org.br\r\n\r\nzaira.goncalves@ossantacatarina.org.br \r\n\r\nerineide.campos@ossantacatarina.org.br', '2020-09-11 20:26:45', NULL),
 (5, 'AMA/UBS INT. JD. MIRIAM I', 'Dilene', 2787601, '', '', '', 0, '', '', '', NULL, NULL),
 (6, 'AMA/UBS INT. PARQUE DOROTEIA', 'Samia', 2788292, '', '', '', 0, '', '', '', '2020-09-14 00:00:00', NULL),
 (7, 'AMA/UBS INT. VILA IMPERIO', 'Ana Paula', 5731143, '', '', '', 0, '', '', '', '2020-09-14 00:00:00', NULL),
@@ -464,8 +465,7 @@ INSERT INTO `adms_unidades` (`id`, `nome_da_unidade`, `nome_gerente`, `cnes`, `e
 (41, 'URSI CIDADE ADEMAR', 'Patricia Sirianni', 5599881, '', '', '', 0, '', '', '', '2020-09-14 00:00:00', NULL),
 (42, 'UBS SANTO AMARO', 'Jacqueline Yuri Mitsuyuki', 2788640, '', '', '', 0, '', '', '', '2020-09-14 00:00:00', NULL),
 (43, 'UBS JARDIM AEROPORTO', 'Liz Carvalho', 2787156, '', '', '', 0, '', '', '', '2020-09-14 00:00:00', NULL),
-(44, 'UBS CHÁCARA SANTO ANTÔNIO', 'Cristina', 2765993, '', '', '', 0, '', '', '', '2020-09-14 00:00:00', NULL),
-(46, 'Teste de unidade', 'Teste de gerente', 2147483647, 'avenida teste bairro teste numeor 511 cep 13135113651', '51651651561', '6516516.65165.1561.651/65166', 515, '8:00 ás 9:00', '', '', '2020-09-15 22:09:09', NULL);
+(44, 'UBS CHÁCARA SANTO ANTÔNIO', 'Cristina', 2765993, '', '', '', 0, '', '', '', '2020-09-14 00:00:00', NULL);
 
 -- --------------------------------------------------------
 
@@ -605,7 +605,7 @@ ALTER TABLE `adms_menus`
 -- AUTO_INCREMENT de tabela `adms_nivacs_pgs`
 --
 ALTER TABLE `adms_nivacs_pgs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=93;
 
 --
 -- AUTO_INCREMENT de tabela `adms_niveis_acessos`
@@ -617,7 +617,7 @@ ALTER TABLE `adms_niveis_acessos`
 -- AUTO_INCREMENT de tabela `adms_paginas`
 --
 ALTER TABLE `adms_paginas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT de tabela `adms_robots`
@@ -653,7 +653,7 @@ ALTER TABLE `adms_tps_pgs`
 -- AUTO_INCREMENT de tabela `adms_unidades`
 --
 ALTER TABLE `adms_unidades`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
 
 --
 -- AUTO_INCREMENT de tabela `adms_usuarios`

@@ -11,7 +11,7 @@ if (!empty($id)) {
     $pagina = (!empty($pagina_atual) ? $pagina_atual : 1);
 
     //Setar quantidade de itens por pagina
-    $qnt_result_pg = 10;
+    $qnt_result_pg = 20;
 
     //calcular o inicio visualização
     $inicio = ($qnt_result_pg * $pagina) - $qnt_result_pg;
@@ -22,18 +22,26 @@ if (!empty($id)) {
         FROM adms_nivacs_pgs nivpg
         INNER JOIN adms_paginas pg ON pg.id=nivpg.adms_pagina_id
         WHERE nivpg.adms_niveis_acesso_id='$id' 
-        ORDER BY nivpg.ordem ASC LIMIT $inicio, $qnt_result_pg";
+        ORDER BY nivpg.ordem ASC 
+        LIMIT $inicio, $qnt_result_pg";
     } else {
+        $result_niv_ac = "SELECT nivpg. *,
+        pg.nome_pagina, pg.obs
+        FROM adms_nivacs_pgs nivpg
+        INNER JOIN adms_paginas pg ON pg.id=nivpg.adms_pagina_id
+        WHERE nivpg.adms_niveis_acesso_id='$id' 
+        ORDER BY nivpg.ordem ASC 
+        LIMIT $inicio, $qnt_result_pg";
     }
 
     $resultado_niv_ac = mysqli_query($conn, $result_niv_ac);
 
     //Verificar se encontrou algum cadastro
-    if (($resultado_niv_ac) and ($resultado_niv_ac->num_rows != 0)) {
+    if (($resultado_niv_ac) and ( $resultado_niv_ac->num_rows != 0)) {
 
 
         include_once 'app/adms/include/head.php';
-?>
+        ?>
 
         <body>
 
@@ -87,7 +95,7 @@ if (!empty($id)) {
                                 <tbody>
                                     <?php
                                     while ($row_niv_ac = mysqli_fetch_assoc($resultado_niv_ac)) {
-                                    ?>
+                                        ?>
                                         <tr>
                                             <td><?php echo $row_niv_ac['id']; ?></td>
                                             <td>
@@ -96,7 +104,25 @@ if (!empty($id)) {
                                                 </span>
                                                 <?php echo $row_niv_ac['nome_pagina']; ?>
                                             </td>
-                                            <td class="d-none d-sm-table-cell"><?php echo $row_niv_ac['permissao']; ?></td>
+                                            <td class="d-none d-sm-table-cell">
+                                                <?php
+                                                $btn_lib_per = carregar_btn('processa/proc_lib_per', $conn);
+
+                                                if ($btn_lib_per) {
+                                                    if ($row_niv_ac['permissao'] == 1) {
+                                                        echo "<a href='".pg."/processa/proc_lib_per?id=".$row_niv_ac['id']."'><span class='badge badge-pill badge-success'>Liberado</sapn><a/>";
+                                                    } else {
+                                                        echo "<a href='".pg."/processa/proc_lib_per?id=".$row_niv_ac['id']."'><span class='badge badge-pill badge-danger'>Bloqueado</sapn><a/>";
+                                                    }
+                                                } else {
+                                                    if ($row_niv_ac['permissao'] == 1) {
+                                                        echo "<span class='badge badge-pill badge-success'>Liberado</sapn>";
+                                                    } else {
+                                                        echo "<span class='badge badge-pill badge-danger'>Bloqueado</sapn>";
+                                                    }
+                                                }
+                                                ?>
+                                            </td>
                                             <td class="d-none d-sm-table-cell"><?php echo $row_niv_ac['lib_menu']; ?></td>
                                             <td class="d-none d-sm-table-cell"><?php echo $row_niv_ac['dropdown']; ?></td>
                                             <td class="d-none d-sm-table-cell"><?php echo $row_niv_ac['ordem']; ?></td>
@@ -153,7 +179,7 @@ if (!empty($id)) {
             </div>
         </body>
 
-<?php
+        <?php
     } else {
         $_SESSION['msg_de_erro'] = "<div class='alert alert-danger'>Permissão não encontrada!</div>";
         $url_destino = pg . '/listar/list_niv_aces';

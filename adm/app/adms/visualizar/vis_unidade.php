@@ -38,9 +38,9 @@ if (!empty($id)) {
                                     if ($btn_edit) {
                                         echo "<a href='" . pg . "/editar/edit_unidade?id=" . $row_pag_vis['id'] . "' class='btn btn-outline-warning btn-sm'>Editar </a> ";
                                     }
-                                    $btn_apagar = carregar_btn('processa/apagar_pagina', $conn);
+                                    $btn_apagar = carregar_btn('processa/apagar_unidade', $conn);
                                     if ($btn_apagar) {
-                                        echo "<a href='" . pg . "/processa/apagar_pagina?id=" . $row_pag_vis['id'] . "' class='btn btn-outline-danger btn-sm' data-confirm='VOCÊ TEM CERTEZA QUE QUER EXCLUÍR O ITEM SELECIONADO?'>Apagar</a> ";
+                                        echo "<a href='" . pg . "/processa/apagar_unidade?id=" . $row_pag_vis['id'] . "' class='btn btn-outline-danger btn-sm' data-confirm='VOCÊ TEM CERTEZA QUE QUER EXCLUÍR O ITEM SELECIONADO?'>Apagar</a> ";
                                     }
                                     ?>
                                 </span>
@@ -54,10 +54,10 @@ if (!empty($id)) {
                                             echo "<a class='dropdown-item' href='" . pg . "/listar/list_unidades?id=" . $row_pag_vis['id'] . "'>Listar</a> ";
                                         }
                                         if ($btn_edit) {
-                                            echo "<a class='dropdown-item' href='" . pg . "/editar/list_npagina?id=" . $row_pag_vis['id'] . "'>Editar</a> ";
+                                            echo "<a class='dropdown-item' href='" . pg . "/editar/list_unidades?id=" . $row_pag_vis['id'] . "'>Editar</a> ";
                                         }
                                         if ($btn_apagar) {
-                                            echo "<a class='dropdown-item' href='" . pg . "/processa/apagar_pagina?id=" . $row_pag_vis['id'] . "'data-confirm='VOCÊ TEM CERTEZA QUE QUER EXCLUÍR O ITEM SELECIONADO?'>Apagar</a> ";
+                                            echo "<a class='dropdown-item' href='" . pg . "/processa/apagar_unidade?id=" . $row_pag_vis['id'] . "'data-confirm='VOCÊ TEM CERTEZA QUE QUER EXCLUÍR O ITEM SELECIONADO?'>Apagar</a> ";
                                         }
                                         ?>
                                     </div>
@@ -79,13 +79,22 @@ if (!empty($id)) {
                             <dd class="col-sm-9"><?php echo $row_pag_vis['cnes']; ?></dd>
 
                             <dt class="col-sm-3">Endereço</dt>
-                            <dd class="col-sm-9"><?php echo $row_pag_vis['endereco']; ?></dd>                            
-
-                            <dt class="col-sm-3">Numero de telefone</dt>
-                            <dd class="col-sm-9"><?php echo $row_pag_vis['telefone']; ?></dd>                            
+                            <dd class="col-sm-9"><?php echo $row_pag_vis['endereco']; ?></dd>                                                       
 
                             <dt class="col-sm-3">CNPJ</dt>
                             <dd class="col-sm-9"><?php echo $row_pag_vis['cnpj']; ?></dd>
+
+                            <dt class="col-sm-3">Razão Social</dt>
+                            <dd class="col-sm-9"><?php echo $row_pag_vis['razao_social']; ?></dd>
+
+                            <dt class="col-sm-3">Ramal da unidade (VOIP)</dt>
+                            <dd class="col-sm-9"><?php echo $row_pag_vis['ramal_voip']; ?></dd>
+
+                            <dt class="col-sm-3">Horário de funcionamento da unidade</dt>
+                            <dd class="col-sm-9"><?php echo $row_pag_vis['funcionamento']; ?></dd>
+
+                            <dt class="col-sm-3">Numero de telefone</dt>
+                            <dd class="col-sm-9"><?php echo $row_pag_vis['telefone']; ?></dd> 
 
                             <dt class="col-sm-3">Email da unidade</dt>
                             <dd class="col-sm-9"><?php echo $row_pag_vis['email']; ?></dd>

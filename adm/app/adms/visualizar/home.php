@@ -27,7 +27,7 @@ include_once 'app/adms/include/head.php';
                 </div>
                 <div class="row mb-3">
                     <div class="col-lg-3 col-sm-6">
-                        <div class="card bg-danger text-white">
+                        <div class="card bg-success text-white">
                             <div class="card-body">
                                 <i class="fas fa-users-cog fa-3x"></i>
                                 <h6 class="card-title">Usuários</h6>
@@ -36,7 +36,7 @@ include_once 'app/adms/include/head.php';
                         </div>
                     </div>                      
                     <div class="col-lg-3 col-sm-6">
-                        <div class="card bg-danger text-white">
+                        <div class="card bg-success text-white">
                             <div class="card-body">
                                 <i class="fas fa-file-medical fa-3x"></i>
                                 <h6 class="card-title">Artigos</h6>
@@ -45,7 +45,7 @@ include_once 'app/adms/include/head.php';
                         </div>
                     </div>
                     <div class="col-lg-3 col-sm-6">
-                        <div class="card bg-danger text-white">
+                        <div class="card bg-success text-white">
                             <div class="card-body">
                                 <i class="fas fa-eye fa-3x"></i>
                                 <h6 class="card-title">Visitas</h6>
@@ -54,7 +54,7 @@ include_once 'app/adms/include/head.php';
                         </div>
                     </div>
                     <div class="col-lg-3 col-sm-6">
-                        <div class="card bg-danger text-white">
+                        <div class="card bg-success text-white">
                             <div class="card-body">
                                 <i class="fas fa-comments fa-3x"></i>
                                 <h6 class="card-title">Comentários</h6>

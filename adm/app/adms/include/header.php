@@ -11,9 +11,10 @@ $nome = explode(" ", $row_user_hd['nome']);
 $prim_nome = $nome[0];
 ?>
 
-<nav class="navbar navbar-expand navbar-dark bg-primary">
+<nav class="navbar navbar-expand navbar-dark bg-success">
     <a class="sidebar-toggle text-light mr-3"><span class="navbar-toggler-icon"></span></a>
-    <a class="navbar-brand" href="#">System - RotePille</a>
+    <!--<a class="navbar-brand" href="#">INTS</a>-->
+    <img src="<?php echo pg; ?>/assets/imagens/logo_login/ints-logo-barra.png">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
