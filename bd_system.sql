@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.2
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 19-Set-2020 às 16:07
+-- Tempo de geração: 21-Set-2020 às 21:20
 -- Versão do servidor: 10.4.11-MariaDB
--- versão do PHP: 7.4.1
+-- versão do PHP: 7.2.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -422,50 +422,50 @@ CREATE TABLE `adms_unidades` (
 --
 
 INSERT INTO `adms_unidades` (`id`, `nome_da_unidade`, `nome_gerente`, `cnes`, `endereco`, `cnpj`, `razao_social`, `ramal_voip`, `funcionamento`, `telefone`, `email`, `created`, `modified`) VALUES
-(1, 'COORDENAÇÃO', 'Carlos Uehara', 1, 'Avenida Nossa Senhora do Sabará, 4029 - Cidade Ademar CEP - 04447-021', '60.922.168/0007-71', 'ASSOCIAÇÃO  CONGREGAÇÃO DE SANTA CATARINA', 0, '', '(11) 5613-4444', 'www.ossantacatarina.org.br', '2020-09-11 00:00:00', NULL),
-(2, 'APD Santo Amaro', 'Renata Takebayachi', 2, 'Av. Miguel Yunes, 491 - CEP: 04444-000', '60.922.168/0026-34', 'ASSOCIAÇÃO  CONGREGAÇÃO DE SANTA CATARINA', 0, '', '5041-7582', 'apd.santoamaro@ossantacatarina.org.br ', '2020-09-11 00:00:00', NULL),
+(1, 'COORDENAÇÃO', 'Carlos Uehara', 1, 'Avenida Nossa Senhora do Sabará, 4029 - Cidade Ademar CEP - 04447-021', '60.922.168/0007-71', 'ASSOCIAÇÃO  CONGREGAÇÃO DE SANTA CATARINA', 0, '08:00 ás 17:00', '(11) 5613-4444', 'www.ossantacatarina.org.br', '2020-09-11 00:00:00', NULL),
+(2, 'APD Santo Amaro', 'Renata Takebayachi', 2, 'Av. Miguel Yunes, 491 - CEP: 04444-000', '60.922.168/0026-34', 'ASSOCIAÇÃO  CONGREGAÇÃO DE SANTA CATARINA', 0, '08:00 ás 17:00', '5041-7582', 'apd.santoamaro@ossantacatarina.org.br ', '2020-09-11 00:00:00', NULL),
 (3, 'AD - ASSISTÊNCIA DOMICILIAR', 'Nivio', 6703607, 'Rua Dr. Nestor Sampaio Penteado, 181-189 - Vila Império - CEP:04459-110 ', '60.922.168/0026-34', 'ASSOCIAÇÃO  CONGREGAÇÃO DE SANTA CATARINA', 1034, '08:00 ás 17:00', '5622-1988 / 5612-6901', 'assistenciadomiciliar@ossantacatarina.org.br\r\n\r\nnivio.bertolazzi@ossantacatarina.org.br', '2020-09-11 00:00:00', NULL),
-(4, 'AMA ESPECIALIDADE VILA CONSTÂNCIA', 'Zaira', 6415415, 'Rua Hermenegildo MartiniNº 21.500 / 100 S/N - CEP: 04438-280', '60.922.168/0026-34 ', 'ASSOCIAÇÃO  CONGREGAÇÃO DE SANTA CATARINA', 1018, '', '5565-1069 / 5562-6957  / 5562-6944 / 5562-7034 / 5565-7061', 'vilaconstancia.amaespecialidades@ossantacatarina.org.br\r\n\r\nzaira.goncalves@ossantacatarina.org.br \r\n\r\nerineide.campos@ossantacatarina.org.br', '2020-09-11 20:26:45', NULL),
-(5, 'AMA/UBS INT. JD. MIRIAM I', 'Dilene', 2787601, '', '', '', 0, '', '', '', NULL, NULL),
-(6, 'AMA/UBS INT. PARQUE DOROTEIA', 'Samia', 2788292, '', '', '', 0, '', '', '', '2020-09-14 00:00:00', NULL),
-(7, 'AMA/UBS INT. VILA IMPERIO', 'Ana Paula', 5731143, '', '', '', 0, '', '', '', '2020-09-14 00:00:00', NULL),
-(8, 'AMA/UBS INT. VILA JOANIZA', 'Arlete', 2751828, '', '', '', 0, '', '', '', '2020-09-14 00:00:00', NULL),
-(9, 'AMA/UBS INTEGRADA V. MISSIONARIA', 'Janise', 2789078, '', '', '', 0, '', '', '', '2020-09-14 00:00:00', NULL),
-(10, 'CAPS ADULTO II CIDADE ADEMAR', 'Edson', 5731194, '', '', '', 0, '', '', '', '2020-09-14 00:00:00', NULL),
-(11, 'CAPS INFANTO/JUVENIL CIDADE ADEMAR', 'Andrea', 6646581, '', '', '', 0, '', '', '', '2020-09-14 00:00:00', NULL),
-(12, 'CEO II / LRPD DR. HUMBERTO NASTARI', 'Maira Caracas', 2786621, '', '', '', 0, '', '', '', '2020-09-14 00:00:00', NULL),
-(13, 'CERIII - CENTRO ESP EM REABILITACAO', 'Nakamura', 7706332, '', '', '', 0, '', '', '', '2020-09-14 00:00:00', NULL),
-(14, 'PAI CIDADE ADEMAR', '', 3, '', '', '', 0, '', '', '', '2020-09-14 00:00:00', NULL),
-(15, 'REDE HORA CERTA CIDADE ADEMAR', 'Arnold', 2751925, '', '', '', 0, '', '', '', '2020-09-14 00:00:00', NULL),
-(16, 'SRT CIDADE ADEMAR I', 'Juliana Polastrini', 4, '', '', '', 0, '', '', '', '2020-09-14 00:00:00', NULL),
-(17, 'SRT CIDADE ADEMAR II', '', 5, '', '', '', 0, '', '', '', '2020-09-14 00:00:00', NULL),
-(18, 'SRT SANTO AMARO', 'Carla Nascimento', 6, '', '', '', 0, '', '', '', '2020-09-14 00:00:00', NULL),
-(19, 'SRT SANTO AMARO II', '', 7, '', '', '', 0, '', '', '', '2020-09-14 00:00:00', NULL),
-(20, 'SRT SANTO AMARO III', '', 8, '', '', '', 0, '', '', '', '2020-09-14 00:00:00', NULL),
-(21, 'UBS CAMPO GRANDE', 'Maria de Lourdes', 3452689, '', '', '', 0, '', '', '', '2020-09-14 00:00:00', NULL),
-(22, 'UBS INT. JARDIM MIRIAM II', 'Josiane', 2787911, '', '', '', 0, '', '', '', '2020-09-14 00:00:00', NULL),
-(23, 'UBS JD. UMUARAMA', 'Miriam', 2787911, '', '', '', 0, '', '', '', '2020-09-14 00:00:00', NULL),
-(24, 'UBS VILA ARRIETE', 'Heloisa Handa', 2788748, '', '', '', 0, '', '', '', '2020-09-14 00:00:00', NULL),
-(25, 'UBS VILA CONSTANCIA', 'Paulo', 2788799, '', '', '', 0, '', '', '', '2020-09-14 00:00:00', NULL),
-(26, 'UBS/ESF CIDADE JULIA', 'Lisia', 2786893, '', '', '', 0, '', '', '', '2020-09-14 00:00:00', NULL),
-(27, 'UBS/ESF JD. APURA', 'Jussara', 2787180, '', '', '', 0, '', '', '', '2020-09-14 00:00:00', NULL),
-(28, 'UBS/ESF JD. NITEROI', 'Mirela', 2787652, '', '', '', 0, '', '', '', '2020-09-14 00:00:00', NULL),
-(29, 'UBS/ESF JD. NOVO PANTANAL', 'Ivanir', 7357761, '', '', '', 0, '', '', '', '2020-09-14 00:00:00', NULL),
-(30, 'UBS/ESF JD. SAO CARLOS', 'Ana Paula', 3074544, '', '', '', 0, '', '', '', '2020-09-14 00:00:00', NULL),
-(31, 'UBS/ESF JARDIM SELMA - CIDADE ADEMAR', 'Laura', 10, '', '', '', 0, '', '', '', '2020-09-14 00:00:00', NULL),
-(32, 'UBS/ESF LARANJEIRAS', 'Vladimir', 2788039, '', '', '', 0, '', '', '', '2020-09-14 00:00:00', NULL),
-(33, 'UBS/ESF MAR PAULISTA', 'Maria Cristina', 2766000, '', '', '', 0, '', '', '', '2020-09-14 00:00:00', NULL),
-(34, 'UBS/ESF MATA VIRGEM', 'Regiana', 2788098, '', '', '', 0, '', '', '', '2020-09-14 00:00:00', NULL),
-(35, 'UBS/ESF SAO JORGE', 'Leandro', 3996115, '', '', '', 0, '', '', '', '2020-09-14 00:00:00', NULL),
-(36, 'UBS/ESF VILA APARECIDA', 'Juliane', 2788705, '', '', '', 0, '', '', '', '2020-09-14 00:00:00', NULL),
-(37, 'UBS/ESF VILA GUACURI', 'Andrezza Carpentieri', 2788934, '', '', '', 0, '', '', '', '2020-09-14 00:00:00', NULL),
-(38, 'UBS/ESF VILA IMPERIO II', 'Marcia', 2788977, '', '', '', 0, '', '', '', '2020-09-14 00:00:00', NULL),
-(39, 'UPA PEDREIRA', 'Roberval', 6133460, '', '', '', 0, '', '', '', '2020-09-14 00:00:00', NULL),
-(40, 'UPA SANTO AMARO', 'Patricia Vieira', 2752107, '', '', '', 0, '', '', '', '2020-09-14 00:00:00', NULL),
-(41, 'URSI CIDADE ADEMAR', 'Patricia Sirianni', 5599881, '', '', '', 0, '', '', '', '2020-09-14 00:00:00', NULL),
-(42, 'UBS SANTO AMARO', 'Jacqueline Yuri Mitsuyuki', 2788640, '', '', '', 0, '', '', '', '2020-09-14 00:00:00', NULL),
-(43, 'UBS JARDIM AEROPORTO', 'Liz Carvalho', 2787156, '', '', '', 0, '', '', '', '2020-09-14 00:00:00', NULL),
-(44, 'UBS CHÁCARA SANTO ANTÔNIO', 'Cristina', 2765993, '', '', '', 0, '', '', '', '2020-09-14 00:00:00', NULL);
+(4, 'AMA ESPECIALIDADE VILA CONSTÂNCIA', 'Zaira', 6415415, 'Rua Hermenegildo MartiniNº 21.500 / 100 S/N - CEP: 04438-280', '60.922.168/0026-34', 'ASSOCIAÇÃO  CONGREGAÇÃO DE SANTA CATARINA', 1018, '08:00 ás 17:00', '5565-1069 / 5562-6957  / 5562-6944 / 5562-7034 / 5565-7061', 'vilaconstancia.amaespecialidades@ossantacatarina.org.br\r\n\r\nzaira.goncalves@ossantacatarina.org.br \r\n\r\nerineide.campos@ossantacatarina.org.br', '2020-09-11 20:26:45', NULL),
+(5, 'AMA/UBS INT. JD. MIRIAM I', 'Dilene', 2787601, 'AV. SANTO AFONSO, 419 – CEP: 04426-000', '60.922.168/0001-86 ', 'ASSOCIAÇÃO  CONGREGAÇÃO DE SANTA CATARINA', 1022, '08:00 ás 17:00', '', '', NULL, NULL),
+(6, 'AMA/UBS INT. PARQUE DOROTEIA', 'Samia', 2788292, 'RUA ANIQUIS, 3 A - CEP: 04474-000', '60.922.168/0026-34', 'ASSOCIAÇÃO  CONGREGAÇÃO DE SANTA CATARINA', 1030, '08:00 ás 17:00', '', '', '2020-09-14 00:00:00', NULL),
+(7, 'AMA/UBS INT. VILA IMPERIO', 'Ana Paula', 5731143, 'RUA CATARINA GABRIELE, 150 - CEP: 04408-090', '60.922.168/0026-34', 'ASSOCIAÇÃO  CONGREGAÇÃO DE SANTA CATARINA', 1014, '08:00 ás 17:00', '', '', '2020-09-14 00:00:00', NULL),
+(8, 'AMA/UBS INT. VILA JOANIZA', 'Arlete', 2751828, 'RUA LUIS VIVES, 85 - CEP: 04404-150', '60.922.168/0026-34', 'ASSOCIAÇÃO  CONGREGAÇÃO DE SANTA CATARINA', 1026, '08:00 ás 17:00', '', '', '2020-09-14 00:00:00', NULL),
+(9, 'AMA/UBS INTEGRADA V. MISSIONARIA', 'Janise', 2789078, 'RUA RAINHA DAS MISSÕES, 515 Cep: 04430-010  ', '60.922.168/0026-34', 'ASSOCIAÇÃO  CONGREGAÇÃO DE SANTA CATARINA', 1021, '08:00 ás 17:00', '', '', '2020-09-14 00:00:00', NULL),
+(10, 'CAPS ADULTO II CIDADE ADEMAR', 'Edson', 5731194, 'RUA CONCEIÇÃO DA BOA VIAGEM, 216 – CEP: 04463-030', '60.922.168/0026-34', 'ASSOCIAÇÃO  CONGREGAÇÃO DE SANTA CATARINA', 1023, '08:00 ás 17:00', '', '', '2020-09-14 00:00:00', NULL),
+(11, 'CAPS INFANTO/JUVENIL CIDADE ADEMAR', 'Andrea', 6646581, 'Rua Joaquim do Lago, 228 - Balneario Mar Paulista - CEP: 04463-080', '60.922.168/0026-34', 'ASSOCIAÇÃO  CONGREGAÇÃO DE SANTA CATARINA', 1024, '08:00 ás 17:00', '', '', '2020-09-14 00:00:00', NULL),
+(12, 'CEO II / LRPD DR. HUMBERTO NASTARI', 'Maira Caracas', 2786621, 'ESTRADA DA ALVARENGA, 257 CEP: 04462-000 JD . DA PEDREIRA', '60.922.168/0026-34', 'ASSOCIAÇÃO  CONGREGAÇÃO DE SANTA CATARINA', 1025, '08:00 ás 17:00', '', '', '2020-09-14 00:00:00', NULL),
+(13, 'CERIII - CENTRO ESP EM REABILITACAO', 'Nakamura', 7706332, 'RUA CORREGO AZUL, 443 / 433 – Cep: 04463-010', '60.922.168/0026-34', 'ASSOCIAÇÃO  CONGREGAÇÃO DE SANTA CATARINA', 0, '08:00 ás 17:00', '', 'vanessa.nakamura@ossantacatarina.org.br', '2020-09-14 00:00:00', NULL),
+(14, 'PAI CIDADE ADEMAR', '', 3, 'R: SEBASTIÃO ANDRADE BONANI, 340 - CEP: 04649-050', '60.922.168/0026-34', 'ASSOCIAÇÃO  CONGREGAÇÃO DE SANTA CATARINA', 0, '08:00 ás 17:00', '', '', '2020-09-14 00:00:00', NULL),
+(15, 'REDE HORA CERTA CIDADE ADEMAR', 'Arnold', 2751925, 'RUA CORREGO AZUL, 443 / 433 – Cep: 04463-010', '60.922.168/0026-34', 'ASSOCIAÇÃO  CONGREGAÇÃO DE SANTA CATARINA', 1019, '08:00 ás 17:00', '', '', '2020-09-14 00:00:00', NULL),
+(16, 'SRT CIDADE ADEMAR I', 'Juliana Polastrini', 4, 'Rua Tapirapés, nº 96 - CEP: 04463-040', '60.922.168/0026-34', 'ASSOCIAÇÃO  CONGREGAÇÃO DE SANTA CATARINA', 0, '08:00 ás 17:00', '', '', '2020-09-14 00:00:00', NULL),
+(17, 'SRT CIDADE ADEMAR II', '', 5, 'Rua Matsuichi Wada, 34', '60.922.168/0026-34', 'ASSOCIAÇÃO  CONGREGAÇÃO DE SANTA CATARINA', 0, '08:00 ás 17:00', '', '', '2020-09-14 00:00:00', NULL),
+(18, 'SRT SANTO AMARO', 'Carla Nascimento', 6, 'Rua Abel Seixas, 76 – Cep: 04754-030', '60.922.168/0026-34', 'ASSOCIAÇÃO  CONGREGAÇÃO DE SANTA CATARINA', 0, '08:00 ás 17:00', '', '', '2020-09-14 00:00:00', NULL),
+(19, 'SRT SANTO AMARO II', '', 7, 'RUA: VISCONDE DE TAUNAY, 809 SANTO AMARO - São Paulo, SP CEP 04726-010.', '60.922.168/0026-34', 'ASSOCIAÇÃO  CONGREGAÇÃO DE SANTA CATARINA', 0, '08:00 ás 17:00', '', '', '2020-09-14 00:00:00', NULL),
+(20, 'SRT SANTO AMARO III', '', 8, '', '60.922.168/0026-34', 'ASSOCIAÇÃO  CONGREGAÇÃO DE SANTA CATARINA', 0, '08:00 ás 17:00', '', '', '2020-09-14 00:00:00', NULL),
+(21, 'UBS CAMPO GRANDE', 'Maria de Lourdes', 3452689, ' R. Monlevade, 195 - Vila Romano, São Paulo - SP, 04679-345', '60.922.168/0026-34', 'ASSOCIAÇÃO  CONGREGAÇÃO DE SANTA CATARINA', 1028, '08:00 ás 17:00', '', '', '2020-09-14 00:00:00', NULL),
+(22, 'UBS INT. JARDIM MIRIAM II', 'Josiane', 2787911, 'AV. CUPECE, 5185 – CIDADE ADEMAR - CEP:04365-001', '60.922.168/0026-34', 'ASSOCIAÇÃO  CONGREGAÇÃO DE SANTA CATARINA', 1003, '08:00 ás 17:00', '', '', '2020-09-14 00:00:00', NULL),
+(23, 'UBS JD. UMUARAMA', 'Miriam', 2787911, 'RUA ANTONIO GIL, 721 - CEP: 04655-000 ', '60.922.168/0026-34', 'ASSOCIAÇÃO  CONGREGAÇÃO DE SANTA CATARINA', 1015, '08:00 ás 17:00', '', '', '2020-09-14 00:00:00', NULL),
+(24, 'UBS VILA ARRIETE', 'Heloisa Handa', 2788748, 'RUA JULIETA DE ARAUJO ALMEIDA, 44  CEP: 044445-010', '60.922.168/0026-34', 'ASSOCIAÇÃO  CONGREGAÇÃO DE SANTA CATARINA', 1016, '08:00 ás 17:00', '', '', '2020-09-14 00:00:00', NULL),
+(25, 'UBS VILA CONSTANCIA', 'Paulo', 2788799, 'Rua Hermenegildo MartiniNº 21.500 / 100 S/N - CEP: 04438-280    ', '60.922.168/0026-34', 'ASSOCIAÇÃO  CONGREGAÇÃO DE SANTA CATARINA', 1027, '08:00 ás 17:00', '', '', '2020-09-14 00:00:00', NULL),
+(26, 'UBS/ESF CIDADE JULIA', 'Lisia', 2786893, 'RUA PASCOAL GRIECO, 366 – CEP: 04421-150', '60.922.168/0026-34', 'ASSOCIAÇÃO  CONGREGAÇÃO DE SANTA CATARINA', 1002, '08:00 ás 17:00', '', '', '2020-09-14 00:00:00', NULL),
+(27, 'UBS/ESF JD. APURÁ', 'Jussara', 2787180, 'RUA DR. DARI BARCELOS, 37 – Cep: 04470-170', '60.922.168/0026-34', 'ASSOCIAÇÃO  CONGREGAÇÃO DE SANTA CATARINA', 1004, '08:00 ás 17:00', '', '', '2020-09-14 00:00:00', NULL),
+(28, 'UBS/ESF JD. NITEROI', 'Mirela', 2787652, 'RUA SAMUEL ARNALD, 596 – CEP: 04434-000 ', '60.922.168/0026-34', 'ASSOCIAÇÃO  CONGREGAÇÃO DE SANTA CATARINA', 1005, '08:00 ás 17:00', '', '', '2020-09-14 00:00:00', NULL),
+(29, 'UBS/ESF JD. NOVO PANTANAL', 'Ivanir', 7357761, 'RUA PROFESSOR CARDOZO DE MELLO, 674, JD. STA TEREZINHA, CEP: 04474-180', '60.922.168/0026-34', 'ASSOCIAÇÃO  CONGREGAÇÃO DE SANTA CATARINA', 1006, '08:00 ás 17:00', '', '', '2020-09-14 00:00:00', NULL),
+(30, 'UBS/ESF JD. SAO CARLOS', 'Ana Paula', 3074544, 'RUA CLAUDIA MUZZIO, 163 – CEP: 04429-280', '60.922.168/0026-34', 'ASSOCIAÇÃO  CONGREGAÇÃO DE SANTA CATARINA', 1007, '08:00 ás 17:00', '', '', '2020-09-14 00:00:00', NULL),
+(31, 'UBS/ESF JARDIM SELMA - CIDADE ADEMAR', 'Laura', 10, ' R. Pedro Fernandes Aragão - 305, CEP:04431-160', '60.922.168/0026-34', 'ASSOCIAÇÃO  CONGREGAÇÃO DE SANTA CATARINA', 1013, '08:00 ás 17:00', '', '', '2020-09-14 00:00:00', NULL),
+(32, 'UBS/ESF LARANJEIRAS', 'Vladimir', 2788039, 'RUA DENIS FURTEL, 108  CEP: 04476-145 ', '60.922.168/0026-34', 'ASSOCIAÇÃO  CONGREGAÇÃO DE SANTA CATARINA', 1001, '08:00 ás 17:00', '', '', '2020-09-14 00:00:00', NULL),
+(33, 'UBS/ESF MAR PAULISTA', 'Maria Cristina', 2766000, 'RUA MATSUICHI WADA, 393 - CEP: 04463-060', '60.922.168/0026-34', 'ASSOCIAÇÃO  CONGREGAÇÃO DE SANTA CATARINA', 1009, '08:00 ás 17:00', '', '', '2020-09-14 00:00:00', NULL),
+(34, 'UBS/ESF MATA VIRGEM', 'Regiana', 2788098, 'RUA/ESTRADA DA SAÚDE, 47 – CEP: 04476-320 ', '60.922.168/0026-34', 'ASSOCIAÇÃO  CONGREGAÇÃO DE SANTA CATARINA', 1010, '08:00 ás 17:00', '', '', '2020-09-14 00:00:00', NULL),
+(35, 'UBS/ESF SAO JORGE', 'Leandro', 3996115, 'RUA EDUARDO PEREIRA RAMOS, 808/810 – CEP: 04432-000', '60.922.168/0026-34', 'ASSOCIAÇÃO  CONGREGAÇÃO DE SANTA CATARINA', 1008, '08:00 ás 17:00', '', '', '2020-09-14 00:00:00', NULL),
+(36, 'UBS/ESF VILA APARECIDA', 'Juliane', 2788705, 'AV. BATISTA MACIEL, 430 - CEP:04459-110 ', '60.922.168/0026-34', 'ASSOCIAÇÃO  CONGREGAÇÃO DE SANTA CATARINA', 1011, '08:00 ás 17:00', '', '', '2020-09-14 00:00:00', NULL),
+(37, 'UBS/ESF VILA GUACURI', 'Andrezza Carpentieri', 2788934, 'RUA VALENTINO FIORAVANTE, 416', '60.922.168/0026-34', 'ASSOCIAÇÃO  CONGREGAÇÃO DE SANTA CATARINA', 1012, '08:00 ás 17:00', '', '', '2020-09-14 00:00:00', NULL),
+(38, 'UBS/ESF VILA IMPERIO II', 'Marcia', 2788977, 'RUA DR. NESTOR SAMPAIO PENTEADO, 181/189 - CEP: 04409-060', '60.922.168/0026-34', 'ASSOCIAÇÃO  CONGREGAÇÃO DE SANTA CATARINA', 1000, '08:00 ás 17:00', '', '', '2020-09-14 00:00:00', NULL),
+(39, 'UPA PEDREIRA', 'Roberval', 6133460, ' Av. Nossa Sra. de Sabará, 4901 CEP:04459-000', '60.922.168/0026-34', 'ASSOCIAÇÃO  CONGREGAÇÃO DE SANTA CATARINA', 1020, '08:00 ás 17:00', '', '', '2020-09-14 00:00:00', NULL),
+(40, 'UPA SANTO AMARO', 'Patricia Vieira', 2752107, ' R. Carlos Gomes, 661, CEP:04743-050', '60.922.168/0026-34', 'ASSOCIAÇÃO  CONGREGAÇÃO DE SANTA CATARINA', 1032, '08:00 ás 17:00', '', '', '2020-09-14 00:00:00', NULL),
+(41, 'URSI CIDADE ADEMAR', 'Patricia Sirianni', 5599881, 'R: SEBASTIÃO ANDRADE BONANI, 340 - CEP: 04649-050', '60.922.168/0026-34', 'ASSOCIAÇÃO  CONGREGAÇÃO DE SANTA CATARINA', 1017, '08:00 ás 17:00', '', '', '2020-09-14 00:00:00', NULL),
+(42, 'UBS SANTO AMARO', 'Jacqueline Yuri Mitsuyuki', 2788640, 'Rua Conde de Itu, 359, CEP 04741-000', '60.922.168/0026-34', 'ASSOCIAÇÃO  CONGREGAÇÃO DE SANTA CATARINA', 1029, '08:00 ás 17:00', '', '', '2020-09-14 00:00:00', NULL),
+(43, 'UBS JARDIM AEROPORTO', 'Liz Carvalho', 2787156, 'R. Vieira de Morais, 1752 - CEP:04617-006', '60.922.168/0026-34', 'ASSOCIAÇÃO  CONGREGAÇÃO DE SANTA CATARINA', 1031, '08:00 ás 17:00', '', '', '2020-09-14 00:00:00', NULL),
+(44, 'UBS CHÁCARA SANTO ANTÔNIO', 'Cristina', 2765993, ' Rua Alexandre Dumas, 719, CEP:04717-001', '60.922.168/0026-34', 'ASSOCIAÇÃO  CONGREGAÇÃO DE SANTA CATARINA', 1033, '08:00 ás 17:00', '', '', '2020-09-14 00:00:00', NULL);
 
 -- --------------------------------------------------------
 
