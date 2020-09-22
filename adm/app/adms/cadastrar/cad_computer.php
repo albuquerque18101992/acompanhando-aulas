@@ -18,10 +18,30 @@ include_once 'app/adms/include/head.php';
         <?php
         include_once 'app/adms/include/menu.php';
         ?>
-        
+
         <div class="content p-1">
             <div class="list-group-item">
-                <form method="POST" action="salvar_cadastar.php" autocomplete="off">
+                <div class="d-flex">
+                    <div class="mr-auto p-2">
+                        <h2 class="display-4 titulo"> Cadastrar Equipamentos </h2>
+                    </div>
+                    <div class="p-2">
+                        <?php
+                        $btn_list = carregar_btn('listar/list_computer', $conn);
+                        if ($btn_list) {
+                            echo "<a href='" . pg . "/listar/list_computer' class='btn btn-outline-info btn-sm'>Listar</a>";
+                        }
+                        ?>
+
+                    </div>
+                </div>
+                <div class="alert alert-success" role="alert">
+                    Máquina cadastrada com sucesso!
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form method="POST" action="" autocomplete="off">
                     <div class="select-caixas">
                         <div class="row">
                             <div class="col-md-4">
@@ -120,29 +140,35 @@ include_once 'app/adms/include/head.php';
                             </div>
                         </div>
                         <br>
-                        <div class="caixa_informacoes">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <label for="">Informações Pertinentes ao Equipamento</label>
-                                    <textarea type="text-area" name="descricoes" maxlength="280" placeholder="Observções sobre o equipamento ." style="width:80%;height:80px; border-radius:5px"></textarea>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label><i class="fas fa-university"></i> Unidade</label require>
+                                    <select type="text" name="unidade" class="form-control" id="unidade" onclick="formatar()">
+                                        <option selected disabled>Escolha Unidade</option required>
+                                        <?php
+                                        include_once("conexao.php");
+                                        $consult = "SELECT * FROM adms_unidades WHERE cnes ORDER BY nome_da_unidade";
+                                        $consulta = mysqli_query($conn, $consult);
+                                        while ($row_cat_post = mysqli_fetch_assoc($consulta)) {
+                                            echo '<option value="' . $row_cat_post['nome_da_unidade'] . '"> ' . $row_cat_post['nome_da_unidade'] . '</option>';
+                                        }
+                                        ?>
+                                    </select>
                                 </div>
                             </div>
                         </div>
-                        <div class="cadastrar">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="text-center">
-                                        <input class="btn btn-outline-primary" id="bt_cadastrar" type="submit" value="Salvar dados">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="text-center">
-                                        <input class="btn btn-outline-primary" id="bt_cadastrar" type="reset" value="Limpar">
-                                    </div>
-                                </div>
+                        <br>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label for="">Informações Pertinentes ao Equipamento</label>
+                                <textarea type="text-area" name="descricoes" maxlength="280" placeholder="Observções sobre o equipamento ." style="width:100%;height:100px; border-radius:5px"></textarea>
                             </div>
                         </div>
+                        <br>
                     </div>
+                    <input name="SendCadComputer" type="submit" class="btn btn-success" value="Cadastrar">
                 </form>
             </div>
         </div>

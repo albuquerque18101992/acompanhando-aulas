@@ -23,13 +23,13 @@ include_once 'app/adms/include/head.php';
             <div class="list-group-item">
                 <div class="d-flex">
                     <div class="mr-auto p-2">
-                        <h2 class="display-4 titulo"> Listar Unidades </h2>
+                        <h2 class="display-4 titulo"> Listar Equipamentos </h2>
                     </div>
                     <div class="p-2">
                         <?php
-                        $btn_cad_unidade = carregar_btn('cadastrar/cad_unidade', $conn);
-                        if ($btn_cad_unidade) {
-                            echo "<a href='" . pg . "/cadastrar/cad_unidade' class='btn btn-outline-success btn-sm'>Cadastrar unidade</a>";
+                        $btn_cad_computer = carregar_btn('cadastrar/cad_computer', $conn);
+                        if ($btn_cad_computer) {
+                            echo "<a href='" . pg . "/cadastrar/cad_computer' class='btn btn-outline-success btn-sm'>Cadastrar computador</a>";
                         }
                         ?>
                     </div>
@@ -50,9 +50,9 @@ include_once 'app/adms/include/head.php';
                 //Calcular o inicio visualização
                 $inicio = ($qnt_result_pg * $pagina) - $qnt_result_pg;
                 if ($_SESSION['adms_niveis_acesso_id'] == 1) {
-                    $resul_pg = "SELECT * FROM adms_unidades";
+                    $resul_pg = "SELECT * FROM adms_pc_cad";
                 }else {
-                    $resul_pg = "SELECT * FROM adms_unidades";
+                    $resul_pg = "SELECT * FROM adms_pc_cad";
                   }
                 $resultado_pg = mysqli_query($conn, $resul_pg);
                 if (($resultado_pg) and ($resultado_pg->num_rows != 0)) {
@@ -62,21 +62,24 @@ include_once 'app/adms/include/head.php';
                             <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Unidade</th>
-                                    <th class="d-none d-sm-table-cell">Gerente Unidade </th>
-                                    <th class="d-none d-sm-table-cell">CNES</th>
+                                    <th>Localização</th>
+                                    <th class="d-none d-sm-table-cell">Computador</th>
+                                    <th class="d-none d-sm-table-cell">Monitor</th>
+                                    <th class="d-none d-sm-table-cell">Unidade</th>
                                     <th class="text-center">Ações</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                
                                 <?php
                                 while ($row_pg = mysqli_fetch_assoc($resultado_pg)) {
                                 ?>
                                     <tr>
                                         <th><?php echo $row_pg['id']; ?></th>
-                                        <td><?php echo $row_pg['nome_da_unidade']; ?></td>
-                                        <td class="d-none d-sm-table-cell"><?php echo $row_pg['nome_gerente']; ?></td>
-                                        <td class="d-none d-sm-table-cell"><?php echo $row_pg['cnes']; ?></td>
+                                        <td><?php echo $row_pg['localizacao']; ?></td>
+                                        <td class="d-none d-sm-table-cell"><?php echo $row_pg['numero_serie_cpu']; ?></td>
+                                        <td class="d-none d-sm-table-cell"><?php echo $row_pg['numero_serie_monitor']; ?></td>
+                                        <td class="d-none d-sm-table-cell"><?php echo $row_pg['adms_unidade_id']; ?></td>
                                         <td class="text-center">
                                             <span class="d-none d-md-block">
                                                 <?php
@@ -116,11 +119,11 @@ include_once 'app/adms/include/head.php';
                                     </tr>
                                 <?php
                                 }
-                                ?>
+                                ?> 
                             </tbody>
                         </table>
                         <?php
-                        $result_pg = "SELECT COUNT(id) AS num_result FROM adms_unidades";
+                        $result_pg = "SELECT COUNT(id) AS num_result FROM adms_pc_cad";
                         $resultado_pg = mysqli_query($conn, $result_pg);
                         $row_pg = mysqli_fetch_assoc($resultado_pg);
                         //echo $row_pg['num_result'];

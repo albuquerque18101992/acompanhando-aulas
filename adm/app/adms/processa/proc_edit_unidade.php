@@ -23,7 +23,7 @@ if ($SendEditUnidade) {
         $_SESSION['msg_de_erro'] = "<div class='alert alert-danger'>Necessário preencher todos os campos para editar a unidade!</div>";
     } else {
         //Proibir cadastro de unidade duplicada
-        $result_unidades = "SELECT id FROM adms_unidades WHERE cnes='" . $dados_validos['cnes'] . "'";
+        $result_unidades = "SELECT id FROM adms_unidades WHERE cnes='" . $dados_validos['cnes'] . "'AND id<>'" . $dados['id'] . "' ";
         $resultado_unidades = mysqli_query($conn, $result_unidades);
         if (($resultado_unidades)AND ( $resultado_unidades->num_rows != 0)) {
             $erro = true;
