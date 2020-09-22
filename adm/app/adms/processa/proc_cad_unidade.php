@@ -22,12 +22,12 @@ if ($SendCadUnidade) {
         $erro = true;
         $_SESSION['msg_de_erro'] = "<div class='alert alert-danger'>Necessário preencher todos os campos para cadastrar a unidade!</div>";
     } else {
-        //Proibir cadastro de página duplicado
-        $result_paginas = "SELECT id FROM adms_unidades WHERE cnes='" . $dados_validos['cnes'] . "' AND adms_tps_pg_id='" . $dados_validos['adms_tps_pg_id'] . "'";
-        $resultado_paginas = mysqli_query($conn, $result_paginas);
-        if (($resultado_paginas)AND ( $resultado_paginas->num_rows != 0)) {
+        //Proibir cadastro de unidade duplicada
+        $result_unidades = "SELECT id FROM adms_unidades WHERE cnes='" . $dados_validos['cnes'] . "'";
+        $resultado_unidades = mysqli_query($conn, $result_unidades);
+        if (($resultado_unidades)AND ( $resultado_unidades->num_rows != 0)) {
             $erro = true;
-            $_SESSION['msg_de_erro'] = "<div class='alert alert-danger'>Este CNES já esta cadastrado!</div>";
+            $_SESSION['msg_de_erro'] = "<div class='alert alert-danger'>Este número de CNES já esta cadastrado, verifique as informações!</div>";
         }
     }
 
@@ -92,7 +92,7 @@ if ($SendCadUnidade) {
                 mysqli_query($conn, $result_cad_pagina);
             }
 
-            $_SESSION['msg_de_erro'] = "<div class='alert alert-success'>Unidade cadastrada!</div>";
+            $_SESSION['msg_de_erro'] = "<div class='alert alert-success'>Unidade cadastrada com sucesso!</div>";
             $url_destino = pg . '/listar/list_unidades';
             header("Location: $url_destino");
         } else {

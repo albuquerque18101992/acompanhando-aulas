@@ -104,7 +104,7 @@ include_once 'app/adms/include/head.php';
                                                         echo "<a class='dropdown-item' href='" . pg . "/visualizar/vis_unidade?id=" . $row_pg['id'] . "'>Visualizar</a> ";
                                                     }
                                                     if ($btn_edit) {
-                                                        echo "<a class='dropdown-item' href='" . pg . "/editar/list_pagina?id=" . $row_pg['id'] . "'>Editar</a> ";
+                                                        echo "<a class='dropdown-item' href='" . pg . "/editar/edit_unidades?id=" . $row_pg['id'] . "'>Editar</a> ";
                                                     }
                                                     if ($btn_apagar) {
                                                         echo "<a class='dropdown-item' href='" . pg . "/processa/apagar_unidade?id=" . $row_pg['id'] . "' data-confirm='VOCÊ TEM CERTEZA QUE QUER EXCLUÍR O ITEM SELECIONADO?'>Apagar</a> ";
@@ -120,7 +120,7 @@ include_once 'app/adms/include/head.php';
                             </tbody>
                         </table>
                         <?php
-                        $result_pg = "SELECT COUNT(id) AS num_result FROM adms_paginas";
+                        $result_pg = "SELECT COUNT(id) AS num_result FROM adms_unidades";
                         $resultado_pg = mysqli_query($conn, $result_pg);
                         $row_pg = mysqli_fetch_assoc($resultado_pg);
                         //echo $row_pg['num_result'];

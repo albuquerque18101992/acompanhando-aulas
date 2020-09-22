@@ -44,7 +44,7 @@ if (!empty($id)) {
                         }
                         ?>
 
-                        <form id="add-unidade" method="POST" action="<?php echo pg; ?>/processa/proc_cad_unidade" autocomplete="off">
+                        <form id="add-unidade" method="POST" action="<?php echo pg; ?>/processa/proc_edit_unidade" autocomplete="off">
                             <input type="hidden" name="id" value="<?php
                             if (isset($row_edit_unidade['id'])) {
                                 echo $row_edit_unidade['id'];
@@ -221,7 +221,7 @@ if (!empty($id)) {
                                         <span class="text-danger">* </span>Campos Obrigatório
                                     </p>
 
-                                    <input name="SendCadUnidade" id="SendCadUnidade" type="submit" class="btn btn-warning" value="Salvar Edição">
+                                    <input name="SendEditUnidade" id="SendCadUnidade" type="submit" class="btn btn-warning" value="Salvar Edição">
                                 </div>
                         </form>
                     </div>

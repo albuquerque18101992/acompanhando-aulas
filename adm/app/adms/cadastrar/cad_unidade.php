@@ -47,7 +47,11 @@ include_once 'app/adms/include/head.php';
                                 <span class="text-danger">*</span>
                                 Nome da Unidade
                             </label>
-                            <input name="nome_da_unidade" text="text" class="form-control" id="nome" placeholder="Nome da unidade">
+                            <input name="nome_da_unidade" text="text" class="form-control" id="nome" placeholder="Nome da unidade" value="<?php
+                            if (isset($_SESSION['dados']['nome_da_unidade'])) {
+                                echo $_SESSION['dados']['nome_da_unidade'];
+                            }
+                            ?>">
                         </div>
                         <div class="form-group col-md-4">
                             <label>
@@ -57,7 +61,11 @@ include_once 'app/adms/include/head.php';
                                 <span class="text-danger">*</span>
                                 Nome do gerente da Unidade
                             </label>
-                            <input name="nome_gerente" type="text" class="form-control" id="gerente_da_unidade" placeholder="Nome do responsável da unidade">
+                            <input name="nome_gerente" type="text" class="form-control" id="gerente_da_unidade" placeholder="Nome do responsável da unidade" value="<?php
+                            if (isset($_SESSION['dados']['nome_gerente'])) {
+                                echo $_SESSION['dados']['nome_gerente'];
+                            }
+                            ?>">
                         </div>
                         <div class="form-group col-md-4">
                             <label>
@@ -66,7 +74,11 @@ include_once 'app/adms/include/head.php';
                                 </span>
                                 CNES da unidade
                             </label>
-                            <input name="cnes" type="text" class="form-control" id="cnes" placeholder="CNES">
+                            <input name="cnes" type="text" class="form-control" id="cnes" placeholder="CNES" value="<?php
+                            if (isset($_SESSION['dados']['cnes'])) {
+                                echo $_SESSION['dados']['cnes'];
+                            }
+                            ?>">
                         </div>
                     </div>
 
@@ -78,7 +90,11 @@ include_once 'app/adms/include/head.php';
                                 </span>
                                 <span class="text-danger">*</span> Endereço da Unidade
                             </label>
-                            <input name="endereco" text="text" class="form-control" id="nome" placeholder="EXEMPLO: AV:UM, N°:DOIS, BAIRRO:TRÊS CEP:00000-000">
+                            <input name="endereco" text="text" class="form-control" id="nome" placeholder="EXEMPLO: AV:UM, N°:DOIS, BAIRRO:TRÊS CEP:00000-000" value="<?php
+                            if (isset($_SESSION['dados']['endereco'])) {
+                                echo $_SESSION['dados']['endereco'];
+                            }
+                            ?>">
                         </div>
 
 
@@ -89,7 +105,11 @@ include_once 'app/adms/include/head.php';
                                 </span>
                                 <span class="text-danger">*</span> CNPJ
                             </label>
-                            <input name="cnpj" type="text" class="form-control" id="cnpj" placeholder="CNPJ">
+                            <input name="cnpj" type="text" class="form-control" id="cnpj" placeholder="CNPJ" value="<?php
+                            if (isset($_SESSION['dados']['cnpj'])) {
+                                echo $_SESSION['dados']['cnpj'];
+                            }
+                            ?>">
                         </div>                        
                     </div>
 
@@ -101,7 +121,11 @@ include_once 'app/adms/include/head.php';
                                 </span>
                                 <span class="text-danger">*</span> Razão Social
                             </label>
-                            <input name="razao_social" type="text" class="form-control" id="razao_social" placeholder="Razão Social">
+                            <input name="razao_social" type="text" class="form-control" id="razao_social" placeholder="Razão Social" value="<?php
+                            if (isset($_SESSION['dados']['razao_social'])) {
+                                echo $_SESSION['dados']['razao_social'];
+                            }
+                            ?>">
                         </div>
 
                         <div class="form-group col-md-4">
@@ -111,7 +135,11 @@ include_once 'app/adms/include/head.php';
                                 </span>
                                 <span class="text-danger">*</span> Ramal VOIP
                             </label>
-                            <input name="ramal_voip" type="text" class="form-control" id="razao_social" placeholder="Ramal da unidade">
+                            <input name="ramal_voip" type="text" class="form-control" id="razao_social" placeholder="Ramal da unidade" value="<?php
+                            if (isset($_SESSION['dados']['ramal_voip'])) {
+                                echo $_SESSION['dados']['ramal_voip'];
+                            }
+                            ?>">
                         </div>
 
                         <div class="form-group col-md-4">
@@ -121,7 +149,11 @@ include_once 'app/adms/include/head.php';
                                 </span>
                                 <span class="text-danger">*</span> Horário de funcionamento
                             </label>
-                            <input name="funcionamento" type="text" class="form-control" id="razao_social" placeholder="Exemplo: 8:00 ás 17:00">
+                            <input name="funcionamento" type="text" class="form-control" id="razao_social" placeholder="Exemplo: 8:00 ás 17:00" value="<?php
+                            if (isset($_SESSION['dados']['funcionamento'])) {
+                                echo $_SESSION['dados']['funcionamento'];
+                            }
+                            ?>">
                         </div>
 
 
