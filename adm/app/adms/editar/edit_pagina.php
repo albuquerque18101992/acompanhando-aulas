@@ -311,12 +311,12 @@ if (!empty($id)) {
                                         <?php
                                         while ($row_sits_pgs = mysqli_fetch_assoc($resultado_sits_pgs)) {
                                             if (isset($_SESSION['dados']['adms_sits_pg_id']) AND ( $_SESSION['dados']['adms_sits_pg_id'] == $row_sits_pgs['id'])) {
-                                                echo "<option value='" . $row_sits_pgs['id'] . "' selected >" . $row_sits_pgs['nome'] . "</option>";
+                                                echo "<option value='" . $row_sits_pgs['id'] . "' selected>" . $row_sits_pgs['nome'] . "</option>";
                                                 //Preencher com informações do banco de dados caso não tenha nenhum valor salvo na sessão $_SESSION['dados']
-                                            } elseif (!isset($_SESSION['dados'] ['adms_sits_pg_id']) AND ( isset($row_edit_pg['adms_sits_pg_id']) AND ( $row_edit_pg['adms_sits_pg_id'] == $row_sits_pgs['id']))) {
-                                                echo "<option value='" . $row_sits_pgs['id'] . "' selected >" . $row_sits_pgs['nome'] . "</option>";
+                                            } elseif (!isset($_SESSION['dados']['adms_sits_pg_id']) AND ( isset($row_edit_pg['adms_sits_pg_id']) AND ( $row_edit_pg['adms_sits_pg_id'] == $row_sits_pgs['id']))) {
+                                                echo "<option value='" . $row_sits_pgs['id'] . "' selected>" . $row_sits_pgs['nome'] . "</option>";
                                             } else {
-                                                echo "<option value='" . $row_sits_pgs['id'] . "' selected >" . $row_sits_pgs['nome'] . "</option>";
+                                                echo "<option value='" . $row_sits_pgs['id'] . "'>" . $row_sits_pgs['nome'] . "</option>";
                                             }
                                         }
                                         ?>

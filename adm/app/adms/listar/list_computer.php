@@ -50,13 +50,16 @@ include_once 'app/adms/include/head.php';
                 //Calcular o inicio visualização
                 $inicio = ($qnt_result_pg * $pagina) - $qnt_result_pg;
                 if ($_SESSION['adms_niveis_acesso_id'] == 1) {
+                    $resul_pg = "SELECT nivelpagina.*,
+                            unidade.nome_da_unidade
+                            FROM adms_pc_cad nivelpagina
+                            INNER JOIN adms_unidades unidade ON unidade.id=nivelpagina.adms_unidade_id";
+                } else {
                     $resul_pg = "SELECT * FROM adms_pc_cad";
-                }else {
-                    $resul_pg = "SELECT * FROM adms_pc_cad";
-                  }
+                }
                 $resultado_pg = mysqli_query($conn, $resul_pg);
-                if (($resultado_pg) and ($resultado_pg->num_rows != 0)) {
-                ?>
+                if (($resultado_pg) and ( $resultado_pg->num_rows != 0)) {
+                    ?>
                     <div class="table-responsive">
                         <table class="table table-hover table-hover table-bordered">
                             <thead>
@@ -70,16 +73,16 @@ include_once 'app/adms/include/head.php';
                                 </tr>
                             </thead>
                             <tbody>
-                                
+
                                 <?php
                                 while ($row_pg = mysqli_fetch_assoc($resultado_pg)) {
-                                ?>
+                                    ?>
                                     <tr>
                                         <th><?php echo $row_pg['id']; ?></th>
                                         <td><?php echo $row_pg['localizacao']; ?></td>
                                         <td class="d-none d-sm-table-cell"><?php echo $row_pg['numero_serie_cpu']; ?></td>
                                         <td class="d-none d-sm-table-cell"><?php echo $row_pg['numero_serie_monitor']; ?></td>
-                                        <td class="d-none d-sm-table-cell"><?php echo $row_pg['adms_unidade_id']; ?></td>
+                                        <td class="d-none d-sm-table-cell"><?php echo $row_pg['nome_da_unidade']; ?></td>
                                         <td class="text-center">
                                             <span class="d-none d-md-block">
                                                 <?php
@@ -117,7 +120,7 @@ include_once 'app/adms/include/head.php';
                                             </div>
                                         </td>
                                     </tr>
-                                <?php
+                                    <?php
                                 }
                                 ?> 
                             </tbody>
@@ -160,7 +163,7 @@ include_once 'app/adms/include/head.php';
                         echo "</nav>";
                         ?>
                     </div>
-                <?php
+                    <?php
                 }
                 ?>
             </div>

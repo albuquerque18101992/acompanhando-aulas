@@ -79,4 +79,3 @@ if ($SendCadComputer) {
     header("Location: $url_destino");
 }
 ?>
- 

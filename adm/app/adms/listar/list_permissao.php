@@ -11,11 +11,11 @@ if (!empty($id)) {
     $pagina = (!empty($pagina_atual) ? $pagina_atual : 1);
 
     //Setar quantidade de itens por pagina
-    $qnt_result_pg = 20;
+    $qnt_result_pg = 50;
 
     //calcular o inicio visualização
     $inicio = ($qnt_result_pg * $pagina) - $qnt_result_pg;
-
+       //if para super-administrador
     if ($_SESSION['adms_niveis_acesso_id'] == 1) {
         $result_niv_ac = "SELECT nivpg. *,
         pg.nome_pagina, pg.obs
@@ -24,6 +24,7 @@ if (!empty($id)) {
         WHERE nivpg.adms_niveis_acesso_id='$id' 
         ORDER BY nivpg.ordem ASC 
         LIMIT $inicio, $qnt_result_pg";
+       //else para outro niveis de acesso
     } else {
         $result_niv_ac = "SELECT nivpg. *,
         pg.nome_pagina, pg.obs
@@ -110,9 +111,9 @@ if (!empty($id)) {
 
                                                 if ($btn_lib_per) {
                                                     if ($row_niv_ac['permissao'] == 1) {
-                                                        echo "<a href='".pg."/processa/proc_lib_per?id=".$row_niv_ac['id']."'><span class='badge badge-pill badge-success'>Liberado</sapn><a/>";
+                                                        echo "<a href='" . pg . "/processa/proc_lib_per?id=" . $row_niv_ac['id'] . "'><span class='badge badge-pill badge-success'>Liberado</sapn><a/>";
                                                     } else {
-                                                        echo "<a href='".pg."/processa/proc_lib_per?id=".$row_niv_ac['id']."'><span class='badge badge-pill badge-danger'>Bloqueado</sapn><a/>";
+                                                        echo "<a href='" . pg . "/processa/proc_lib_per?id=" . $row_niv_ac['id'] . "'><span class='badge badge-pill badge-danger'>Bloqueado</sapn><a/>";
                                                     }
                                                 } else {
                                                     if ($row_niv_ac['permissao'] == 1) {
