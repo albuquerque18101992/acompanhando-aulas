@@ -21,7 +21,7 @@ if (!empty($id)) {
         pg.nome_pagina, pg.obs
         FROM adms_nivacs_pgs nivpg
         INNER JOIN adms_paginas pg ON pg.id=nivpg.adms_pagina_id
-        WHERE nivpg.adms_niveis_acesso_id='$id' 
+        WHERE nivpg.adms_niveis_acesso_id='$id' AND pg.depend_pg=0
         ORDER BY nivpg.ordem ASC 
         LIMIT $inicio, $qnt_result_pg";
        //else para outro niveis de acesso

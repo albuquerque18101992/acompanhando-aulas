@@ -9,7 +9,14 @@ $resultado_user_hd = mysqli_query($conn, $result_user_hd);
 $row_user_hd = mysqli_fetch_assoc($resultado_user_hd);
 $nome = explode(" ", $row_user_hd['nome']);
 $prim_nome = $nome[0];
+
+
+$niv_acesso = "SELECT id, nome FROM adms_niveis_acessos WHERE id='" . $_SESSION['adms_niveis_acesso_id'] . "' LIMIT 1";
+$nivel_acesso = mysqli_query($conn, $niv_acesso);
+$row_nivel_acesso = mysqli_fetch_assoc($nivel_acesso);
 ?>
+
+
 
 <nav class="navbar navbar-expand navbar-dark bg-success">
     <a class="sidebar-toggle text-light mr-3"><span class="navbar-toggler-icon"></span></a>
@@ -18,7 +25,6 @@ $prim_nome = $nome[0];
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-
     <div class="collapse navbar-collapse">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item dropdown">
@@ -35,6 +41,7 @@ $prim_nome = $nome[0];
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown" id="navbarDropdownMenuLink">
                     <a class="dropdown-item" href="#"> <i class="fas fa-user"></i> Perfil</a>
                     <a class="dropdown-item" href="<?php echo pg; ?> /acesso/sair"> <i class="fa fa-power-off"></i> Sair</a> 
+                    <a class="dropdown-item"><i class="fa fa-unlock-alt" aria-hidden="true"></i> <?php echo $row_nivel_acesso['nome']; ?></a>
                 </div>
             </li>
         </ul>
