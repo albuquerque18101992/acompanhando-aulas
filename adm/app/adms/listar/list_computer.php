@@ -50,12 +50,11 @@ include_once 'app/adms/include/head.php';
                 //Calcular o inicio visualização
                 $inicio = ($qnt_result_pg * $pagina) - $qnt_result_pg;
                 if ($_SESSION['adms_niveis_acesso_id'] == 1) {
-                    $resul_pg = "SELECT nivelpagina.*,
-                            unidade.nome_da_unidade
-                            FROM adms_pc_cad nivelpagina
+                    $resul_pg = "SELECT nivelpagina.*, unidade.nome_da_unidade
+                            FROM adms_equipamentos nivelpagina
                             INNER JOIN adms_unidades unidade ON unidade.id=nivelpagina.adms_unidade_id";
                 } else {
-                    $resul_pg = "SELECT * FROM adms_pc_cad";
+                    $resul_pg = "SELECT * FROM adms_equipamentos";
                 }
                 $resultado_pg = mysqli_query($conn, $resul_pg);
                 if (($resultado_pg) and ( $resultado_pg->num_rows != 0)) {
@@ -79,7 +78,7 @@ include_once 'app/adms/include/head.php';
                                     ?>
                                     <tr>
                                         <th><?php echo $row_pg['id']; ?></th>
-                                        <td><?php echo $row_pg['localizacao']; ?></td>
+                                        <td><?php echo $row_pg['adms_setores_id']; ?></td>
                                         <td class="d-none d-sm-table-cell"><?php echo $row_pg['numero_serie_cpu']; ?></td>
                                         <td class="d-none d-sm-table-cell"><?php echo $row_pg['numero_serie_monitor']; ?></td>
                                         <td class="d-none d-sm-table-cell"><?php echo $row_pg['nome_da_unidade']; ?></td>
@@ -126,7 +125,7 @@ include_once 'app/adms/include/head.php';
                             </tbody>
                         </table>
                         <?php
-                        $result_pg = "SELECT COUNT(id) AS num_result FROM adms_pc_cad";
+                        $result_pg = "SELECT COUNT(id) AS num_result FROM adms_equipamentos";
                         $resultado_pg = mysqli_query($conn, $result_pg);
                         $row_pg = mysqli_fetch_assoc($resultado_pg);
                         //echo $row_pg['num_result'];

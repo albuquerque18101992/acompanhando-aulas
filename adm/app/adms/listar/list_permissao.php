@@ -11,11 +11,11 @@ if (!empty($id)) {
     $pagina = (!empty($pagina_atual) ? $pagina_atual : 1);
 
     //Setar quantidade de itens por pagina
-    $qnt_result_pg = 50;
+    $qnt_result_pg = 60;
 
     //calcular o inicio visualização
     $inicio = ($qnt_result_pg * $pagina) - $qnt_result_pg;
-       //if para super-administrador
+    //if para super-administrador
     if ($_SESSION['adms_niveis_acesso_id'] == 1) {
         $result_niv_ac = "SELECT nivpg. *,
         pg.nome_pagina, pg.obs
@@ -24,7 +24,7 @@ if (!empty($id)) {
         WHERE nivpg.adms_niveis_acesso_id='$id' AND pg.depend_pg=0
         ORDER BY nivpg.ordem ASC 
         LIMIT $inicio, $qnt_result_pg";
-       //else para outro niveis de acesso
+        //else para outro niveis de acesso
     } else {
         $result_niv_ac = "SELECT nivpg. *,
         pg.nome_pagina, pg.obs
@@ -86,10 +86,10 @@ if (!empty($id)) {
                                     <tr>
                                         <th>ID</th>
                                         <th>Página</th>
-                                        <th class="d-none d-sm-table-cell">Permissão</th>
-                                        <th class="d-none d-sm-table-cell">Menu</th>
-                                        <th class="d-none d-sm-table-cell">Dropdown</th>
-                                        <th class="d-none d-sm-table-cell">Ordem</th>
+                                        <th class="d-none d-sm-table-cell text-center">Permissão</th>
+                                        <th class="d-none d-sm-table-cell text-center">Menu</th>
+                                        <th class="d-none d-sm-table-cell text-center">Dropdown</th>
+                                        <th class="d-none d-sm-table-cell text-center">Ordem</th>
                                         <th class="text-center">Ações</th>
                                     </tr>
                                 </thead>
@@ -105,7 +105,7 @@ if (!empty($id)) {
                                                 </span>
                                                 <?php echo $row_niv_ac['nome_pagina']; ?>
                                             </td>
-                                            <td class="d-none d-sm-table-cell">
+                                            <td class="d-none d-sm-table-cell text-center">
                                                 <?php
                                                 $btn_lib_per = carregar_btn('processa/proc_lib_per', $conn);
 
@@ -124,7 +124,26 @@ if (!empty($id)) {
                                                 }
                                                 ?>
                                             </td>
-                                            <td class="d-none d-sm-table-cell"><?php echo $row_niv_ac['lib_menu']; ?></td>
+                                            <td class="d-none d-sm-table-cell text-center">
+                                                <?php
+                                                
+                                                $btn_lib_menu = carregar_btn('processa/proc_lib_menu', $conn);
+
+                                                if ($btn_lib_menu) {
+                                                    if ($row_niv_ac['lib_menu'] == 1) {
+                                                        echo "<a href='" . pg . "/processa/proc_lib_menu?id=" . $row_niv_ac['id'] . "'><span class='badge badge-pill badge-success'>Liberado</sapn><a/>";
+                                                    } else {
+                                                        echo "<a href='" . pg . "/processa/proc_lib_menu?id=" . $row_niv_ac['id'] . "'><span class='badge badge-pill badge-danger'>Bloqueado</sapn><a/>";
+                                                    }
+                                                } else {
+                                                    if ($row_niv_ac['lib_menu'] == 1) {
+                                                        echo "<span class='badge badge-pill badge-success'>Liberado</sapn>";
+                                                    } else {
+                                                        echo "<span class='badge badge-pill badge-danger'>Bloqueado</sapn>";
+                                                    }
+                                                }
+                                                ?>
+                                            </td>
                                             <td class="d-none d-sm-table-cell"><?php echo $row_niv_ac['dropdown']; ?></td>
                                             <td class="d-none d-sm-table-cell"><?php echo $row_niv_ac['ordem']; ?></td>
                                             <td>Ações</td>

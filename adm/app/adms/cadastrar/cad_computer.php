@@ -34,80 +34,15 @@ include_once 'app/adms/include/head.php';
                         ?>
 
                     </div>
-                </div>
-                <div class="alert alert-success" role="alert">
-                    Máquina cadastrada com sucesso!
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <form method="POST" action="" autocomplete="off">
-                    <div class="select-caixas">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <label for="exampleFormControlSelect1"><i class="fas fa-map-marker-alt"></i> Localização</label>
-                                <select type="text" name="localizacao" class="form-control" id="formatar">
-                                    <option selected disabled>SELECIONAR</option>
-                                    <option value="adm">Administração</option>
-                                    <option value="call center">Call Center</option>
-                                    <option value="consultorio medico">Consultório Médico</option>
-                                    <option value="odontologia">Consultório Odontologico</option>
-                                    <option value="data center">Data Center</option>
-                                    <option value="farmacia">Farmácia</option>
-                                    <option value="recepcao">Recepção</option>
-                                    <option value="acolhimento">Sala de Acolhimento</option>
-                                    <option value="almoxarifado">Sala de Almoxarifado</option>
-                                    <option value="coleta">Sala de Coleta</option>
-                                    <option value="curativo">Sala de Curativo</option>
-                                    <option value="demanda">Sala de Demanda</option>
-                                    <option value="enfermagem">Sala de Enfermagem</option>
-                                    <option value="Sala estudos">Sala de Estudos</option>
-                                    <option value="farmacia satelite">Sala de Farmácia Satélite</option>
-                                    <option value="faturamento">Sala de Faturamento</option>
-                                    <option value="gerencia">Sala de Gerência</option>
-                                    <option value="intalacao">Sala de Instalação</option>
-                                    <option value="medicacao">Sala de Medicação</option>
-                                    <option value="obs adulto">Sala de Observação Adulto</option>
-                                    <option value="obs infantil">Sala de Observação Infantil</option>
-                                    <option value="ortopedia">Sala de Ortopedia</option>
-                                    <option value="papanicolau">Sala de Papanicolau</option>
-                                    <option value="siquiatria">Sala de Psiquiatria</option>
-                                    <option value="raio X">Sala de Raio X</option>
-                                    <option value="regulacao">Sala de Regulação</option>
-                                    <option value="saude da mulher">Sala Saúde da Mulher</option>
-                                    <option value="triagem">Sala de Triagem</option>
-                                    <option value="vacina">Sala de Vacina</option>
-                                    <option value="vigilancia">Sala de Vigilância</option>
-                                    <option value="acs">Sala dos ACS's</option>
-                                    <option value="multi uso">Sala Multi Uso</option>
-                                    <option value="same">SAME</option>
-                                    <option value="serviço social">Serviço Social</option>
-                                    <option value="sinais vitais">Sinais Vitais</option>
-                                    <option value="suvis">SUVIS</option>
-                                    <option value="outros">Outros</option>
-                                </select>
-                            </div>
-                            <div class="col-md-4">
-                                <label for="exampleFormControlSelect1"><i class="fas fa-award"></i> Fabricante</label>
-                                <select type="text" name="fabricante" class="form-control" name="fabricante" id="formatar">
-                                    <option selected disabled>SELECIONAR</option>
-                                    <option value="dell">Dell</option>
-                                    <option value="positivo">Positivo</option>
-                                    <option value="outros">Outros</option>
-                                </select>
-                            </div>
-                            <div class="col-md-4">
-                                <label for="exampleFormControlSelect1"><i class="far fa-folder-open"></i> Tipo</label>
-                                <select type="text" name="contrato" class="form-control" name="tipo" id="formatar">
-                                    <option selected disabled id="selecionar_option">SELECIONAR</option>
-                                    <option value="alugada">Alugada</option>
-                                    <option value="patrimonio">Patrimônio</option>
-                                    <option value="serviços epecificos">Serviços específicos</option>
-                                    <option value="outros">Outros</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
+                </div><hr>
+                <?php
+                if (isset($_SESSION['msg_de_erro'])) {
+                    echo $_SESSION['msg_de_erro'];
+                    unset($_SESSION['msg_de_erro']);
+                }
+                ?>
+
+                <form method="POST" action="<?php echo pg; ?>/processa/proc_cad_computer" autocomplete="off">
                     <br>
                     <div class="formulario">
                         <div class="row">
@@ -140,6 +75,49 @@ include_once 'app/adms/include/head.php';
                             </div>
                         </div>
                         <br>
+                        <div class="select-caixas">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label for="exampleFormControlSelect1"><i class="fas fa-map-marker-alt"></i> Localização</label>
+                                    <select type="text" name="localizacao" class="form-control" id="formatar">
+                                        <option selected disabled>SELECIONAR</option>
+                                        <?php
+                                        $consult_local = "SELECT * FROM adms_setor ORDER BY localizacao";
+                                        $consulta_local = mysqli_query($conn, $consult_local);
+                                        while ($row_local = mysqli_fetch_assoc($consulta_local)) {
+                                            echo '<option value"' . $row_local['localizacao'] . '">' . $row_local['localizacao'] . '</option>';
+                                        }
+                                        ?>
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="exampleFormControlSelect1"><i class="fas fa-award"></i> Fabricante</label>
+                                    <select type="text" name="" class="form-control" name="fabricante" id="formatar">
+                                        <option selected disabled>SELECIONAR</option>
+                                        <?php
+                                        $consult_fabricante = "SELECT * FROM adms_fabricante ORDER BY marca";
+                                        $consulta_fabricante = mysqli_query($conn, $consult_fabricante);
+                                        while ($row_fabricante = mysqli_fetch_assoc($consulta_fabricante)) {
+                                            echo '<option value="' . $row_fabricante['marca'] . '">' . $row_fabricante['marca'] . '</option>';
+                                        }
+                                        ?>
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="exampleFormControlSelect1"><i class="far fa-folder-open"></i> Tipo</label>
+                                    <select type="text" name="contrato" class="form-control" name="tipo" id="formatar">
+                                        <option selected disabled>SELECIONAR</option>
+                                        <?php
+                                        $consult_tipo = "SELECT * FROM adms_contrato ORDER BY descricao";
+                                        $consulta_tipo = mysqli_query($conn, $consult_tipo);
+                                        while ($row_tipo_contrato = mysqli_fetch_assoc($consulta_tipo)) {
+                                            echo '<option value="' . $row_tipo_contrato['descricao'] . '">' . $row_tipo_contrato['descricao'] . '</option>';
+                                        }
+                                        ?>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
@@ -147,8 +125,7 @@ include_once 'app/adms/include/head.php';
                                     <select type="text" name="unidade" class="form-control" id="unidade" onclick="formatar()">
                                         <option selected disabled>Escolha Unidade</option required>
                                         <?php
-                                        include_once("conexao.php");
-                                        $consult = "SELECT * FROM adms_unidades WHERE cnes ORDER BY nome_da_unidade";
+                                        $consult = "SELECT * FROM adms_unidades ORDER BY nome_da_unidade";
                                         $consulta = mysqli_query($conn, $consult);
                                         while ($row_cat_post = mysqli_fetch_assoc($consulta)) {
                                             echo '<option value="' . $row_cat_post['nome_da_unidade'] . '"> ' . $row_cat_post['nome_da_unidade'] . '</option>';

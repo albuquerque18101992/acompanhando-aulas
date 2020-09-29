@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 24-Set-2020 às 03:41
+-- Tempo de geração: 29-Set-2020 às 03:22
 -- Versão do servidor: 10.4.11-MariaDB
 -- versão do PHP: 7.4.1
 
@@ -21,6 +21,30 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `bd_system`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `adms_contrato`
+--
+
+CREATE TABLE `adms_contrato` (
+  `id` int(11) NOT NULL,
+  `descricao` varchar(120) NOT NULL,
+  `ordem` int(11) NOT NULL,
+  `created` datetime NOT NULL,
+  `modified` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `adms_contrato`
+--
+
+INSERT INTO `adms_contrato` (`id`, `descricao`, `ordem`, `created`, `modified`) VALUES
+(1, 'Alugada', 1, '0000-00-00 00:00:00', NULL),
+(2, 'Patrimônio', 2, '0000-00-00 00:00:00', NULL),
+(3, 'Serviços Especiais', 3, '0000-00-00 00:00:00', NULL),
+(4, 'Outros', 4, '2020-09-28 18:35:52', NULL);
 
 -- --------------------------------------------------------
 
@@ -49,6 +73,68 @@ INSERT INTO `adms_cors` (`id`, `nome`, `cor`, `created`, `modified`) VALUES
 (6, 'Azul claro', 'info', '2020-07-24 00:00:00', NULL),
 (7, 'Claro', 'light', '2020-07-24 00:00:00', NULL),
 (8, 'Cinza escuro', 'dark', '2020-07-24 00:00:00', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `adms_equipamentos`
+--
+
+CREATE TABLE `adms_equipamentos` (
+  `id` int(11) NOT NULL,
+  `numero_serie_cpu` int(11) NOT NULL,
+  `numero_serie_monitor` int(11) NOT NULL,
+  `numero_serie_mouse` int(11) DEFAULT NULL,
+  `numero_serie_teclado` int(11) DEFAULT NULL,
+  `numero_ti_cpu` int(11) NOT NULL,
+  `numero_ti_monitor` int(11) NOT NULL,
+  `adms_setores_id` int(11) NOT NULL,
+  `adms_fabricantes_id` int(11) NOT NULL,
+  `adms_contratos_id` int(11) NOT NULL,
+  `adms_unidade_id` int(11) NOT NULL,
+  `inform_computer` text DEFAULT NULL,
+  `created` datetime NOT NULL,
+  `modified` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `adms_equipamentos`
+--
+
+INSERT INTO `adms_equipamentos` (`id`, `numero_serie_cpu`, `numero_serie_monitor`, `numero_serie_mouse`, `numero_serie_teclado`, `numero_ti_cpu`, `numero_ti_monitor`, `adms_setores_id`, `adms_fabricantes_id`, `adms_contratos_id`, `adms_unidade_id`, `inform_computer`, `created`, `modified`) VALUES
+(1, 123456, 123456, 123456, 123456, 123456, 123456, 20, 4, 2, 13, 'ok ok', '2020-09-28 00:00:00', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `adms_fabricante`
+--
+
+CREATE TABLE `adms_fabricante` (
+  `id` int(11) NOT NULL,
+  `marca` varchar(120) NOT NULL,
+  `ordem` int(11) NOT NULL,
+  `created` datetime NOT NULL,
+  `modified` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `adms_fabricante`
+--
+
+INSERT INTO `adms_fabricante` (`id`, `marca`, `ordem`, `created`, `modified`) VALUES
+(1, 'Dell', 1, '2020-09-28 18:35:52', NULL),
+(2, 'Positivo', 2, '2020-09-28 18:35:52', NULL),
+(3, 'AOC', 3, '2020-09-28 18:35:52', NULL),
+(4, 'Samsung', 4, '2020-09-28 18:35:52', NULL),
+(5, 'IBM', 5, '2020-09-28 18:35:52', NULL),
+(6, 'Lenovo', 6, '2020-09-28 18:35:52', NULL),
+(7, 'Fujitsu', 7, '2020-09-28 18:35:52', NULL),
+(8, 'Toshiba', 8, '2020-09-28 18:35:52', NULL),
+(9, 'Fujitsu', 9, '2020-09-28 18:35:52', NULL),
+(10, 'Apple', 10, '2020-09-28 18:35:52', NULL),
+(11, 'Fujitsu', 11, '2020-09-28 18:35:52', NULL),
+(12, 'Outros', 12, '2020-09-28 18:35:52', NULL);
 
 -- --------------------------------------------------------
 
@@ -139,83 +225,89 @@ INSERT INTO `adms_nivacs_pgs` (`id`, `permissao`, `ordem`, `dropdown`, `lib_menu
 (9, 1, 9, 2, 2, 2, 1, 11, '2020-07-30 00:00:00', NULL),
 (10, 1, 10, 2, 2, 2, 1, 12, '2020-07-30 00:00:00', NULL),
 (11, 1, 11, 2, 2, 2, 1, 13, '2020-07-30 21:59:59', NULL),
-(12, 1, 1, 2, 1, 1, 3, 1, '2020-07-31 14:04:15', '2020-09-23 18:08:25'),
-(13, 2, 2, 2, 2, 2, 3, 5, '2020-07-31 14:04:15', '2020-09-23 18:46:00'),
-(14, 2, 3, 1, 1, 2, 3, 6, '2020-07-31 14:04:15', '2020-09-23 18:46:01'),
-(15, 2, 4, 1, 1, 3, 3, 7, '2020-07-31 14:04:15', '2020-09-23 18:46:03'),
-(16, 2, 5, 1, 1, 3, 3, 8, '2020-07-31 14:04:15', '2020-09-23 18:46:03'),
-(17, 2, 6, 2, 1, 4, 3, 4, '2020-07-31 14:04:15', '2020-09-23 18:46:04'),
-(18, 2, 7, 2, 2, 2, 3, 9, '2020-07-31 14:04:15', '2020-09-23 18:46:05'),
-(19, 2, 8, 2, 2, 2, 3, 10, '2020-07-31 14:04:15', '2020-09-23 18:46:06'),
-(20, 2, 9, 2, 2, 2, 3, 11, '2020-07-31 14:04:15', '2020-09-23 18:46:07'),
-(21, 2, 10, 2, 2, 2, 3, 12, '2020-07-31 14:04:15', '2020-09-23 18:46:07'),
+(12, 1, 1, 2, 1, 1, 3, 1, '2020-07-31 14:04:15', '2020-09-24 20:40:09'),
+(13, 1, 2, 2, 2, 2, 3, 5, '2020-07-31 14:04:15', '2020-09-24 20:40:10'),
+(14, 1, 3, 1, 1, 2, 3, 6, '2020-07-31 14:04:15', '2020-09-24 20:26:15'),
+(15, 1, 4, 1, 1, 3, 3, 7, '2020-07-31 14:04:15', '2020-09-24 20:40:13'),
+(16, 1, 5, 1, 1, 3, 3, 8, '2020-07-31 14:04:15', '2020-09-24 20:40:13'),
+(17, 1, 6, 2, 1, 4, 3, 4, '2020-07-31 14:04:15', '2020-09-24 20:40:14'),
+(18, 1, 7, 2, 2, 2, 3, 9, '2020-07-31 14:04:15', '2020-09-24 20:40:16'),
+(19, 1, 8, 2, 2, 2, 3, 10, '2020-07-31 14:04:15', '2020-09-24 20:40:17'),
+(20, 1, 9, 2, 2, 2, 3, 11, '2020-07-31 14:04:15', '2020-09-24 19:36:02'),
+(21, 1, 10, 2, 2, 2, 3, 12, '2020-07-31 14:04:15', '2020-09-24 19:35:57'),
 (22, 1, 11, 2, 2, 2, 3, 13, '2020-07-31 14:04:15', NULL),
 (23, 1, 12, 2, 2, 2, 1, 14, '2020-07-31 00:00:00', NULL),
 (24, 1, 13, 1, 2, 2, 1, 15, '2020-08-06 00:00:00', NULL),
 (25, 1, 14, 1, 2, 3, 1, 16, '2020-08-10 00:00:00', NULL),
 (26, 1, 15, 2, 2, 3, 1, 17, '2020-09-07 00:00:00', NULL),
 (27, 1, 16, 1, 2, 3, 1, 18, '2020-09-07 10:08:45', NULL),
-(28, 2, 1, 1, 2, 3, 2, 18, '2020-09-07 10:08:46', '2020-09-23 18:45:26'),
+(28, 1, 1, 1, 1, 3, 2, 18, '2020-09-07 10:08:46', '2020-09-24 19:38:15'),
 (29, 2, 12, 1, 2, 3, 3, 18, '2020-09-07 10:08:46', '2020-09-23 18:46:08'),
 (30, 1, 17, 1, 2, 3, 1, 19, '2020-09-07 10:20:05', NULL),
-(31, 2, 2, 1, 2, 3, 2, 19, '2020-09-07 10:20:05', '2020-09-23 18:45:21'),
+(31, 1, 2, 1, 1, 3, 2, 19, '2020-09-07 10:20:05', '2020-09-24 19:38:16'),
 (32, 2, 13, 1, 2, 3, 3, 19, '2020-09-07 10:20:05', '2020-09-23 18:46:08'),
 (33, 1, 18, 1, 2, 3, 1, 20, '2020-09-07 14:44:22', NULL),
-(34, 2, 3, 1, 2, 3, 2, 20, '2020-09-07 14:44:22', '2020-09-23 18:45:20'),
+(34, 1, 3, 1, 1, 3, 2, 20, '2020-09-07 14:44:22', '2020-09-24 19:38:17'),
 (35, 2, 14, 1, 2, 3, 3, 20, '2020-09-07 14:44:22', '2020-09-23 18:46:09'),
 (36, 1, 19, 1, 2, 3, 1, 21, '2020-09-07 15:18:56', NULL),
-(37, 2, 4, 1, 2, 3, 2, 21, '2020-09-07 15:18:57', NULL),
+(37, 2, 4, 1, 1, 3, 2, 21, '2020-09-07 15:18:57', NULL),
 (38, 2, 15, 1, 2, 3, 3, 21, '2020-09-07 15:18:57', NULL),
 (39, 1, 20, 1, 2, 3, 1, 22, '2020-09-07 20:36:34', NULL),
-(40, 2, 5, 1, 2, 3, 2, 22, '2020-09-07 20:36:34', NULL),
+(40, 2, 5, 1, 1, 3, 2, 22, '2020-09-07 20:36:34', NULL),
 (41, 2, 16, 1, 2, 3, 3, 22, '2020-09-07 20:36:34', NULL),
 (42, 1, 21, 1, 2, 3, 1, 23, '2020-09-10 21:41:18', NULL),
-(43, 2, 6, 1, 2, 3, 2, 23, '2020-09-10 21:41:18', '2020-09-23 18:45:20'),
-(44, 2, 17, 1, 2, 3, 3, 23, '2020-09-10 21:41:18', '2020-09-23 18:46:10'),
+(43, 1, 6, 1, 1, 3, 2, 23, '2020-09-10 21:41:18', '2020-09-24 19:37:54'),
+(44, 1, 17, 1, 2, 3, 3, 23, '2020-09-10 21:41:18', '2020-09-24 19:35:40'),
 (45, 1, 22, 1, 1, 5, 1, 24, '2020-09-11 15:59:09', NULL),
-(46, 2, 7, 1, 1, 5, 2, 24, '2020-09-11 15:59:09', '2020-09-23 18:45:18'),
+(46, 1, 7, 1, 1, 5, 2, 24, '2020-09-11 15:59:09', '2020-09-24 19:43:07'),
 (47, 2, 18, 1, 1, 5, 3, 24, '2020-09-11 15:59:09', '2020-09-23 18:46:10'),
 (48, 1, 23, 1, 2, 3, 1, 25, '2020-09-11 18:08:45', NULL),
-(49, 2, 8, 1, 2, 3, 2, 25, '2020-09-11 18:08:45', '2020-09-23 18:45:18'),
+(49, 1, 8, 1, 1, 3, 2, 25, '2020-09-11 18:08:45', '2020-09-24 19:43:13'),
 (50, 2, 19, 1, 2, 3, 3, 25, '2020-09-11 18:08:45', '2020-09-23 18:46:32'),
 (51, 1, 24, 1, 2, 3, 1, 26, '2020-09-11 20:33:52', NULL),
-(52, 2, 9, 1, 2, 3, 2, 26, '2020-09-11 20:33:52', '2020-09-23 18:45:17'),
+(52, 1, 9, 1, 1, 3, 2, 26, '2020-09-11 20:33:52', '2020-09-24 19:43:15'),
 (53, 2, 20, 1, 2, 3, 3, 26, '2020-09-11 20:33:52', '2020-09-23 18:46:31'),
 (54, 1, 25, 1, 2, 3, 1, 27, '2020-09-11 20:54:51', NULL),
-(55, 2, 10, 1, 2, 3, 2, 27, '2020-09-11 20:54:52', NULL),
+(55, 2, 10, 1, 1, 3, 2, 27, '2020-09-11 20:54:52', NULL),
 (56, 2, 21, 1, 2, 3, 3, 27, '2020-09-11 20:54:52', NULL),
 (57, 1, 26, 1, 2, 3, 1, 28, '2020-09-15 11:20:25', NULL),
-(58, 2, 11, 1, 2, 3, 2, 28, '2020-09-15 11:20:25', '2020-09-23 18:45:16'),
+(58, 1, 11, 1, 1, 3, 2, 28, '2020-09-15 11:20:25', '2020-09-24 19:43:16'),
 (59, 2, 22, 1, 2, 3, 3, 28, '2020-09-15 11:20:25', '2020-09-23 18:46:28'),
 (63, 1, 28, 1, 2, 3, 1, 29, '2020-09-15 22:06:18', NULL),
-(64, 2, 13, 1, 2, 3, 2, 29, '2020-09-15 22:06:19', NULL),
+(64, 2, 13, 1, 1, 3, 2, 29, '2020-09-15 22:06:19', NULL),
 (65, 2, 24, 1, 2, 3, 3, 29, '2020-09-15 22:06:19', NULL),
 (78, 1, 30, 1, 2, 3, 1, 30, '2020-09-17 18:58:25', NULL),
-(79, 2, 15, 1, 2, 3, 2, 30, '2020-09-17 18:58:25', '2020-09-23 18:45:15'),
-(80, 2, 26, 1, 2, 3, 3, 30, '2020-09-17 18:58:25', '2020-09-23 18:46:27'),
+(79, 1, 15, 1, 1, 3, 2, 30, '2020-09-17 18:58:25', '2020-09-24 19:37:43'),
+(80, 1, 26, 1, 2, 3, 3, 30, '2020-09-17 18:58:25', '2020-09-24 19:35:32'),
 (93, 1, 31, 1, 2, 3, 1, 31, '2020-09-21 19:42:38', NULL),
-(94, 2, 16, 1, 2, 3, 2, 31, '2020-09-21 19:42:38', '2020-09-23 18:45:14'),
+(94, 1, 16, 1, 1, 3, 2, 31, '2020-09-21 19:42:38', '2020-09-24 19:43:31'),
 (95, 2, 27, 1, 2, 3, 3, 31, '2020-09-21 19:42:38', '2020-09-23 18:46:35'),
 (150, 1, 32, 2, 1, 1, 2, 1, '2020-09-21 00:00:00', '2020-09-23 18:45:13'),
 (169, 1, 32, 1, 1, 5, 1, 32, '2020-09-22 14:27:07', NULL),
-(170, 2, 33, 1, 2, 5, 2, 32, '2020-09-22 14:27:08', '2020-09-23 18:45:11'),
+(170, 1, 33, 1, 1, 5, 2, 32, '2020-09-22 14:27:08', '2020-09-24 19:43:30'),
 (171, 2, 28, 1, 2, 5, 3, 32, '2020-09-22 14:27:08', '2020-09-23 18:46:25'),
 (172, 1, 33, 1, 2, 5, 1, 33, '2020-09-22 14:45:20', NULL),
-(173, 2, 34, 1, 2, 5, 2, 33, '2020-09-22 14:45:20', '2020-09-23 18:45:10'),
+(173, 1, 34, 1, 1, 5, 2, 33, '2020-09-22 14:45:20', '2020-09-24 19:43:27'),
 (174, 2, 29, 1, 2, 5, 3, 33, '2020-09-22 14:45:20', '2020-09-23 18:46:24'),
-(175, 1, 34, 1, 2, 3, 1, 34, '2020-09-22 15:56:44', NULL),
-(176, 2, 35, 1, 2, 3, 2, 34, '2020-09-22 15:56:44', '2020-09-23 18:45:09'),
-(177, 2, 30, 1, 2, 3, 3, 34, '2020-09-22 15:56:44', '2020-09-23 18:46:22'),
-(184, 2, 36, 1, 1, 3, 2, 7, '2020-09-22 00:00:00', '2020-09-23 18:45:29'),
+(184, 1, 36, 1, 1, 3, 2, 7, '2020-09-22 00:00:00', '2020-09-24 19:43:25'),
 (185, 2, 36, 2, 1, 4, 2, 4, '2020-09-23 00:00:00', '2020-09-23 18:45:45'),
-(186, 2, 37, 1, 1, 2, 2, 5, '2020-09-23 00:00:00', '2020-09-23 18:45:31'),
-(187, 2, 38, 1, 2, 2, 2, 6, '2020-09-23 00:00:00', '2020-09-23 18:45:41'),
-(188, 2, 39, 1, 2, 2, 2, 8, '2020-09-23 00:00:00', '2020-09-23 18:45:38'),
-(189, 2, 40, 1, 2, 2, 2, 9, '2020-09-23 00:00:00', '2020-09-23 18:45:43'),
-(190, 2, 41, 2, 2, 2, 2, 10, '2020-09-23 00:00:00', '2020-09-23 18:45:36'),
-(191, 2, 42, 2, 2, 2, 2, 11, '0000-00-00 00:00:00', '2020-09-23 18:45:35'),
-(192, 2, 43, 2, 2, 2, 2, 12, '2020-09-23 00:00:00', '2020-09-23 18:45:08'),
-(193, 1, 44, 2, 2, 2, 2, 13, '2020-09-23 00:00:00', NULL);
+(186, 1, 37, 1, 1, 2, 2, 5, '2020-09-23 00:00:00', '2020-09-24 19:43:18'),
+(187, 1, 38, 1, 1, 2, 2, 6, '2020-09-23 00:00:00', '2020-09-24 19:37:32'),
+(188, 1, 39, 1, 1, 2, 2, 8, '2020-09-23 00:00:00', '2020-09-24 19:43:19'),
+(189, 1, 40, 1, 1, 2, 2, 9, '2020-09-23 00:00:00', '2020-09-24 19:37:26'),
+(190, 1, 41, 2, 1, 2, 2, 10, '2020-09-23 00:00:00', '2020-09-24 19:37:22'),
+(191, 1, 42, 2, 1, 2, 2, 11, '0000-00-00 00:00:00', '2020-09-24 19:37:20'),
+(192, 1, 43, 2, 1, 2, 2, 12, '2020-09-23 00:00:00', '2020-09-24 19:37:18'),
+(193, 1, 44, 2, 1, 2, 2, 13, '2020-09-23 00:00:00', NULL),
+(203, 1, 34, 1, 2, 3, 1, 34, '2020-09-24 13:52:27', NULL),
+(204, 2, 45, 1, 1, 3, 2, 34, '2020-09-24 13:52:27', NULL),
+(205, 2, 30, 1, 2, 3, 3, 34, '2020-09-24 13:52:27', NULL),
+(206, 1, 35, 1, 2, 3, 1, 6, '2020-09-24 14:17:31', NULL),
+(207, 1, 46, 1, 1, 3, 2, 6, '2020-09-24 14:17:31', '2020-09-24 19:37:11'),
+(208, 1, 31, 1, 2, 3, 3, 6, '2020-09-24 14:17:31', '2020-09-24 19:35:16'),
+(209, 1, 36, 1, 2, 3, 1, 35, '2020-09-24 18:48:57', NULL),
+(210, 1, 47, 1, 1, 3, 2, 35, '2020-09-24 18:48:57', '2020-09-24 19:43:21'),
+(211, 2, 32, 1, 2, 3, 3, 35, '2020-09-24 18:48:57', NULL);
 
 -- --------------------------------------------------------
 
@@ -302,41 +394,8 @@ INSERT INTO `adms_paginas` (`id`, `nome_pagina`, `endereco`, `obs`, `keywords`, 
 (31, 'Processa editar unidade', 'processa/proc_edit_unidade', 'Processa editar unidade', 'Processa editar unidade', 'Processa editar unidade', 'Paulo Albuquerque', 2, '', 0, 3, '1', 4, 1, '2020-09-21 19:42:38', NULL),
 (32, 'Listar os Computadores', 'listar/list_computer', 'Listar Computadores ', 'Listar Computadores', 'Listar Computadores', 'Paulo Albuquerque', 2, 'fas fa-laptop-medical', 0, 2, '1', 4, 1, '2020-09-22 14:27:07', '2020-09-22 14:42:09'),
 (33, 'Cadastrar Computadores', 'cadastrar/cad_computer', 'Cadastrar Computadores', 'Cadastrar Computadores', 'Cadastrar Computadores', 'Paulo Albuquerque', 2, '', 0, 2, '1', 4, 1, '2020-09-22 14:45:20', NULL),
-(34, 'processar cadastrar computadores', 'processa/proc_cad_computer', 'Processar cadastrar computadores', 'processar cadastrar computadores', 'processar cadastrar computadores', 'Paulo Albuquerque', 2, '', 0, 2, '1', 4, 1, '2020-09-22 15:56:44', '2020-09-22 22:34:59');
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `adms_pc_cad`
---
-
-CREATE TABLE `adms_pc_cad` (
-  `id` int(11) NOT NULL,
-  `localizacao` varchar(220) NOT NULL,
-  `fabricante` varchar(220) NOT NULL,
-  `contrato` varchar(220) NOT NULL,
-  `numero_serie_cpu` int(11) NOT NULL,
-  `numero_serie_monitor` int(11) NOT NULL,
-  `numero_serie_mouse` int(11) DEFAULT NULL,
-  `numero_serie_teclado` int(11) DEFAULT NULL,
-  `numero_ti_cpu` int(11) DEFAULT NULL,
-  `numero_ti_monitor` int(11) DEFAULT NULL,
-  `descricoes` text DEFAULT NULL,
-  `adms_unidade_id` int(11) NOT NULL,
-  `created` datetime NOT NULL,
-  `modified` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Extraindo dados da tabela `adms_pc_cad`
---
-
-INSERT INTO `adms_pc_cad` (`id`, `localizacao`, `fabricante`, `contrato`, `numero_serie_cpu`, `numero_serie_monitor`, `numero_serie_mouse`, `numero_serie_teclado`, `numero_ti_cpu`, `numero_ti_monitor`, `descricoes`, `adms_unidade_id`, `created`, `modified`) VALUES
-(1, 'Call Center', 'Dell', 'Alugada', 534545, 585896, 545558888, 545558888, 545558888, 545558888, NULL, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(2, 'Call Center', 'Dell', 'Alugada', 561655, 15651, 651, 6651, 651651, 651651, NULL, 3, '2020-09-22 00:00:00', '0000-00-00 00:00:00'),
-(3, 'Administração', 'HP', 'Alugada', 654162, 654162, 654162, 654162, 654162, 654162, 'mouse quebrado', 2, '2020-09-22 00:00:00', '0000-00-00 00:00:00'),
-(4, 'Recepção', 'Dell', 'Alugada', 952958, 58959, 950, 5995, 95952, 952, 'maquina ok', 1, '2020-09-22 00:00:00', NULL),
-(5, 'SUVIS', 'Positivo', 'Patrimônio', 123456, 654321, 123456789, 987654321, 132545, 135462, 'Máquina com falha na placa de rede', 36, '2020-09-22 00:00:00', NULL);
+(34, 'Processa cad Computador', 'processa/proc_cad_computer', 'Processa cad Computador', 'Processa cad Computador', 'Processa cad Computador', 'Paulo Albuquerque', 2, '', 33, 2, '1', 4, 1, '2020-09-24 13:52:27', NULL),
+(35, 'Liberar menu', 'processa/proc_lib_menu', 'Pagina para liberar item de menu ', 'Liberar menu', 'Liberar menu', 'Paulo Albuquerque', 2, '', 0, 3, '1', 4, 1, '2020-09-24 18:48:57', '2020-09-24 20:25:58');
 
 -- --------------------------------------------------------
 
@@ -362,6 +421,63 @@ INSERT INTO `adms_robots` (`id`, `nome`, `tipo`, `created`, `modified`) VALUES
 (3, 'Index a página mas não siga os links', 'index,nofollow', '2020-07-22 00:00:00', NULL),
 (4, 'Não indexe a pagina e nem seguir os links', 'noindex, nofollow', '2020-07-22 00:00:00', NULL),
 (5, 'Não exibir a versão em cahce da página', 'noarchive', '2020-07-22 00:00:00', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `adms_setor`
+--
+
+CREATE TABLE `adms_setor` (
+  `id` int(11) NOT NULL,
+  `localizacao` varchar(120) NOT NULL,
+  `ordem` int(11) NOT NULL,
+  `created` datetime DEFAULT NULL,
+  `modified` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `adms_setor`
+--
+
+INSERT INTO `adms_setor` (`id`, `localizacao`, `ordem`, `created`, `modified`) VALUES
+(1, 'Administração', 1, '2020-09-28 18:35:52', '0000-00-00 00:00:00'),
+(2, 'Call Center', 2, '2020-09-28 18:35:52', '0000-00-00 00:00:00'),
+(3, 'Consultório Médico', 3, '2020-09-28 18:35:52', '0000-00-00 00:00:00'),
+(4, 'Consultório Odontologico', 4, '2020-09-28 18:35:52', '0000-00-00 00:00:00'),
+(5, 'Data Center', 5, '2020-09-28 18:35:52', '0000-00-00 00:00:00'),
+(6, 'Farmácia', 6, '2020-09-28 18:35:52', '0000-00-00 00:00:00'),
+(7, 'Recepção', 7, '2020-09-28 18:35:52', '0000-00-00 00:00:00'),
+(8, 'Sala de Acolhimento', 8, '2020-09-28 18:35:52', '0000-00-00 00:00:00'),
+(9, 'Sala de Almoxarifado', 9, '2020-09-28 18:35:52', '0000-00-00 00:00:00'),
+(10, 'Sala de Coleta', 10, '2020-09-28 18:35:52', '0000-00-00 00:00:00'),
+(11, 'Sala de Curativo', 11, '2020-09-28 18:35:52', '0000-00-00 00:00:00'),
+(12, 'Sala de Demanda', 12, '2020-09-28 18:35:52', '0000-00-00 00:00:00'),
+(13, 'Sala de Enfermagem', 13, '2020-09-28 18:35:52', '0000-00-00 00:00:00'),
+(14, 'Sala de Estudos', 14, '2020-09-28 18:35:52', '0000-00-00 00:00:00'),
+(15, 'Sala de Farmácia Satélite', 15, '2020-09-28 18:35:52', '0000-00-00 00:00:00'),
+(16, 'Sala de Faturamento', 16, '2020-09-28 18:35:52', '0000-00-00 00:00:00'),
+(17, 'Sala de Gerênci', 17, '2020-09-28 18:35:52', '0000-00-00 00:00:00'),
+(18, 'Sala de Instalação', 18, '2020-09-28 18:35:52', '0000-00-00 00:00:00'),
+(19, 'Sala de Medicação', 19, '2020-09-28 18:35:52', '0000-00-00 00:00:00'),
+(20, 'Sala de Observação Adulto', 20, '2020-09-28 18:35:52', '0000-00-00 00:00:00'),
+(21, 'Sala de Observação Infantil', 21, '2020-09-28 18:35:52', '0000-00-00 00:00:00'),
+(22, 'Sala de Ortopedia', 22, '2020-09-28 18:35:52', '0000-00-00 00:00:00'),
+(23, 'Sala de Papanicolau', 23, '2020-09-28 18:35:52', '0000-00-00 00:00:00'),
+(24, 'Sala de Psiquiatria', 24, '2020-09-28 18:35:52', '0000-00-00 00:00:00'),
+(25, 'Sala de Raio X', 25, '2020-09-28 18:35:52', '0000-00-00 00:00:00'),
+(26, 'Sala de Regulação', 26, '2020-09-28 18:35:52', '0000-00-00 00:00:00'),
+(27, 'Sala Saúde da Mulher', 27, '2020-09-28 18:35:52', '0000-00-00 00:00:00'),
+(28, 'Sala de Triagem', 28, '2020-09-28 18:35:52', '0000-00-00 00:00:00'),
+(29, 'Sala de Vacina', 29, '2020-09-28 18:35:52', '0000-00-00 00:00:00'),
+(30, 'Sala de Vigilância', 30, '2020-09-28 18:35:52', '0000-00-00 00:00:00'),
+(31, 'Sala dos ACSs', 31, '2020-09-28 18:35:52', '0000-00-00 00:00:00'),
+(32, 'Sala Multi Uso', 32, '2020-09-28 18:35:52', '0000-00-00 00:00:00'),
+(33, 'SAME', 33, '2020-09-28 18:35:52', '0000-00-00 00:00:00'),
+(34, 'Serviço Social', 34, '2020-09-28 18:35:52', '0000-00-00 00:00:00'),
+(35, 'Sinais Vitais', 35, '2020-09-28 18:35:52', '0000-00-00 00:00:00'),
+(36, 'SUVIS', 36, '2020-09-28 18:35:52', '0000-00-00 00:00:00'),
+(37, 'Outros', 37, '2020-09-28 18:35:52', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -565,9 +681,27 @@ INSERT INTO `adms_usuarios` (`id`, `nome`, `apelido`, `email`, `usuario`, `senha
 --
 
 --
+-- Índices para tabela `adms_contrato`
+--
+ALTER TABLE `adms_contrato`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Índices para tabela `adms_cors`
 --
 ALTER TABLE `adms_cors`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices para tabela `adms_equipamentos`
+--
+ALTER TABLE `adms_equipamentos`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices para tabela `adms_fabricante`
+--
+ALTER TABLE `adms_fabricante`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -601,15 +735,15 @@ ALTER TABLE `adms_paginas`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `adms_pc_cad`
---
-ALTER TABLE `adms_pc_cad`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Índices para tabela `adms_robots`
 --
 ALTER TABLE `adms_robots`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices para tabela `adms_setor`
+--
+ALTER TABLE `adms_setor`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -653,10 +787,28 @@ ALTER TABLE `adms_usuarios`
 --
 
 --
+-- AUTO_INCREMENT de tabela `adms_contrato`
+--
+ALTER TABLE `adms_contrato`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT de tabela `adms_cors`
 --
 ALTER TABLE `adms_cors`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT de tabela `adms_equipamentos`
+--
+ALTER TABLE `adms_equipamentos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT de tabela `adms_fabricante`
+--
+ALTER TABLE `adms_fabricante`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de tabela `adms_grps_pgs`
@@ -674,7 +826,7 @@ ALTER TABLE `adms_menus`
 -- AUTO_INCREMENT de tabela `adms_nivacs_pgs`
 --
 ALTER TABLE `adms_nivacs_pgs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=194;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=212;
 
 --
 -- AUTO_INCREMENT de tabela `adms_niveis_acessos`
@@ -686,19 +838,19 @@ ALTER TABLE `adms_niveis_acessos`
 -- AUTO_INCREMENT de tabela `adms_paginas`
 --
 ALTER TABLE `adms_paginas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
-
---
--- AUTO_INCREMENT de tabela `adms_pc_cad`
---
-ALTER TABLE `adms_pc_cad`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT de tabela `adms_robots`
 --
 ALTER TABLE `adms_robots`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT de tabela `adms_setor`
+--
+ALTER TABLE `adms_setor`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT de tabela `adms_sits`
@@ -728,7 +880,7 @@ ALTER TABLE `adms_tps_pgs`
 -- AUTO_INCREMENT de tabela `adms_unidades`
 --
 ALTER TABLE `adms_unidades`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- AUTO_INCREMENT de tabela `adms_usuarios`
