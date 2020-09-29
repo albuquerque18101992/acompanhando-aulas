@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 29-Set-2020 às 03:22
+-- Tempo de geração: 29-Set-2020 às 18:41
 -- Versão do servidor: 10.4.11-MariaDB
 -- versão do PHP: 7.4.1
 
@@ -102,7 +102,7 @@ CREATE TABLE `adms_equipamentos` (
 --
 
 INSERT INTO `adms_equipamentos` (`id`, `numero_serie_cpu`, `numero_serie_monitor`, `numero_serie_mouse`, `numero_serie_teclado`, `numero_ti_cpu`, `numero_ti_monitor`, `adms_setores_id`, `adms_fabricantes_id`, `adms_contratos_id`, `adms_unidade_id`, `inform_computer`, `created`, `modified`) VALUES
-(1, 123456, 123456, 123456, 123456, 123456, 123456, 20, 4, 2, 13, 'ok ok', '2020-09-28 00:00:00', NULL);
+(1, 214813, 412443, NULL, NULL, 2294, 2293, 8, 1, 1, 46, NULL, '2020-09-29 00:00:00', NULL);
 
 -- --------------------------------------------------------
 
@@ -214,23 +214,19 @@ CREATE TABLE `adms_nivacs_pgs` (
 --
 
 INSERT INTO `adms_nivacs_pgs` (`id`, `permissao`, `ordem`, `dropdown`, `lib_menu`, `adms_menu_id`, `adms_niveis_acesso_id`, `adms_pagina_id`, `created`, `modified`) VALUES
-(1, 1, 1, 2, 1, 1, 1, 1, '2020-07-24 00:00:00', NULL),
 (2, 1, 2, 1, 1, 2, 1, 5, '2020-07-25 00:00:00', NULL),
 (3, 1, 3, 1, 1, 2, 1, 6, '2020-07-25 00:00:00', NULL),
 (4, 1, 4, 1, 1, 3, 1, 7, '2020-07-27 00:00:00', NULL),
 (5, 1, 5, 1, 1, 3, 1, 8, '2020-07-27 00:00:00', NULL),
-(6, 2, 6, 2, 1, 4, 1, 4, '2020-07-27 00:00:00', NULL),
 (7, 1, 7, 2, 2, 2, 1, 9, '2020-07-30 00:00:00', NULL),
 (8, 1, 8, 2, 2, 2, 1, 10, '2020-07-30 00:00:00', NULL),
 (9, 1, 9, 2, 2, 2, 1, 11, '2020-07-30 00:00:00', NULL),
 (10, 1, 10, 2, 2, 2, 1, 12, '2020-07-30 00:00:00', NULL),
 (11, 1, 11, 2, 2, 2, 1, 13, '2020-07-30 21:59:59', NULL),
-(12, 1, 1, 2, 1, 1, 3, 1, '2020-07-31 14:04:15', '2020-09-24 20:40:09'),
 (13, 1, 2, 2, 2, 2, 3, 5, '2020-07-31 14:04:15', '2020-09-24 20:40:10'),
 (14, 1, 3, 1, 1, 2, 3, 6, '2020-07-31 14:04:15', '2020-09-24 20:26:15'),
 (15, 1, 4, 1, 1, 3, 3, 7, '2020-07-31 14:04:15', '2020-09-24 20:40:13'),
 (16, 1, 5, 1, 1, 3, 3, 8, '2020-07-31 14:04:15', '2020-09-24 20:40:13'),
-(17, 1, 6, 2, 1, 4, 3, 4, '2020-07-31 14:04:15', '2020-09-24 20:40:14'),
 (18, 1, 7, 2, 2, 2, 3, 9, '2020-07-31 14:04:15', '2020-09-24 20:40:16'),
 (19, 1, 8, 2, 2, 2, 3, 10, '2020-07-31 14:04:15', '2020-09-24 20:40:17'),
 (20, 1, 9, 2, 2, 2, 3, 11, '2020-07-31 14:04:15', '2020-09-24 19:36:02'),
@@ -282,7 +278,6 @@ INSERT INTO `adms_nivacs_pgs` (`id`, `permissao`, `ordem`, `dropdown`, `lib_menu
 (93, 1, 31, 1, 2, 3, 1, 31, '2020-09-21 19:42:38', NULL),
 (94, 1, 16, 1, 1, 3, 2, 31, '2020-09-21 19:42:38', '2020-09-24 19:43:31'),
 (95, 2, 27, 1, 2, 3, 3, 31, '2020-09-21 19:42:38', '2020-09-23 18:46:35'),
-(150, 1, 32, 2, 1, 1, 2, 1, '2020-09-21 00:00:00', '2020-09-23 18:45:13'),
 (169, 1, 32, 1, 1, 5, 1, 32, '2020-09-22 14:27:07', NULL),
 (170, 1, 33, 1, 1, 5, 2, 32, '2020-09-22 14:27:08', '2020-09-24 19:43:30'),
 (171, 2, 28, 1, 2, 5, 3, 32, '2020-09-22 14:27:08', '2020-09-23 18:46:25'),
@@ -290,7 +285,6 @@ INSERT INTO `adms_nivacs_pgs` (`id`, `permissao`, `ordem`, `dropdown`, `lib_menu
 (173, 1, 34, 1, 1, 5, 2, 33, '2020-09-22 14:45:20', '2020-09-24 19:43:27'),
 (174, 2, 29, 1, 2, 5, 3, 33, '2020-09-22 14:45:20', '2020-09-23 18:46:24'),
 (184, 1, 36, 1, 1, 3, 2, 7, '2020-09-22 00:00:00', '2020-09-24 19:43:25'),
-(185, 2, 36, 2, 1, 4, 2, 4, '2020-09-23 00:00:00', '2020-09-23 18:45:45'),
 (186, 1, 37, 1, 1, 2, 2, 5, '2020-09-23 00:00:00', '2020-09-24 19:43:18'),
 (187, 1, 38, 1, 1, 2, 2, 6, '2020-09-23 00:00:00', '2020-09-24 19:37:32'),
 (188, 1, 39, 1, 1, 2, 2, 8, '2020-09-23 00:00:00', '2020-09-24 19:43:19'),
@@ -307,7 +301,13 @@ INSERT INTO `adms_nivacs_pgs` (`id`, `permissao`, `ordem`, `dropdown`, `lib_menu
 (208, 1, 31, 1, 2, 3, 3, 6, '2020-09-24 14:17:31', '2020-09-24 19:35:16'),
 (209, 1, 36, 1, 2, 3, 1, 35, '2020-09-24 18:48:57', NULL),
 (210, 1, 47, 1, 1, 3, 2, 35, '2020-09-24 18:48:57', '2020-09-24 19:43:21'),
-(211, 2, 32, 1, 2, 3, 3, 35, '2020-09-24 18:48:57', NULL);
+(211, 2, 32, 1, 2, 3, 3, 35, '2020-09-24 18:48:57', NULL),
+(212, 1, 37, 1, 2, 3, 1, 36, '2020-09-29 11:23:49', NULL),
+(213, 2, 48, 1, 2, 3, 2, 36, '2020-09-29 11:23:49', NULL),
+(214, 2, 33, 1, 2, 3, 3, 36, '2020-09-29 11:23:49', NULL),
+(215, 1, 38, 1, 2, 3, 1, 37, '2020-09-29 11:40:47', NULL),
+(216, 2, 49, 1, 2, 3, 2, 37, '2020-09-29 11:40:47', NULL),
+(217, 2, 34, 1, 2, 3, 3, 37, '2020-09-29 11:40:47', NULL);
 
 -- --------------------------------------------------------
 
@@ -394,8 +394,10 @@ INSERT INTO `adms_paginas` (`id`, `nome_pagina`, `endereco`, `obs`, `keywords`, 
 (31, 'Processa editar unidade', 'processa/proc_edit_unidade', 'Processa editar unidade', 'Processa editar unidade', 'Processa editar unidade', 'Paulo Albuquerque', 2, '', 0, 3, '1', 4, 1, '2020-09-21 19:42:38', NULL),
 (32, 'Listar os Computadores', 'listar/list_computer', 'Listar Computadores ', 'Listar Computadores', 'Listar Computadores', 'Paulo Albuquerque', 2, 'fas fa-laptop-medical', 0, 2, '1', 4, 1, '2020-09-22 14:27:07', '2020-09-22 14:42:09'),
 (33, 'Cadastrar Computadores', 'cadastrar/cad_computer', 'Cadastrar Computadores', 'Cadastrar Computadores', 'Cadastrar Computadores', 'Paulo Albuquerque', 2, '', 0, 2, '1', 4, 1, '2020-09-22 14:45:20', NULL),
-(34, 'Processa cad Computador', 'processa/proc_cad_computer', 'Processa cad Computador', 'Processa cad Computador', 'Processa cad Computador', 'Paulo Albuquerque', 2, '', 33, 2, '1', 4, 1, '2020-09-24 13:52:27', NULL),
-(35, 'Liberar menu', 'processa/proc_lib_menu', 'Pagina para liberar item de menu ', 'Liberar menu', 'Liberar menu', 'Paulo Albuquerque', 2, '', 0, 3, '1', 4, 1, '2020-09-24 18:48:57', '2020-09-24 20:25:58');
+(34, 'Processa cad Computador', 'processa/proc_cad_computer', 'Processa cadadastrar Computadores', 'Processa cad Computador', 'Processa cad Computador', 'Paulo Albuquerque', 2, '', 33, 2, '1', 4, 1, '2020-09-24 13:52:27', '2020-09-29 10:50:19'),
+(35, 'Liberar menu', 'processa/proc_lib_menu', 'Pagina para liberar item de menu ', 'Liberar menu', 'Liberar menu', 'Paulo Albuquerque', 2, '', 0, 3, '1', 4, 1, '2020-09-24 18:48:57', '2020-09-24 20:25:58'),
+(36, 'Editar equipamentos', 'editar/edit_computer', 'Editar equipamentos já registrados', 'Editar computadores', 'Editar computadores', 'Paulo Albuquerque', 2, '', 0, 3, '1', 4, 1, '2020-09-29 11:23:49', NULL),
+(37, 'Apagar equipamento', 'processa/apagar_computer', '', 'Apagar equipamento', 'Apagar equipamento', 'Paulo Albuquerque', 2, '', 0, 4, '1', 4, 1, '2020-09-29 11:40:47', NULL);
 
 -- --------------------------------------------------------
 
@@ -601,7 +603,7 @@ CREATE TABLE `adms_unidades` (
 
 INSERT INTO `adms_unidades` (`id`, `nome_da_unidade`, `nome_gerente`, `cnes`, `endereco`, `cnpj`, `razao_social`, `ramal_voip`, `funcionamento`, `telefone`, `email`, `adms_tps_pg_id`, `created`, `modified`) VALUES
 (1, 'COORDENAÇÃO', 'Carlos Uehara', 1, 'Avenida Nossa Senhora do Sabará, 4029 - Cidade Ademar CEP - 04447-021', '60.922.168/0007-71', 'ASSOCIAÇÃO  CONGREGAÇÃO DE SANTA CATARINA', 0, '08:00 ás 17:00', '', '', '1', '2020-09-11 00:00:00', '2020-09-22 14:21:05'),
-(2, 'APD Santo Amaro', 'Renata Takebayachi', 2, 'Av. Miguel Yunes, 491 - CEP: 04444-000', '60.922.168/0026-34', 'ASSOCIAÇÃO  CONGREGAÇÃO DE SANTA CATARINA', 0, '08:00 ás 17:00', '', '', '1', '2020-09-11 00:00:00', '2020-09-22 13:16:59'),
+(2, 'APD Santo Amaro', 'Renata Takebayachi', 2, 'Av. Miguel Yunes, 491 - CEP: 04444-000', '60.922.168/0026-34', 'ASSOCIAÇÃO  CONGREGAÇÃO DE SANTA CATARINA', 0, '08:00 ás 17:00', '', '', '', '2020-09-29 00:00:00', NULL),
 (3, 'AD - ASSISTÊNCIA DOMICILIAR', 'Nivio', 6703607, 'Rua Dr. Nestor Sampaio Penteado, 181-189 - Vila Império - CEP:04459-110 ', '60.922.168/0026-34', 'ASSOCIAÇÃO  CONGREGAÇÃO DE SANTA CATARINA', 1034, '08:00 ás 17:00', '5622-1988 / 5612-6901', 'assistenciadomiciliar@ossantacatarina.org.br\r\n\r\nnivio.bertolazzi@ossantacatarina.org.br', '1', '2020-09-11 00:00:00', NULL),
 (4, 'AMA ESPECIALIDADE VILA CONSTÂNCIA', 'Zaira', 6415415, 'Rua Hermenegildo Martini Nº 21.500 / 100 S/N - CEP: 04438-280', '60.922.168/0026-34', 'ASSOCIAÇÃO  CONGREGAÇÃO DE SANTA CATARINA', 1018, '08:00 ás 17:00', '', '', '1', '2020-09-11 20:26:45', '2020-09-21 20:25:25'),
 (5, 'AMA/UBS INT. JD. MIRIAM I', 'Dilene', 2787601, 'AV. SANTO AFONSO, 419 – CEP: 04426-000', '60.922.168/0001-86 ', 'ASSOCIAÇÃO  CONGREGAÇÃO DE SANTA CATARINA', 1022, '08:00 ás 17:00', '', '', '1', NULL, NULL),
@@ -826,7 +828,7 @@ ALTER TABLE `adms_menus`
 -- AUTO_INCREMENT de tabela `adms_nivacs_pgs`
 --
 ALTER TABLE `adms_nivacs_pgs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=212;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=221;
 
 --
 -- AUTO_INCREMENT de tabela `adms_niveis_acessos`
@@ -838,7 +840,7 @@ ALTER TABLE `adms_niveis_acessos`
 -- AUTO_INCREMENT de tabela `adms_paginas`
 --
 ALTER TABLE `adms_paginas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT de tabela `adms_robots`
@@ -880,7 +882,7 @@ ALTER TABLE `adms_tps_pgs`
 -- AUTO_INCREMENT de tabela `adms_unidades`
 --
 ALTER TABLE `adms_unidades`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT de tabela `adms_usuarios`

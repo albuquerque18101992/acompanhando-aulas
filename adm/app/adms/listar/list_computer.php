@@ -50,9 +50,10 @@ include_once 'app/adms/include/head.php';
                 //Calcular o inicio visualização
                 $inicio = ($qnt_result_pg * $pagina) - $qnt_result_pg;
                 if ($_SESSION['adms_niveis_acesso_id'] == 1) {
-                    $resul_pg = "SELECT nivelpagina.*, unidade.nome_da_unidade
+                    $resul_pg = "SELECT nivelpagina.*, unidade.nome_da_unidade, lugarpc.localizacao
                             FROM adms_equipamentos nivelpagina
-                            INNER JOIN adms_unidades unidade ON unidade.id=nivelpagina.adms_unidade_id";
+                            INNER JOIN adms_unidades unidade ON unidade.id=nivelpagina.adms_unidade_id
+                            INNER JOIN adms_setor lugarpc ON lugarpc.id=nivelpagina.adms_setores_id";
                 } else {
                     $resul_pg = "SELECT * FROM adms_equipamentos";
                 }
@@ -63,7 +64,6 @@ include_once 'app/adms/include/head.php';
                         <table class="table table-hover table-hover table-bordered">
                             <thead>
                                 <tr>
-                                    <th>ID</th>
                                     <th>Localização</th>
                                     <th class="d-none d-sm-table-cell">Computador</th>
                                     <th class="d-none d-sm-table-cell">Monitor</th>
@@ -77,8 +77,7 @@ include_once 'app/adms/include/head.php';
                                 while ($row_pg = mysqli_fetch_assoc($resultado_pg)) {
                                     ?>
                                     <tr>
-                                        <th><?php echo $row_pg['id']; ?></th>
-                                        <td><?php echo $row_pg['adms_setores_id']; ?></td>
+                                        <td><?php echo $row_pg['localizacao']; ?></td>
                                         <td class="d-none d-sm-table-cell"><?php echo $row_pg['numero_serie_cpu']; ?></td>
                                         <td class="d-none d-sm-table-cell"><?php echo $row_pg['numero_serie_monitor']; ?></td>
                                         <td class="d-none d-sm-table-cell"><?php echo $row_pg['nome_da_unidade']; ?></td>
@@ -89,13 +88,13 @@ include_once 'app/adms/include/head.php';
                                                 if ($btn_vis) {
                                                     echo "<a href='" . pg . "/visualizar/vis_unidade?id=" . $row_pg['id'] . "' class='btn btn-outline-primary btn-sm'>Visualizar</a> ";
                                                 }
-                                                $btn_edit = carregar_btn('editar/edit_unidade', $conn);
+                                                $btn_edit = carregar_btn('editar/edit_computer', $conn);
                                                 if ($btn_edit) {
-                                                    echo "<a href='" . pg . "/editar/edit_unidade?id=" . $row_pg['id'] . "' class='btn btn-outline-warning btn-sm'>Editar </a> ";
+                                                    echo "<a href='" . pg . "/editar/edit_computer?id=" . $row_pg['id'] . "' class='btn btn-outline-warning btn-sm'>Editar </a> ";
                                                 }
                                                 $btn_apagar = carregar_btn('processa/apagar_unidade', $conn);
                                                 if ($btn_apagar) {
-                                                    echo "<a href='" . pg . "/processa/apagar_unidade?id=" . $row_pg['id'] . "' class='btn btn-outline-danger btn-sm' data-confirm='VOCÊ TEM CERTEZA QUE QUER EXCLUÍR O ITEM SELECIONADO?'>Apagar</a> ";
+                                                    echo "<a href='" . pg . "/processa/apagar_computer?id=" . $row_pg['id'] . "' class='btn btn-outline-danger btn-sm' data-confirm='VOCÊ TEM CERTEZA QUE QUER EXCLUÍR O ITEM SELECIONADO?'>Apagar</a> ";
                                                 }
                                                 ?>
                                             </span>
@@ -109,10 +108,10 @@ include_once 'app/adms/include/head.php';
                                                         echo "<a class='dropdown-item' href='" . pg . "/visualizar/vis_unidade?id=" . $row_pg['id'] . "'>Visualizar</a> ";
                                                     }
                                                     if ($btn_edit) {
-                                                        echo "<a class='dropdown-item' href='" . pg . "/editar/edit_unidades?id=" . $row_pg['id'] . "'>Editar</a> ";
+                                                        echo "<a class='dropdown-item' href='" . pg . "/editar/edit_computer?id=" . $row_pg['id'] . "'>Editar</a> ";
                                                     }
                                                     if ($btn_apagar) {
-                                                        echo "<a class='dropdown-item' href='" . pg . "/processa/apagar_unidade?id=" . $row_pg['id'] . "' data-confirm='VOCÊ TEM CERTEZA QUE QUER EXCLUÍR O ITEM SELECIONADO?'>Apagar</a> ";
+                                                        echo "<a class='dropdown-item' href='" . pg . "/processa/apagar_computer?id=" . $row_pg['id'] . "' data-confirm='VOCÊ TEM CERTEZA QUE QUER EXCLUÍR O ITEM SELECIONADO?'>Apagar</a> ";
                                                     }
                                                     ?>
                                                 </div>

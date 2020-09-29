@@ -120,7 +120,7 @@ include_once 'app/adms/include/head.php';
                             </tbody>
                         </table>
                         <?php
-                        $result_pg = "SELECT COUNT(id) AS num_result FROM adms_unidade";
+                        $result_pg = "SELECT COUNT(id) AS num_result FROM adms_unidades";
                         $resultado_pg = mysqli_query($conn, $result_pg);
                         $row_pg = mysqli_fetch_assoc($resultado_pg);
                         //echo $row_pg['num_result'];
