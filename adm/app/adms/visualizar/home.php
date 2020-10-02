@@ -43,10 +43,10 @@ include_once 'app/adms/include/head.php';
                     <div class="col-lg-3 col-sm-6">
                         <div class="card bg-success text-white">
                             <div class="card-body">
-                                <i class="fas fa-file-medical fa-3x"></i>
-                                <h6 class="card-title">Documentos PHP</h6>
+                                <i class="fas fa-database fa-3x"></i>
+                                <h6 class="card-title">Máquinas Registradas</h6>
                                 <?php
-                                $result_pgs = "SELECT * FROM adms_paginas";
+                                $result_pgs = "SELECT * FROM adms_equipamentos";
                                 $resultado_pgs = mysqli_query($conn, $result_pgs);
                                 $total_pgs = mysqli_num_rows($resultado_pgs)
                                 ?>
@@ -84,6 +84,7 @@ include_once 'app/adms/include/head.php';
                     </div>
                 </div>
             </div>
+            <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1gCH2DOWw5mnlq0ra57KmINX_q5uF-lgB" width="100%" style="height:80vh;"></iframe>
         </div>
         <?php
         include_once 'app/adms/include/rodape_lib.php';

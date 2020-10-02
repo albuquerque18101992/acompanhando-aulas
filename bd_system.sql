@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 29-Set-2020 às 18:41
+-- Tempo de geração: 02-Out-2020 às 12:12
 -- Versão do servidor: 10.4.11-MariaDB
 -- versão do PHP: 7.4.1
 
@@ -82,12 +82,12 @@ INSERT INTO `adms_cors` (`id`, `nome`, `cor`, `created`, `modified`) VALUES
 
 CREATE TABLE `adms_equipamentos` (
   `id` int(11) NOT NULL,
-  `numero_serie_cpu` int(11) NOT NULL,
-  `numero_serie_monitor` int(11) NOT NULL,
+  `numero_serie_cpu` varchar(70) NOT NULL,
+  `numero_serie_monitor` varchar(70) NOT NULL,
   `numero_serie_mouse` int(11) DEFAULT NULL,
   `numero_serie_teclado` int(11) DEFAULT NULL,
-  `numero_ti_cpu` int(11) NOT NULL,
-  `numero_ti_monitor` int(11) NOT NULL,
+  `numero_ti_cpu` varchar(70) NOT NULL,
+  `numero_ti_monitor` varchar(70) NOT NULL,
   `adms_setores_id` int(11) NOT NULL,
   `adms_fabricantes_id` int(11) NOT NULL,
   `adms_contratos_id` int(11) NOT NULL,
@@ -102,7 +102,36 @@ CREATE TABLE `adms_equipamentos` (
 --
 
 INSERT INTO `adms_equipamentos` (`id`, `numero_serie_cpu`, `numero_serie_monitor`, `numero_serie_mouse`, `numero_serie_teclado`, `numero_ti_cpu`, `numero_ti_monitor`, `adms_setores_id`, `adms_fabricantes_id`, `adms_contratos_id`, `adms_unidade_id`, `inform_computer`, `created`, `modified`) VALUES
-(1, 214813, 412443, NULL, NULL, 2294, 2293, 8, 1, 1, 46, NULL, '2020-09-29 00:00:00', NULL);
+(1, '214813', '412443', NULL, NULL, '2294', '2293', 8, 1, 1, 4, NULL, '2020-09-29 00:00:00', NULL),
+(2, '214893', '413432', NULL, NULL, '2311', '2312', 3, 1, 1, 4, NULL, '2020-09-29 00:00:00', NULL),
+(3, '214809', '413483', NULL, NULL, '2300', '2299', 3, 1, 1, 4, NULL, '2020-09-29 00:00:00', NULL),
+(4, '214882', '411297', NULL, NULL, '2292', '2291', 3, 1, 1, 4, NULL, '2020-09-29 00:00:00', NULL),
+(5, '217927', '416594', NULL, NULL, '2820', '2821', 38, 1, 2, 4, NULL, '2020-09-29 00:00:00', NULL),
+(6, 'EHQ2AIA000596', 'EHQ2AIA000596', NULL, NULL, 'EHQ2AIA000596', 'EHQ2AIA000596', 38, 1, 2, 4, 'ALL-IN-ONE', '2020-09-29 00:00:00', NULL),
+(7, '214803', '413259', NULL, NULL, '2282', '2281', 3, 1, 1, 4, NULL, '2020-09-29 18:00:00', NULL),
+(8, '214849', '413024', NULL, NULL, '2288', '2287', 3, 1, 1, 4, NULL, '2020-09-29 18:59:02', NULL),
+(9, '214851', '412465', NULL, NULL, '2302', '2301', 13, 1, 1, 4, NULL, '2020-09-29 01:10:12', NULL),
+(10, '214900', '413418', NULL, NULL, '2296', '2648', 6, 1, 1, 4, NULL, '2020-09-29 01:10:12', NULL),
+(11, '214828', '410781', NULL, NULL, '2298', '2297', 6, 1, 1, 4, NULL, '2020-09-29 01:10:12', NULL),
+(12, '214868', '412445', NULL, NULL, '1866', '1860', 16, 1, 1, 4, NULL, '2020-09-29 01:10:12', NULL),
+(13, '214864', '412433', NULL, NULL, '1868', '1867', 16, 1, 1, 4, NULL, '2020-09-29 01:10:12', NULL),
+(14, '309085', 'NOTEBOOK', NULL, NULL, '309085', 'NOTEBOOK', 17, 1, 1, 4, 'NOTEBOOK AS LOCADO', '2020-09-29 01:10:12', NULL),
+(15, '214867', '410867', NULL, NULL, '1870', '1869', 17, 1, 1, 4, NULL, '2020-09-29 01:10:12', NULL),
+(16, '214853', '412797', NULL, NULL, '2286', '2285', 3, 1, 1, 4, NULL, '2020-09-29 01:10:12', NULL),
+(17, '214866', '412885', NULL, NULL, '2053', '1873', 3, 1, 1, 4, NULL, '2020-09-29 01:10:12', NULL),
+(18, '214847', '413529', NULL, NULL, '1871', '1872', 22, 1, 1, 4, NULL, '2020-09-29 01:10:12', NULL),
+(19, '213884', '412790', NULL, NULL, '2306', '2305', 7, 1, 1, 4, NULL, '2020-09-29 01:10:12', NULL),
+(20, '214861', '412650', NULL, NULL, '2303', '2304', 7, 1, 1, 4, NULL, '2020-09-29 01:10:12', NULL),
+(21, '214054', '413520', NULL, NULL, '1677', '2307', 7, 1, 1, 4, NULL, '2020-09-29 01:10:12', NULL),
+(22, '4A2111518', '601A77270', NULL, NULL, '2370', '2369', 26, 2, 2, 4, NULL, '2020-09-29 01:10:12', NULL),
+(23, '214859', '411305', NULL, NULL, '2276', '2275', 26, 2, 1, 4, NULL, '2020-09-29 01:10:12', NULL),
+(24, '215101', '413470', NULL, NULL, '2309', '2310', 26, 1, 1, 4, NULL, '2020-09-29 01:10:12', NULL),
+(25, '207372', '410726', NULL, NULL, '4102', '2273', 26, 2, 1, 4, NULL, '2020-09-29 01:10:12', NULL),
+(26, '4A211198J', '601A77275', NULL, NULL, '2055', '2054', 26, 2, 2, 4, NULL, '2020-09-29 01:10:12', NULL),
+(27, '214035', '413523', NULL, NULL, '1975', '1976', 26, 1, 1, 4, NULL, '2020-09-29 01:10:12', NULL),
+(28, '214858', '412788', NULL, NULL, '2284', '2283', 3, 1, 1, 4, NULL, '2020-09-29 01:10:12', NULL),
+(29, '4A1820K4L', '601A71177', NULL, NULL, '594', '593', 10, 2, 2, 4, NULL, '2020-09-29 01:10:12', NULL),
+(30, '214873', '413428', NULL, NULL, '2290', '2289', 39, 1, 1, 4, NULL, '2020-09-29 01:10:12', NULL);
 
 -- --------------------------------------------------------
 
@@ -214,6 +243,7 @@ CREATE TABLE `adms_nivacs_pgs` (
 --
 
 INSERT INTO `adms_nivacs_pgs` (`id`, `permissao`, `ordem`, `dropdown`, `lib_menu`, `adms_menu_id`, `adms_niveis_acesso_id`, `adms_pagina_id`, `created`, `modified`) VALUES
+(1, 1, 50, 2, 1, 1, 1, 1, '2020-09-29 00:00:00', NULL),
 (2, 1, 2, 1, 1, 2, 1, 5, '2020-07-25 00:00:00', NULL),
 (3, 1, 3, 1, 1, 2, 1, 6, '2020-07-25 00:00:00', NULL),
 (4, 1, 4, 1, 1, 3, 1, 7, '2020-07-27 00:00:00', NULL),
@@ -282,7 +312,7 @@ INSERT INTO `adms_nivacs_pgs` (`id`, `permissao`, `ordem`, `dropdown`, `lib_menu
 (170, 1, 33, 1, 1, 5, 2, 32, '2020-09-22 14:27:08', '2020-09-24 19:43:30'),
 (171, 2, 28, 1, 2, 5, 3, 32, '2020-09-22 14:27:08', '2020-09-23 18:46:25'),
 (172, 1, 33, 1, 2, 5, 1, 33, '2020-09-22 14:45:20', NULL),
-(173, 1, 34, 1, 1, 5, 2, 33, '2020-09-22 14:45:20', '2020-09-24 19:43:27'),
+(173, 1, 34, 1, 2, 5, 2, 33, '2020-09-22 14:45:20', '2020-09-24 19:43:27'),
 (174, 2, 29, 1, 2, 5, 3, 33, '2020-09-22 14:45:20', '2020-09-23 18:46:24'),
 (184, 1, 36, 1, 1, 3, 2, 7, '2020-09-22 00:00:00', '2020-09-24 19:43:25'),
 (186, 1, 37, 1, 1, 2, 2, 5, '2020-09-23 00:00:00', '2020-09-24 19:43:18'),
@@ -307,7 +337,9 @@ INSERT INTO `adms_nivacs_pgs` (`id`, `permissao`, `ordem`, `dropdown`, `lib_menu
 (214, 2, 33, 1, 2, 3, 3, 36, '2020-09-29 11:23:49', NULL),
 (215, 1, 38, 1, 2, 3, 1, 37, '2020-09-29 11:40:47', NULL),
 (216, 2, 49, 1, 2, 3, 2, 37, '2020-09-29 11:40:47', NULL),
-(217, 2, 34, 1, 2, 3, 3, 37, '2020-09-29 11:40:47', NULL);
+(217, 2, 34, 1, 2, 3, 3, 37, '2020-09-29 11:40:47', NULL),
+(221, 1, 51, 2, 1, 1, 2, 1, '2020-09-29 00:00:00', NULL),
+(222, 1, 52, 2, 1, 1, 3, 1, '2020-09-29 00:00:00', NULL);
 
 -- --------------------------------------------------------
 
@@ -459,7 +491,7 @@ INSERT INTO `adms_setor` (`id`, `localizacao`, `ordem`, `created`, `modified`) V
 (14, 'Sala de Estudos', 14, '2020-09-28 18:35:52', '0000-00-00 00:00:00'),
 (15, 'Sala de Farmácia Satélite', 15, '2020-09-28 18:35:52', '0000-00-00 00:00:00'),
 (16, 'Sala de Faturamento', 16, '2020-09-28 18:35:52', '0000-00-00 00:00:00'),
-(17, 'Sala de Gerênci', 17, '2020-09-28 18:35:52', '0000-00-00 00:00:00'),
+(17, 'Sala da Gerência', 17, '2020-09-28 18:35:52', '0000-00-00 00:00:00'),
 (18, 'Sala de Instalação', 18, '2020-09-28 18:35:52', '0000-00-00 00:00:00'),
 (19, 'Sala de Medicação', 19, '2020-09-28 18:35:52', '0000-00-00 00:00:00'),
 (20, 'Sala de Observação Adulto', 20, '2020-09-28 18:35:52', '0000-00-00 00:00:00'),
@@ -479,7 +511,9 @@ INSERT INTO `adms_setor` (`id`, `localizacao`, `ordem`, `created`, `modified`) V
 (34, 'Serviço Social', 34, '2020-09-28 18:35:52', '0000-00-00 00:00:00'),
 (35, 'Sinais Vitais', 35, '2020-09-28 18:35:52', '0000-00-00 00:00:00'),
 (36, 'SUVIS', 36, '2020-09-28 18:35:52', '0000-00-00 00:00:00'),
-(37, 'Outros', 37, '2020-09-28 18:35:52', '0000-00-00 00:00:00');
+(37, 'Outros', 37, '2020-09-28 18:35:52', '0000-00-00 00:00:00'),
+(38, 'Container', 38, '2020-09-29 00:00:00', '0000-00-00 00:00:00'),
+(39, 'Ultrassom', 39, '2020-09-29 00:00:00', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -804,7 +838,7 @@ ALTER TABLE `adms_cors`
 -- AUTO_INCREMENT de tabela `adms_equipamentos`
 --
 ALTER TABLE `adms_equipamentos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT de tabela `adms_fabricante`
@@ -828,7 +862,7 @@ ALTER TABLE `adms_menus`
 -- AUTO_INCREMENT de tabela `adms_nivacs_pgs`
 --
 ALTER TABLE `adms_nivacs_pgs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=221;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=223;
 
 --
 -- AUTO_INCREMENT de tabela `adms_niveis_acessos`
@@ -852,7 +886,7 @@ ALTER TABLE `adms_robots`
 -- AUTO_INCREMENT de tabela `adms_setor`
 --
 ALTER TABLE `adms_setor`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT de tabela `adms_sits`
