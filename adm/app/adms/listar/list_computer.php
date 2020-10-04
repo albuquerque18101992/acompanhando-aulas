@@ -55,7 +55,10 @@ include_once 'app/adms/include/head.php';
                             INNER JOIN adms_unidades unidade ON unidade.id=nivelpagina.adms_unidade_id
                             INNER JOIN adms_setor lugarpc ON lugarpc.id=nivelpagina.adms_setores_id";
                 } else {
-                    $resul_pg = "SELECT * FROM adms_equipamentos";
+                    $resul_pg = "SELECT nivelpagina.*, unidade.nome_da_unidade, lugarpc.localizacao
+                            FROM adms_equipamentos nivelpagina
+                            INNER JOIN adms_unidades unidade ON unidade.id=nivelpagina.adms_unidade_id
+                            INNER JOIN adms_setor lugarpc ON lugarpc.id=nivelpagina.adms_setores_id";
                 }
                 $resultado_pg = mysqli_query($conn, $resul_pg);
                 if (($resultado_pg) and ( $resultado_pg->num_rows != 0)) {
@@ -86,13 +89,13 @@ include_once 'app/adms/include/head.php';
                                                 <?php
                                                 $btn_vis = carregar_btn('visualizar/vis_unidade', $conn);
                                                 if ($btn_vis) {
-                                                    echo "<a href='" . pg . "/visualizar/vis_unidade?id=" . $row_pg['id'] . "' class='btn btn-outline-primary btn-sm'>Visualizar</a> ";
+                                                    echo "<a href='" . pg . "/visualizar/vis_computer?id=" . $row_pg['id'] . "' class='btn btn-outline-primary btn-sm'>Visualizar</a> ";
                                                 }
                                                 $btn_edit = carregar_btn('editar/edit_computer', $conn);
                                                 if ($btn_edit) {
                                                     echo "<a href='" . pg . "/editar/edit_computer?id=" . $row_pg['id'] . "' class='btn btn-outline-warning btn-sm'>Editar </a> ";
                                                 }
-                                                $btn_apagar = carregar_btn('processa/apagar_unidade', $conn);
+                                                $btn_apagar = carregar_btn('processa/apagar_computer', $conn);
                                                 if ($btn_apagar) {
                                                     echo "<a href='" . pg . "/processa/apagar_computer?id=" . $row_pg['id'] . "' class='btn btn-outline-danger btn-sm' data-confirm='VOCÊ TEM CERTEZA QUE QUER EXCLUÍR O ITEM SELECIONADO?'>Apagar</a> ";
                                                 }
@@ -105,7 +108,7 @@ include_once 'app/adms/include/head.php';
                                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="acoesListar">
                                                     <?php
                                                     if ($btn_vis) {
-                                                        echo "<a class='dropdown-item' href='" . pg . "/visualizar/vis_unidade?id=" . $row_pg['id'] . "'>Visualizar</a> ";
+                                                        echo "<a class='dropdown-item' href='" . pg . "/visualizar/vis_computer?id=" . $row_pg['id'] . "'>Visualizar</a> ";
                                                     }
                                                     if ($btn_edit) {
                                                         echo "<a class='dropdown-item' href='" . pg . "/editar/edit_computer?id=" . $row_pg['id'] . "'>Editar</a> ";

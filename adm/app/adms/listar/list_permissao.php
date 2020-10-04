@@ -95,6 +95,7 @@ if (!empty($id)) {
                                 </thead>
                                 <tbody>
                                     <?php
+                                    $qnt_linhas_exe = 1;
                                     while ($row_niv_ac = mysqli_fetch_assoc($resultado_niv_ac)) {
                                         ?>
                                         <tr>
@@ -126,7 +127,6 @@ if (!empty($id)) {
                                             </td>
                                             <td class="d-none d-sm-table-cell text-center">
                                                 <?php
-                                                
                                                 $btn_lib_menu = carregar_btn('processa/proc_lib_menu', $conn);
 
                                                 if ($btn_lib_menu) {
@@ -144,9 +144,41 @@ if (!empty($id)) {
                                                 }
                                                 ?>
                                             </td>
-                                            <td class="d-none d-sm-table-cell"><?php echo $row_niv_ac['dropdown']; ?></td>
-                                            <td class="d-none d-sm-table-cell"><?php echo $row_niv_ac['ordem']; ?></td>
-                                            <td>Ações</td>
+                                            <td class="d-none d-sm-table-cell text-center">
+                                                <?php
+                                                $btn_lib_dropdown = carregar_btn('processa/proc_lib_dropdown', $conn);
+
+                                                if ($btn_lib_dropdown) {
+                                                    if ($row_niv_ac['dropdown'] == 1) {
+                                                        echo "<a href='" . pg . "/processa/proc_lib_dropdown?id=" . $row_niv_ac['id'] . "'><span class='badge badge-pill badge-success'>Dropdown Liberado</sapn><a/>";
+                                                    } else {
+                                                        echo "<a href='" . pg . "/processa/proc_lib_dropdown?id=" . $row_niv_ac['id'] . "'><span class='badge badge-pill badge-danger'>Dropdown Bloqueado</sapn><a/>";
+                                                    }
+                                                } else {
+                                                    if ($row_niv_ac['dropdown'] == 1) {
+                                                        echo "<span class='badge badge-pill badge-success'>Dropdown Liberado</sapn>";
+                                                    } else {
+                                                        echo "<span class='badge badge-pill badge-danger'>Dropdown Bloqueado</sapn>";
+                                                    }
+                                                }
+                                                ?>
+                                            </td>
+                                            <td class="d-none d-sm-table-cell text-center"><?php echo $row_niv_ac['ordem']; ?></td>
+                                            <td>
+                                                <?php
+                                                $btn_ordem_menu = carregar_btn('processa/proc_ordem_menu', $conn);
+                                                if ($btn_ordem_menu) {
+                                                    if ($qnt_linhas_exe == 1) {
+                                                        echo "<button class='btn btn-outline-secondary btn-sm disabled'><i class='fas fa-angle-double-up'></i></button>";
+                                                    } else {
+                                                        echo "<a href='" . pg . "/processa/proc_ordem_menu?id=" . $row_niv_ac['id'] . "' class='btn btn-outline-secondary btn-sm'><i class='fa fa-angle-double-up' aria-hidden='true'></i></a> ";
+                                                    }
+                                                } else {
+                                                    
+                                                }
+                                                $qnt_linhas_exe ++;
+                                                ?>
+                                            </td>
                                         <?php } ?>
                                 </tbody>
                             </table>

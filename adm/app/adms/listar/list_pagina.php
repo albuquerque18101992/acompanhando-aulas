@@ -49,9 +49,9 @@ include_once 'app/adms/include/head.php';
                 $inicio = ($qnt_result_pg * $pagina) - $qnt_result_pg;
                 if ($_SESSION['adms_niveis_acesso_id'] == 1) {
                     $resul_pg = "SELECT pg.id, pg.nome_pagina, pg.endereco, tpg.tipo FROM adms_paginas pg INNER JOIN adms_tps_pgs tpg ON tpg.id=pg.adms_tps_pg_id ORDER BY id ASC LIMIT $inicio, $qnt_result_pg";
-                } /* else {
-                  $resul_niv_aces = "SELECT * FROM adms_niveis_acessos WHERE ordem > '" . $_SESSION['ordem'] . "' ORDER BY ordem ASC LIMIT $inicio, $qnt_result_pg";
-                  } */
+                }  else {
+                  $resul_pg= "SELECT pg.id, pg.nome_pagina, pg.endereco, tpg.tipo FROM adms_paginas pg INNER JOIN adms_tps_pgs tpg ON tpg.id=pg.adms_tps_pg_id ORDER BY id ASC LIMIT $inicio, $qnt_result_pg";
+                  } 
                 $resultado_pg = mysqli_query($conn, $resul_pg);
                 if (($resultado_pg) AND ( $resultado_pg->num_rows != 0)) {
                     ?>
