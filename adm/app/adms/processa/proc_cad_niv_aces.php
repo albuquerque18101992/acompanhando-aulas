@@ -28,7 +28,7 @@ if ($SendCadNivAc) {
         $row_niv_ordem = mysqli_fetch_assoc($resultado_niv_ordem);
         $row_niv_ordem ['ordem'] ++;
 
-        $result_niv_ac = "INSERT INTO adms_niveis_acessos (nome, ordem, created) VALUE ('" . $dados_validos['nome'] . "', '" . $row_niv_ordem ['ordem'] . "', NOW())";
+        $result_niv_ac = "INSERT INTO adms_niveis_acessos (nome, obs_niv, ordem, created) VALUE ('" . $dados_validos['nome'] . "','" . $dados_validos['obs_niv'] . "', '" . $row_niv_ordem ['ordem'] . "', NOW())";
         mysqli_query($conn, $result_niv_ac);
         if (mysqli_insert_id($conn)) {
             $_SESSION['msg_de_erro'] = "<div class='alert alert-success'>Nível de acesso inserido com sucesso!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";

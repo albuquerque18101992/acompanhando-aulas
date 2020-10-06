@@ -88,6 +88,14 @@ if ($id) {
                                 }
                                 ?>">
                             </div>
+                            <div class="form-group">
+                                <label> Observação</label>
+                                <textarea name="obs_niv" class="form-control" placeholder="Detalhes sobre cadastro"><?php
+                                    if (isset($row_nivac_ed['obs_niv'])) {
+                                        echo $row_nivac_ed['obs_niv'];
+                                    }
+                                    ?></textarea>
+                            </div>
                             <p>
                                 <span class="text-danger">* </span>Campo Obrigatório
                             </p>

@@ -77,6 +77,8 @@ include_once 'app/adms/include/head.php';
                         <dd class="col-sm-9"><?php echo $row_niv_aces['id']; ?></dd>
                         <dt class="col-sm-3">Nome</dt>
                         <dd class="col-sm-9"><?php echo $row_niv_aces['nome']; ?></dd>
+                        <dt class="col-sm-3">Observação</dt>
+                        <dd class="col-sm-9"><?php echo $row_niv_aces['obs_niv']; ?></dd>
                         <dt class="col-sm-3">Ordem</dt>
                         <dd class="col-sm-9"><?php echo $row_niv_aces['ordem']; ?></dd>
                         <dt class="col-sm-3 text-truncate">Data do cadastro</dt>

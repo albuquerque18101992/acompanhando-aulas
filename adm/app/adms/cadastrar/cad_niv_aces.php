@@ -42,6 +42,10 @@ include_once 'app/adms/include/head.php';
                         <label for="inputAddress"> <span class="text-danger">*</span> Nome</label>
                         <input name="nome" type="text" class="form-control" placeholder="Nome do nível de acesso">
                     </div>
+                    <div class="form-group">
+                        <label> Observação</label>
+                        <textarea name="obs_niv" class="form-control" placeholder="Detalhes sobre cadastro"></textarea>
+                    </div>
                     <p>
                         <span class="text-danger">* </span>Campo Obrigatório
                     </p>

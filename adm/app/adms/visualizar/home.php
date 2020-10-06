@@ -84,7 +84,7 @@ include_once 'app/adms/include/head.php';
                     </div>
                 </div>
             </div>
-            <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1gCH2DOWw5mnlq0ra57KmINX_q5uF-lgB" width="100%" style="height:80vh;"></iframe>
+            <iframe src="https://www.google.com/maps/d/embed?mid=1gCH2DOWw5mnlq0ra57KmINX_q5uF-lgB&z=13" width="100%" style="height:70vh;"></iframe>
         </div>
         <?php
         include_once 'app/adms/include/rodape_lib.php';

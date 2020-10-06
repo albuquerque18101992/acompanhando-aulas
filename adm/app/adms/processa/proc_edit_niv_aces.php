@@ -23,7 +23,7 @@ if ($SendEditNivAc) {
         header("Location: $url_destino");
     } else {
 
-        $result_niv_ac = "UPDATE adms_niveis_acessos SET nome='" . $dados_validos['nome'] . "', modified=NOW() WHERE id='" . $dados_validos['id'] . "'";
+        $result_niv_ac = "UPDATE adms_niveis_acessos SET nome='" . $dados_validos['nome'] . "', obs_niv='" . $dados_validos['obs_niv'] . "', modified=NOW() WHERE id='" . $dados_validos['id'] . "'";
         mysqli_query($conn, $result_niv_ac);
         if (mysqli_affected_rows($conn)) {
 

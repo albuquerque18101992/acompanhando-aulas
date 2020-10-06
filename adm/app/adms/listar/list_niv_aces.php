@@ -25,6 +25,11 @@ include_once 'app/adms/include/head.php';
                     </div>
                     <div class="p-2">
                         <?php
+                        $btn_sincro = carregar_btn('processa/proc_sincro_nivac_pg', $conn);
+                        if ($btn_sincro) {
+                            echo "<a href='" . pg . "/processa/proc_sincro_nivac_pg' class='btn btn-outline-success btn-sm'>Sincronizar</a> ";
+                        }
+
                         $btn_cad = carregar_btn('cadastrar/cad_niv_aces', $conn);
                         if ($btn_cad) {
                             echo "<a href='" . pg . "/cadastrar/cad_niv_aces' class='btn btn-outline-success btn-sm'>Cadastrar</a>";
@@ -57,7 +62,7 @@ include_once 'app/adms/include/head.php';
                 if (($resultado_niv_aces) AND ( $resultado_niv_aces->num_rows != 0)) {
                     ?>
                     <div class="table-responsive">
-                        <table class="table table-striped table-hover table-bordered">
+                        <table class="table table-hover table-hover table-bordered">
                             <thead>
                                 <tr>
                                     <th>ID</th>
