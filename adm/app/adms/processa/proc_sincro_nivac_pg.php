@@ -36,7 +36,7 @@ while ($row_niv_acesso = mysqli_fetch_array($resultado_niv_acesso)) {
             }
             //Pesquisar o maior número da ordem na tabela adms_nivacs_pgs para o nível em execução.
             $result_maior_ordem = "SELECT ordem FROM adms_nivacs_pgs
-                WHERE adms_niveis_acesso_id='" . $row_niv_acesso['id'] . "'ORDER BY DESC LIMIT 1";
+                WHERE adms_niveis_acesso_id='" . $row_niv_acesso['id'] . "'ORDER BY id DESC LIMIT 1";
             $resultado_maior_ordem = mysqli_query($conn, $result_maior_ordem);
             $row_maior_ordem = mysqli_fetch_assoc($resultado_maior_ordem);
             $ordem = $row_maior_ordem['ordem'] + 1;
