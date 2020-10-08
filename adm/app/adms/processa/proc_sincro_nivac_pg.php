@@ -16,8 +16,8 @@ while ($row_niv_acesso = mysqli_fetch_array($resultado_niv_acesso)) {
 
     while ($row_paginas = mysqli_fetch_array($resultado_paginas)) {
         //Pesquisar se o nível de acesso possuí a inscrição da página na tabela adms_nivacs_pgs no casso "adms_pagina_id"
-        $result_niv_ac_pg = "SELECT id FROM amds_nivacs_pgs
-            WHERE adms_niveis_acesso_id = '" . $row_niv_acesso['id'] . "' AND adms_pagina_id = '" . $row_paginas ['id'] . "' ORDER BY id ACS LIMIT 1";
+        $result_niv_ac_pg = "SELECT id FROM adms_nivacs_pgs
+            WHERE adms_niveis_acesso_id = '" . $row_niv_acesso['id'] . "' AND adms_pagina_id = '" . $row_paginas ['id'] . "' ORDER BY id ASC LIMIT 1";
         $resultado_niv_ac_pg = mysqli_query($conn, $result_niv_ac_pg);
 
         //Verificar se não encontrou a página cadastrada para o nível de acesso em questão.
@@ -28,7 +28,7 @@ while ($row_niv_acesso = mysqli_fetch_array($resultado_niv_acesso)) {
             if ($row_niv_acesso['id'] == 1) {
                 $permissao = 1;
             } else {
-                if ($row_paginas ['lib_pub'] == 1) {
+                if ($row_paginas['lib_pub'] == 1) {
                     $permissao = 1;
                 } else {
                     $permissao = 2;
