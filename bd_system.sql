@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.2
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 08-Out-2020 às 04:18
+-- Tempo de geração: 08-Out-2020 às 18:13
 -- Versão do servidor: 10.4.11-MariaDB
--- versão do PHP: 7.4.1
+-- versão do PHP: 7.2.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -102,7 +102,7 @@ CREATE TABLE `adms_equipamentos` (
 --
 
 INSERT INTO `adms_equipamentos` (`id`, `numero_serie_cpu`, `numero_serie_monitor`, `numero_serie_mouse`, `numero_serie_teclado`, `numero_ti_cpu`, `numero_ti_monitor`, `adms_setores_id`, `adms_fabricantes_id`, `adms_contratos_id`, `adms_unidade_id`, `inform_computer`, `created`, `modified`) VALUES
-(1, '214813', '412443', NULL, NULL, '2294', '2293', 8, 1, 1, 4, NULL, '2020-09-29 00:00:00', NULL),
+(1, '214813', '412443', NULL, NULL, '2294', '2293', 8, 1, 1, 4, 'Descrição TESTE', '2020-09-29 00:00:00', NULL),
 (2, '214893', '413432', NULL, NULL, '2311', '2312', 3, 1, 1, 4, NULL, '2020-09-29 00:00:00', NULL),
 (3, '214809', '413483', NULL, NULL, '2300', '2299', 3, 1, 1, 4, NULL, '2020-09-29 00:00:00', NULL),
 (4, '214882', '411297', NULL, NULL, '2292', '2291', 3, 1, 1, 4, NULL, '2020-09-29 00:00:00', NULL),
@@ -352,7 +352,7 @@ INSERT INTO `adms_nivacs_pgs` (`id`, `permissao`, `ordem`, `dropdown`, `lib_menu
 (107, 2, 1, 2, 2, 3, 4, 40, '2020-10-05 22:29:36', '2020-10-07 19:08:53'),
 (108, 1, 39, 1, 2, 3, 1, 2, '2020-10-07 22:40:12', '0000-00-00 00:00:00'),
 (109, 1, 40, 1, 2, 3, 1, 3, '2020-10-07 22:40:12', '0000-00-00 00:00:00'),
-(110, 1, 41, 2, 1, 4, 1, 4, '2020-10-07 22:40:12', '2020-10-07 22:45:45'),
+(110, 1, 41, 2, 2, 4, 1, 4, '2020-10-07 22:40:12', '2020-10-08 12:50:05'),
 (111, 1, 39, 1, 2, 3, 2, 2, '2020-10-07 22:40:12', '0000-00-00 00:00:00'),
 (112, 1, 40, 1, 2, 3, 2, 3, '2020-10-07 22:40:12', '0000-00-00 00:00:00'),
 (113, 1, 41, 1, 2, 4, 2, 4, '2020-10-07 22:40:13', '2020-10-07 22:41:33'),
@@ -404,7 +404,11 @@ INSERT INTO `adms_nivacs_pgs` (`id`, `permissao`, `ordem`, `dropdown`, `lib_menu
 (159, 2, 36, 1, 2, 3, 4, 36, '2020-10-07 22:40:16', '0000-00-00 00:00:00'),
 (160, 2, 37, 1, 2, 3, 4, 37, '2020-10-07 22:40:16', '0000-00-00 00:00:00'),
 (161, 2, 38, 1, 2, 3, 4, 38, '2020-10-07 22:40:16', '0000-00-00 00:00:00'),
-(162, 2, 39, 1, 2, 3, 4, 39, '2020-10-07 22:40:16', '0000-00-00 00:00:00');
+(162, 2, 39, 1, 2, 3, 4, 39, '2020-10-07 22:40:16', '0000-00-00 00:00:00'),
+(163, 1, 42, 1, 2, 3, 1, 41, '2020-10-08 12:54:54', '0000-00-00 00:00:00'),
+(164, 2, 46, 1, 2, 3, 2, 41, '2020-10-08 12:54:54', '0000-00-00 00:00:00'),
+(165, 2, 46, 1, 2, 3, 3, 41, '2020-10-08 12:54:54', '0000-00-00 00:00:00'),
+(166, 2, 40, 1, 2, 3, 4, 41, '2020-10-08 12:54:54', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -499,7 +503,8 @@ INSERT INTO `adms_paginas` (`id`, `nome_pagina`, `endereco`, `obs`, `keywords`, 
 (37, 'Apagar equipamento', 'processa/apagar_computer', '', 'Apagar equipamento', 'Apagar equipamento', 'Paulo Albuquerque', 2, '', 0, 4, '1', 4, 1, '2020-09-29 11:40:47', NULL),
 (38, 'Liberar Dropdown no menu', 'processa/proc_lib_dropdown', 'Liberar Dropdown no menu', 'Liberar Dropdown no menu', 'Liberar Dropdown no menu', 'Paulo Albuquerque', 2, '', 0, 3, '1', 4, 1, '2020-10-04 17:55:32', NULL),
 (39, 'Alterar ordem do menu', 'processa/proc_ordem_menu', 'Alterar ordem do menu', 'Alterar ordem do menu', 'Alterar ordem do menu', 'Paulo Albuquerque', 2, '', 0, 3, '1', 4, 1, '2020-10-04 18:59:28', NULL),
-(40, 'Sincronizar páginas', 'processa/proc_sincro_nivac_pg', 'Sincronizar páginas com o nível de acesso', 'Sincronizar páginas', 'Sincronizar páginas', 'Paulo Albuquerque', 2, '', 0, 3, '1', 2, 1, '2020-10-05 22:29:36', NULL);
+(40, 'Sincronizar páginas', 'processa/proc_sincro_nivac_pg', 'Sincronizar páginas com o nível de acesso', 'Sincronizar páginas', 'Sincronizar páginas', 'Paulo Albuquerque', 2, '', 0, 3, '1', 2, 1, '2020-10-05 22:29:36', NULL),
+(41, 'vis_computer', 'visualizar/vis_computer', 'Página para visualização dos maiores detalhes dos computadores.', 'Visualizar pcs', 'Visualizar pcs', 'Paulo Albuquerque', 2, '', 0, 5, '1', 4, 1, '2020-10-08 12:54:54', NULL);
 
 -- --------------------------------------------------------
 
@@ -932,7 +937,7 @@ ALTER TABLE `adms_menus`
 -- AUTO_INCREMENT de tabela `adms_nivacs_pgs`
 --
 ALTER TABLE `adms_nivacs_pgs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=163;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=167;
 
 --
 -- AUTO_INCREMENT de tabela `adms_niveis_acessos`
@@ -944,7 +949,7 @@ ALTER TABLE `adms_niveis_acessos`
 -- AUTO_INCREMENT de tabela `adms_paginas`
 --
 ALTER TABLE `adms_paginas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT de tabela `adms_robots`
