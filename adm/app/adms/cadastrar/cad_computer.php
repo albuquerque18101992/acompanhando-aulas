@@ -29,7 +29,7 @@ include_once 'app/adms/include/head.php';
                         <?php
                         $btn_list = carregar_btn('listar/list_computer', $conn);
                         if ($btn_list) {
-                            echo "<a href='" . pg . "/listar/list_computer' class='btn btn-outline-info btn-sm'>Listar</a>";
+                            echo "<a href='" . pg . "/listar/list_computer' class='btn btn-outline-info btn-sm'>Listar equipamentos</a>";
                         }
                         ?>
 

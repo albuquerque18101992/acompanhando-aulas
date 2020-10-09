@@ -23,13 +23,13 @@ include_once 'app/adms/include/head.php';
             <div class="list-group-item">
                 <div class="d-flex">
                     <div class="mr-auto p-2">
-                        <h2 class="display-4 titulo"> Cadastrar Equipamentos </h2>
+                        <h2 class="display-4 titulo"> Editar Equipamentos </h2>
                     </div>
                     <div class="p-2">
                         <?php
                         $btn_list = carregar_btn('listar/list_computer', $conn);
                         if ($btn_list) {
-                            echo "<a href='" . pg . "/listar/list_computer' class='btn btn-outline-info btn-sm'>Listar</a>";
+                            echo "<a href='" . pg . "/listar/list_computer' class='btn btn-outline-info btn-sm'>Listar equipamentos</a>";
                         }
                         ?>
 
@@ -145,7 +145,7 @@ include_once 'app/adms/include/head.php';
                         </div>
                         <br>
                     </div>
-                    <input name="SendCadComputer" type="submit" class="btn btn-success" value="Cadastrar">
+                    <input name="SendCadComputer" type="submit" class="btn btn-warning" value="Salvar Edição">
                 </form>
             </div>
         </div>

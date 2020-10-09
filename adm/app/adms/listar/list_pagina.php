@@ -22,6 +22,12 @@ include_once 'app/adms/include/head.php';
                 <div class="d-flex">
                     <div class="mr-auto p-2">
                         <h2 class ="display-4 titulo"> Listar páginas </h2>
+                        <?php
+                        $result_contador = "SELECT *FROM adms_paginas";
+                        $resultado_contador = mysqli_query($conn, $result_contador);
+                        $total_contador = mysqli_num_rows($resultado_contador)
+                        ?>
+                        <h6 class="lead">Listado temos <?php echo "$total_contador"; ?> páginas até o momento.</h6>
                     </div>
                     <div class="p-2">
                         <?php
@@ -49,9 +55,9 @@ include_once 'app/adms/include/head.php';
                 $inicio = ($qnt_result_pg * $pagina) - $qnt_result_pg;
                 if ($_SESSION['adms_niveis_acesso_id'] == 1) {
                     $resul_pg = "SELECT pg.id, pg.nome_pagina, pg.endereco, tpg.tipo FROM adms_paginas pg INNER JOIN adms_tps_pgs tpg ON tpg.id=pg.adms_tps_pg_id ORDER BY id ASC LIMIT $inicio, $qnt_result_pg";
-                }  else {
-                  $resul_pg= "SELECT pg.id, pg.nome_pagina, pg.endereco, tpg.tipo FROM adms_paginas pg INNER JOIN adms_tps_pgs tpg ON tpg.id=pg.adms_tps_pg_id ORDER BY id ASC LIMIT $inicio, $qnt_result_pg";
-                  } 
+                } else {
+                    $resul_pg = "SELECT pg.id, pg.nome_pagina, pg.endereco, tpg.tipo FROM adms_paginas pg INNER JOIN adms_tps_pgs tpg ON tpg.id=pg.adms_tps_pg_id ORDER BY id ASC LIMIT $inicio, $qnt_result_pg";
+                }
                 $resultado_pg = mysqli_query($conn, $resul_pg);
                 if (($resultado_pg) AND ( $resultado_pg->num_rows != 0)) {
                     ?>

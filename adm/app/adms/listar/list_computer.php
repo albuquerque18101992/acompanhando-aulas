@@ -24,6 +24,12 @@ include_once 'app/adms/include/head.php';
                 <div class="d-flex">
                     <div class="mr-auto p-2">
                         <h2 class="display-4 titulo"> Listar Equipamentos </h2>
+                        <?php
+                        $result_contador = "SELECT *FROM adms_equipamentos";
+                        $resultado_contador = mysqli_query($conn, $result_contador);
+                        $total_contador = mysqli_num_rows($resultado_contador)
+                        ?>
+                        <h6 class="lead">Listado temos <?php echo "$total_contador"; ?> equipamentos.</h6>
                     </div>
                     <div class="p-2">
                         <?php

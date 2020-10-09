@@ -24,6 +24,12 @@ include_once 'app/adms/include/head.php';
                 <div class="d-flex">
                     <div class="mr-auto p-2">
                         <h2 class="display-4 titulo"> Listar Unidades </h2>
+                        <?php
+                        $result_contador = "SELECT *FROM adms_unidades";
+                        $resultado_contador = mysqli_query($conn, $result_contador);
+                        $total_contador = mysqli_num_rows($resultado_contador)
+                        ?>
+                        <h6 class="lead">Listado temos <?php echo "$total_contador"; ?> unidades.</h6>
                     </div>
                     <div class="p-2">
                         <?php
@@ -51,12 +57,12 @@ include_once 'app/adms/include/head.php';
                 $inicio = ($qnt_result_pg * $pagina) - $qnt_result_pg;
                 if ($_SESSION['adms_niveis_acesso_id'] == 1) {
                     $resul_pg = "SELECT * FROM adms_unidades";
-                }else {
+                } else {
                     $resul_pg = "SELECT * FROM adms_unidades";
-                  }
+                }
                 $resultado_pg = mysqli_query($conn, $resul_pg);
-                if (($resultado_pg) and ($resultado_pg->num_rows != 0)) {
-                ?>
+                if (($resultado_pg) and ( $resultado_pg->num_rows != 0)) {
+                    ?>
                     <div class="table-responsive">
                         <table class="table table-hover table-hover table-bordered">
                             <thead>
@@ -71,7 +77,7 @@ include_once 'app/adms/include/head.php';
                             <tbody>
                                 <?php
                                 while ($row_pg = mysqli_fetch_assoc($resultado_pg)) {
-                                ?>
+                                    ?>
                                     <tr>
                                         <th><?php echo $row_pg['id']; ?></th>
                                         <td><?php echo $row_pg['nome_da_unidade']; ?></td>
@@ -114,7 +120,7 @@ include_once 'app/adms/include/head.php';
                                             </div>
                                         </td>
                                     </tr>
-                                <?php
+                                    <?php
                                 }
                                 ?>
                             </tbody>
@@ -157,7 +163,7 @@ include_once 'app/adms/include/head.php';
                         echo "</nav>";
                         ?>
                     </div>
-                <?php
+                    <?php
                 }
                 ?>
             </div>

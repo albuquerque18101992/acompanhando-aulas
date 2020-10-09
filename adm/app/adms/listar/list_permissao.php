@@ -64,7 +64,15 @@ if (!empty($id)) {
                                 $row_nome_niv_ac = mysqli_fetch_assoc($resultado_nome_niv_ac);
                                 ?>
                                 <h2 class="display-4 titulo">Listar Permissões - <?php echo $row_nome_niv_ac['nome'] ?></h2>
+
+                                <?php
+                                //$result_contador = "SELECT * FROM adms_nivacs_pgs WHERE adms_niveis_acesso_id ='" . $_SESSION['id'] . "'";
+                                //$resultado_contador = mysqli_query($conn, $result_contador);
+                                //$total_contador = mysqli_num_rows($resultado_contador)
+                                ?>
+                                        <!--<h6 class="lead">Nesta lista de permissões temos <?php echo "$total_contador"; ?> até o momento.</h6>-->
                             </div>
+
                             <div class="p-2">
                                 <?php
                                 $btn_list = carregar_btn('listar/list_niv_aces', $conn);
@@ -90,7 +98,7 @@ if (!empty($id)) {
                                         <th class="d-none d-sm-table-cell text-center">Menu</th>
                                         <th class="d-none d-sm-table-cell text-center">Dropdown</th>
                                         <th class="d-none d-sm-table-cell text-center">Ordem</th>
-                                        <th class="text-center">Ações</th>
+                                        <th class="d-none d-sm-table-cell text-center">Ações</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -166,6 +174,11 @@ if (!empty($id)) {
                                             <td class="d-none d-sm-table-cell text-center"><?php echo $row_niv_ac['ordem']; ?></td>
                                             <td>
                                                 <?php
+                                                $btn_edit = carregar_btn('editar/edit_permissao', $conn);
+                                                if ($btn_edit) {
+                                                    echo"<a href='" . pg . "/editar/edit_permissao?id=" . $row_niv_ac['id'] . "' class='btn btn-outline-warning btn-sm'>Editar </a>   ";
+                                                }
+
                                                 $btn_ordem_menu = carregar_btn('processa/proc_ordem_menu', $conn);
                                                 if ($btn_ordem_menu) {
                                                     if ($qnt_linhas_exe == 1) {
@@ -234,7 +247,7 @@ if (!empty($id)) {
         <?php
     } else {
         $_SESSION['msg_de_erro'] = "<div class='alert alert-danger'>Permissão não encontrada!</div>";
-        $url_destino = pg . '/listar/list_niv_aces';
+        $url_destino = pg . '/listar/list_permissao';
         header("Location: $url_destino");
     }
 } else {
