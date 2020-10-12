@@ -25,7 +25,7 @@ include_once 'app/adms/include/head.php';
                         <?php
                         $btn_list = carregar_btn('listar/list_pagina', $conn);
                         if ($btn_list) {
-                            echo "<a href='" . pg . "/listar/list_pagina' class='btn btn-outline-info btn-sm'>Listar</a> ";
+                            echo "<a href='" . pg . "/listar/list_pagina' class='btn btn-outline-info btn-sm'>Listar páginas</a> ";
                         }
                         ?>
                     </div>

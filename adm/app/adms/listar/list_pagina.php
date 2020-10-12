@@ -33,7 +33,7 @@ include_once 'app/adms/include/head.php';
                         <?php
                         $btn_cad = carregar_btn('cadastrar/cad_pagina', $conn);
                         if ($btn_cad) {
-                            echo "<a href='" . pg . "/cadastrar/cad_pagina' class='btn btn-outline-success btn-sm'>Cadastrar</a>";
+                            echo "<a href='" . pg . "/cadastrar/cad_pagina' class='btn btn-outline-success btn-sm'>Cadastrar páginas</a>";
                         }
                         ?>
                     </div>
@@ -54,9 +54,9 @@ include_once 'app/adms/include/head.php';
                 //Calcular o inicio visualização
                 $inicio = ($qnt_result_pg * $pagina) - $qnt_result_pg;
                 if ($_SESSION['adms_niveis_acesso_id'] == 1) {
-                    $resul_pg = "SELECT pg.id, pg.nome_pagina, pg.endereco, tpg.tipo FROM adms_paginas pg INNER JOIN adms_tps_pgs tpg ON tpg.id=pg.adms_tps_pg_id ORDER BY id ASC LIMIT $inicio, $qnt_result_pg";
+                    $resul_pg = "SELECT pg.id, pg.nome_pagina, pg.endereco, tpg.tipo FROM adms_paginas pg INNER JOIN adms_tps_pgs tpg ON tpg.id=pg.adms_tps_pg_id ORDER BY endereco ASC LIMIT $inicio, $qnt_result_pg";
                 } else {
-                    $resul_pg = "SELECT pg.id, pg.nome_pagina, pg.endereco, tpg.tipo FROM adms_paginas pg INNER JOIN adms_tps_pgs tpg ON tpg.id=pg.adms_tps_pg_id ORDER BY id ASC LIMIT $inicio, $qnt_result_pg";
+                    $resul_pg = "SELECT pg.id, pg.nome_pagina, pg.endereco, tpg.tipo FROM adms_paginas pg INNER JOIN adms_tps_pgs tpg ON tpg.id=pg.adms_tps_pg_id ORDER BY endereco ASC LIMIT $inicio, $qnt_result_pg";
                 }
                 $resultado_pg = mysqli_query($conn, $resul_pg);
                 if (($resultado_pg) AND ( $resultado_pg->num_rows != 0)) {
@@ -67,7 +67,7 @@ include_once 'app/adms/include/head.php';
                                 <tr>
                                     <th>ID</th>
                                     <th>Nome</th>
-                                    <th class="d-none d-sm-table-cell">Endereço</th>
+                                    <th class="d-none d-sm-table-cell">Endereço/diretório</th>
                                     <th class="d-none d-sm-table-cell">Tipo Página</th>
                                     <th class="text-center">Ações</th>
                                 </tr>

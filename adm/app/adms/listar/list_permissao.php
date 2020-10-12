@@ -98,7 +98,7 @@ if (!empty($id)) {
                                         <th class="d-none d-sm-table-cell text-center">Menu</th>
                                         <th class="d-none d-sm-table-cell text-center">Dropdown</th>
                                         <th class="d-none d-sm-table-cell text-center">Ordem</th>
-                                        <th class="d-none d-sm-table-cell text-center">Ações</th>
+                                        <th class="text-center">Ações</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -172,7 +172,7 @@ if (!empty($id)) {
                                                 ?>
                                             </td>
                                             <td class="d-none d-sm-table-cell text-center"><?php echo $row_niv_ac['ordem']; ?></td>
-                                            <td>
+                                            <td class="text-center">
                                                 <?php
                                                 $btn_edit = carregar_btn('editar/edit_permissao', $conn);
                                                 if ($btn_edit) {

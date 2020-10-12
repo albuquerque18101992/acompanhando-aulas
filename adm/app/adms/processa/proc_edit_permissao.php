@@ -29,8 +29,9 @@ if ($SendEditPer) {
         //Tentar alterar o menu
         $result_nivpg_up = "UPDATE adms_nivacs_pgs SET 
             adms_menu_id = '" . $dados_validos ['adms_menu_id'] . "',
-                modified=NOW()
-                WHERE id='" . $dados_validos['id'] . "'";
+            modified=NOW()
+            WHERE id='" . $dados_validos['id'] . "'";
+        mysqli_query($conn, $result_nivpg_up);
         if (mysqli_affected_rows($conn)) {
             //Pesquisar o ID da página e o do nível de acesso.
             $result_nivpg = "SELECT adms_niveis_acesso_id, adms_pagina_id FROM adms_nivacs_pgs WHERE id='" . $dados_validos ['id'] . "' LIMIT 1";
@@ -48,21 +49,21 @@ if ($SendEditPer) {
 
                 if (mysqli_affected_rows($conn)) {
                     $_SESSION['msg_de_erro'] = "<div class='alert alert-success'>Ícone editado com sucesso!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='trues'>&times;</span></button></div>";
-                    $url_destino = pg . '/listar/list_permissao';
+                    $url_destino = pg . '/listar/list_permissao?id=' . $row_nivpg['adms_niveis_acesso_id'];
                     header("Location: $url_destino");
                 } else {
-                    $_SESSION['msg_de_erro'] = "<div class='alert alert-danger'>ERRO ao edita a permissão. ERRO no campo ícone!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='trues'>&times;</span></button></div>";
-                    $url_destino = pg . '/listar/list_permissao';
+                    $_SESSION['msg_de_erro'] = "<div class='alert alert-danger'>ERRO ao editar a permissão. ERRO no campo ícone!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='trues'>&times;</span></button></div>";
+                    $url_destino = pg . '/listar/list_permissao?id=' . $dados['id'];
                     header("Location: $url_destino");
                 }
             } else {
-                $_SESSION['msg_de_erro'] = "<div class='alert alert-danger'>ERRO ao edita a permissão. ERRO no campo ícone!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='trues'>&times;</span></button></div>";
-                $url_destino = pg . '/listar/list_permissao';
+                $_SESSION['msg_de_erro'] = "<div class='alert alert-danger'>ERRO ao editar a permissão. ERRO no campo ícone!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='trues'>&times;</span></button></div>";
+                $url_destino = pg . '/listar/list_permissao?id=' . $dados['id'];
                 header("Location: $url_destino");
             }
         } else {
-            $_SESSION['msg_de_erro'] = "<div class='alert alert-danger'>ERRO ao edita a permissão. ERRO no campo menu!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='trues'>&times;</span></button></div>";
-            $url_destino = pg . '/listar/list_permissao';
+            $_SESSION['msg_de_erro'] = "<div class='alert alert-danger'>ERRO ao editar a permissão. ERRO no campo menu!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='trues'>&times;</span></button></div>";
+            $url_destino = pg . '/listar/list_permissao?id=' . $dados['id'];
             header("Location: $url_destino");
         }
     }
