@@ -51,17 +51,17 @@ if (!empty($id)) {
             $url_destino = pg . '/listar/list_permissao?id=' . $row_niv_ac_pg['adms_niveis_acesso_id'];
             header("Location: $url_destino");
         } else {
-            $_SESSION['msg_de_erro'] = "<div class='alert alert-danger'>Erro ordem do menu não foi alterada!</div>";
+            $_SESSION['msg_de_erro'] = "<div class='alert alert-danger'>Erro ordem do menu não foi alterada!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='trues'>&times;</span></button></div>";
             $url_destino = pg . '/listar/list_permissao?id=' . $row_niv_ac_pg['adms_niveis_acesso_id'];
             header("Location: $url_destino");
         }
     } else {
-        $_SESSION['msg_de_erro'] = "<div class='alert alert-danger'>Página não encontrada!</div>";
+        $_SESSION['msg_de_erro'] = "<div class='alert alert-danger'>Página não encontrada!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='trues'>&times;</span></button></div>";
         $url_destino = pg . '/listar/list_niv_aces';
         header("Location: $url_destino");
     }
 } else {
-    $_SESSION['msg_de_erro'] = "<div class='alert alert-danger'>Página não encontrada!</div>";
+    $_SESSION['msg_de_erro'] = "<div class='alert alert-danger'>Página não encontrada!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='trues'>&times;</span></button></div>";
     $url_destino = pg . '/listar/list_niv_aces';
     header("Location: $url_destino");
 }

@@ -36,21 +36,21 @@ if (!empty($id)) {
             WHERE id='$id'";
         mysqli_query($conn, $result_niv_pg_up);
         if (mysqli_affected_rows($conn)) {
-            $_SESSION['msg_de_erro'] = "<div class='alert alert-success'>Menu dropdown editado com sucesso!</div>";
+            $_SESSION['msg_de_erro'] = "<div class='alert alert-success'>Menu dropdown editado com sucesso!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='trues'>&times;</span></button></div>";
             $url_destino = pg . '/listar/list_permissao?id=' . $row_niv_ac_pg['adms_niveis_acesso_id'];
             header("Location: $url_destino");
         } else {
-            $_SESSION['msg_de_erro'] = "<div class='alert alert-danger'>Erro menu dropdown não foi alterada!</div>";
+            $_SESSION['msg_de_erro'] = "<div class='alert alert-danger'>Erro menu dropdown não foi alterada!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='trues'>&times;</span></button></div>";
             $url_destino = pg . '/listar/list_permissao?id=' . $row_niv_ac_pg['adms_niveis_acesso_id'];
             header("Location: $url_destino");
         }
     } else {
-        $_SESSION['msg_de_erro'] = "<div class='alert alert-danger'>Página não encontradaEROOOOOOOOOOOOOOOOOOOO!</div>";
-        $url_destino = pg . '/listar/list_niv_aces';
+        $_SESSION['msg_de_erro'] = "<div class='alert alert-danger'>Página não encontrada!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='trues'>&times;</span></button></div>";
+        $url_destino = pg . '/listar/list_permissao';
         header("Location: $url_destino");
     }
 } else {
-    $_SESSION['msg_de_erro'] = "<div class='alert alert-danger'>Página não encontrada!</div>";
+    $_SESSION['msg_de_erro'] = "<div class='alert alert-danger'>Página não encontrada!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='trues'>&times;</span></button></div>";
     $url_destino = pg . '/listar/list_niv_aces';
     header("Location: $url_destino");
 }

@@ -15,16 +15,16 @@ if (!empty($id)) {
         $result_nivacs_pgs_del = "DELETE FROM adms_nivacs_pgs WHERE adms_pagina_id='$id'";
         mysqli_query($conn, $result_nivacs_pgs_del);
 
-        $_SESSION['msg_de_erro'] = "<div class='alert alert-success'>Página apagada com sucesso!</div>";
+        $_SESSION['msg_de_erro'] = "<div class='alert alert-success'>Página apagada com sucesso!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='trues'>&times;</span></button></div>";
         $url_destino = pg . '/listar/list_pagina';
         header("Location: $url_destino");
     } else {
-        $_SESSION['msg_de_erro'] = "<div class='alert alert-danger'>ERRO Página não foi apagada!</div>";
+        $_SESSION['msg_de_erro'] = "<div class='alert alert-danger'>ERRO Página não foi apagada!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='trues'>&times;</span></button></div>";
         $url_destino = pg . '/listar/list_pagina';
         header("Location: $url_destino");
     }
 } else {
-    $_SESSION['msg_de_erro'] = "<div class='alert alert-danger'>Página não encontrada!</div>";
+    $_SESSION['msg_de_erro'] = "<div class='alert alert-danger'>Página não encontrada!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='trues'>&times;</span></button></div>";
     $url_destino = pg . '/acesso/login';
     header("Location: $url_destino");
 }

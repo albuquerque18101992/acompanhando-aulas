@@ -125,7 +125,7 @@ include_once 'app/adms/include/head.php';
                                                         echo "<a class='dropdown-item' href='" . pg . "/visualizar/vis_menu?id=" . $row_menu['id'] . "'>Visualizar</a> ";
                                                     }
                                                     if ($btn_edit) {
-                                                        echo "<a class='dropdown-item' href='" . pg . "/editar/list_menu?id=" . $row_menu['id'] . "'>Editar</a> ";
+                                                        echo "<a class='dropdown-item' href='" . pg . "/editar/edit_menu?id=" . $row_menu['id'] . "'>Editar</a> ";
                                                     }
                                                     if ($btn_apagar) {
                                                         echo "<a class='dropdown-item' href='" . pg . "/processa/apagar_menu?id=" . $row_menu['id'] . "' data-confirm='VOCÊ TEM CERTEZA QUE QUER EXCLUÍR O ITEM SELECIONADO?'>Apagar</a> ";
@@ -142,7 +142,7 @@ include_once 'app/adms/include/head.php';
                             </tbody>
                             </tbody>
                         </table>
-                                                <?php
+                        <?php
                         $result_pg = "SELECT COUNT(id) AS num_result FROM adms_menus";
                         $resultado_pg = mysqli_query($conn, $result_pg);
                         $row_pg = mysqli_fetch_assoc($resultado_pg);

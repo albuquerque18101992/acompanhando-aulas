@@ -57,20 +57,20 @@ if ($SendEditUnidade) {
         if (mysqli_affected_rows($conn)) {
             unset($_SESSION['dados']);
 
-            $_SESSION['msg_de_erro'] = "<div class='alert alert-success'>Unidade editada com sucesso!</div>";
+            $_SESSION['msg_de_erro'] = "<div class='alert alert-success'>Unidade editada com sucesso!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='trues'>&times;</span></button></div>";
             $url_destino = pg . '/listar/list_unidades';
             header("Location: $url_destino");
         } else {
             $dados['telefone'] = trim($dados_obs);
             $dados['email'] = $dados_icone;
             $_SESSION['dados'] = $dados;
-            $_SESSION['msg_de_erro'] = "<div class='alert alert-danger'>Unidade não editada!</div>";
+            $_SESSION['msg_de_erro'] = "<div class='alert alert-danger'>Unidade não editada!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='trues'>&times;</span></button></div>";
             $url_destino = pg . '/editar/edit_unidade?id=' . $dados['id'];
             header("Location: $url_destino");
         }
     }
 } else {
-    $_SESSION['msg_de_erro'] = "<div class='alert alert-danger'>Unidade não encontrada!</div>";
+    $_SESSION['msg_de_erro'] = "<div class='alert alert-danger'>Unidade não encontrada!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='trues'>&times;</span></button></div>";
     $url_destino = pg . '/acesso/login';
     header("Location: $url_destino");
 }

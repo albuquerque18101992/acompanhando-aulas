@@ -93,20 +93,20 @@ if ($SendCadPg) {
                 mysqli_query($conn, $result_cad_pagina);
             }
 
-            $_SESSION['msg_de_erro'] = "<div class='alert alert-success'>Página cadastrada!</div>";
+            $_SESSION['msg_de_erro'] = "<div class='alert alert-success'>Página cadastrada!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='trues'>&times;</span></button></div>";
             $url_destino = pg . '/listar/list_pagina';
             header("Location: $url_destino");
         } else {
             $dados['obs'] = trim($dados_obs);
             $dados['icone'] = $dados_icone;
             $_SESSION['dados'] = $dados;
-            $_SESSION['msg_de_erro'] = "<div class='alert alert-danger'>Página não cadastrada!</div>";
+            $_SESSION['msg_de_erro'] = "<div class='alert alert-danger'>Página não cadastrada!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='trues'>&times;</span></button></div>";
             $url_destino = pg . '/cadastrar/cad_pagina';
             header("Location: $url_destino");
         }
     }
 } else {
-    $_SESSION['msg_de_erro'] = "<div class='alert alert-danger'>Página não encontrada!</div>";
+    $_SESSION['msg_de_erro'] = "<div class='alert alert-danger'>Página não encontrada!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='trues'>&times;</span></button></div>";
     $url_destino = pg . '/acesso/login';
     header("Location: $url_destino");
 }

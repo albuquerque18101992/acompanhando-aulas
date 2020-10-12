@@ -27,7 +27,7 @@ if (!empty($id)) {
             $result_niv_mv_baixo = "UPDATE adms_niveis_acessos SET ordem='$ordem', modified=NOW() WHERE id='" . $row_niv_super['id'] . "'";
             mysqli_query($conn, $result_niv_mv_baixo);
 
-            //Alterar a ordem para o número ser maior.
+            //Alterar a ordem para o número ser menor.
             $result_niv_mv_super = "UPDATE adms_niveis_acessos SET ordem='$ordem_super', modified=NOW() WHERE id='" . $row_niv_atual['id'] . "'";
             mysqli_query($conn, $result_niv_mv_super);
 
@@ -43,17 +43,17 @@ if (!empty($id)) {
                 header("Location: $url_destino");
             }
         } else {
-            $_SESSION['msg_de_erro'] = "<div class='alert alert-danger'>Nível de acesso não pode ser alterado!</div>";
+            $_SESSION['msg_de_erro'] = "<div class='alert alert-danger'>Nível de acesso não pode ser alterado!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='trues'>&times;</span></button></div>";
             $url_destino = pg . '/listar/list_niv_aces';
             header("Location: $url_destino");
         }
     } else {
-        $_SESSION['msg_de_erro'] = "<div class='alert alert-danger'>Nível de acesso não encontrado!</div>";
+        $_SESSION['msg_de_erro'] = "<div class='alert alert-danger'>Nível de acesso não encontrado!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='trues'>&times;</span></button></div>";
         $url_destino = pg . '/listar/list_niv_aces';
         header("Location: $url_destino");
     }
 } else {
-    $_SESSION['msg_de_erro'] = "<div class='alert alert-danger'>Página não encontrada!</div>";
+    $_SESSION['msg_de_erro'] = "<div class='alert alert-danger'>Página não encontrada!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='trues'>&times;</span></button></div>";
     $url_destino = pg . '/acesso/login';
     header("Location: $url_destino");
 }

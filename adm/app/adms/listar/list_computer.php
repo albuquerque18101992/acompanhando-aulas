@@ -55,16 +55,19 @@ include_once 'app/adms/include/head.php';
 
                 //Calcular o inicio visualização
                 $inicio = ($qnt_result_pg * $pagina) - $qnt_result_pg;
+
                 if ($_SESSION['adms_niveis_acesso_id'] == 1) {
                     $resul_pg = "SELECT nivelpagina.*, unidade.nome_da_unidade, lugarpc.localizacao
                             FROM adms_equipamentos nivelpagina
                             INNER JOIN adms_unidades unidade ON unidade.id=nivelpagina.adms_unidade_id
-                            INNER JOIN adms_setor lugarpc ON lugarpc.id=nivelpagina.adms_setores_id";
+                            INNER JOIN adms_setor lugarpc ON lugarpc.id=nivelpagina.adms_setores_id
+                            ORDER BY id ASC LIMIT $inicio, $qnt_result_pg";
                 } else {
                     $resul_pg = "SELECT nivelpagina.*, unidade.nome_da_unidade, lugarpc.localizacao
                             FROM adms_equipamentos nivelpagina
                             INNER JOIN adms_unidades unidade ON unidade.id=nivelpagina.adms_unidade_id
-                            INNER JOIN adms_setor lugarpc ON lugarpc.id=nivelpagina.adms_setores_id";
+                            INNER JOIN adms_setor lugarpc ON lugarpc.id=nivelpagina.adms_setores_id
+                            ORDER BY id ASC LIMIT $inicio, $qnt_result_pg";
                 }
                 $resultado_pg = mysqli_query($conn, $resul_pg);
                 if (($resultado_pg) and ( $resultado_pg->num_rows != 0)) {
@@ -81,7 +84,6 @@ include_once 'app/adms/include/head.php';
                                 </tr>
                             </thead>
                             <tbody>
-
                                 <?php
                                 while ($row_pg = mysqli_fetch_assoc($resultado_pg)) {
                                     ?>
@@ -144,12 +146,12 @@ include_once 'app/adms/include/head.php';
                         echo "<nav aria-label='paginacao-blog'>";
                         echo "<ul class='pagination pagination-sm justify-content-center'>";
                         echo "<li class='page-item'>";
-                        echo "<a class='page-link' href='" . pg . "/listar/list_pagina?pagina=1' tabindex='-1'>Primeira</a>";
+                        echo "<a class='page-link' href='" . pg . "/listar/list_computer?pagina=1' tabindex='-1'>Primeira</a>";
                         echo "</li>";
 
                         for ($pag_ant = $pagina - $max_links; $pag_ant <= $pagina - 1; $pag_ant++) {
                             if ($pag_ant >= 1) {
-                                echo "<li class='page-item'><a class='page-link' href='" . pg . "/listar/list_pagina?pagina=$pag_ant'>$pag_ant</a></li>";
+                                echo "<li class='page-item'><a class='page-link' href='" . pg . "/listar/list_computer?pagina=$pag_ant'>$pag_ant</a></li>";
                             }
                         }
 
@@ -159,12 +161,12 @@ include_once 'app/adms/include/head.php';
 
                         for ($pag_dep = $pagina + 1; $pag_dep <= $pagina + $max_links; $pag_dep++) {
                             if ($pag_dep <= $quantidade_pg) {
-                                echo "<li class='page-item'><a class='page-link' href='" . pg . "/listar/list_pagina?pagina=$pag_dep'>$pag_dep</a></li>";
+                                echo "<li class='page-item'><a class='page-link' href='" . pg . "/listar/list_computer?pagina=$pag_dep'>$pag_dep</a></li>";
                             }
                         }
 
                         echo "<li class='page-item'>";
-                        echo "<a class='page-link' href='" . pg . "/listar/list_pagina?pagina=$quantidade_pg'>Última</a>";
+                        echo "<a class='page-link' href='" . pg . "/listar/list_computer?pagina=$quantidade_pg'>Última</a>";
                         echo "</li>";
                         echo "</ul>";
                         echo "</nav>";
@@ -175,10 +177,8 @@ include_once 'app/adms/include/head.php';
                 ?>
             </div>
         </div>
-
-
-        <?php
-        include_once 'app/adms/include/rodape_lib.php';
-        ?>
     </div>
+    <?php
+    include_once 'app/adms/include/rodape_lib.php';
+    ?>
 </body>

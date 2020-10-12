@@ -63,21 +63,21 @@ if ($id) {
 
         //redirecionar o usuário
         if ($alteracao) {
-            $_SESSION['msg_de_erro'] = "<div class='alert alert-success'>Permissão editada com sucesso!</div>";
+            $_SESSION['msg_de_erro'] = "<div class='alert alert-success'>Permissão editada com sucesso!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='trues'>&times;</span></button></div>";
             $url_destino = pg . "/listar/list_permissao?id=" . $row_niv_ac_pg['adms_niveis_acesso_id'];
             header("Location: $url_destino");
         } else {
-            $_SESSION['msg_de_erro'] = "<div class='alert alert-success'>Erro ao editar a permissão!</div>";
+            $_SESSION['msg_de_erro'] = "<div class='alert alert-success'>Erro ao editar a permissão!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='trues'>&times;</span></button></div>";
             $url_destino = pg . "/listar/list_permissao?id=" . $row_niv_ac_pg['adms_niveis_acesso_id'];
             header("Location: $url_destino");
         }
     } else {
-        $_SESSION['msg_de_erro'] = "<div class='alert alert-danger'>Nível de acesso não encontrado!</div>";
+        $_SESSION['msg_de_erro'] = "<div class='alert alert-danger'>Nível de acesso não encontrado!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='trues'>&times;</span></button></div>";
         $url_destino = pg . '/listar/list_niv_aces';
         header("Location: $url_destino");
     }
 } else {
-    $_SESSION['msg_de_erro'] = "<div class='alert alert-danger'>Página não encontrada!</div>";
+    $_SESSION['msg_de_erro'] = "<div class='alert alert-danger'>Página não encontrada!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='trues'>&times;</span></button></div>";
     $url_destino = pg . '/acesso/login';
     header("Location: $url_destino");
 }

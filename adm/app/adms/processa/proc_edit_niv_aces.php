@@ -39,7 +39,7 @@ if ($SendEditNivAc) {
         }
     }
 } else {
-    $_SESSION['msg_de_erro'] = "<div class = 'alert alert-danger'>Página não encontrada!</div>";
+    $_SESSION['msg_de_erro'] = "<div class = 'alert alert-danger'>Página não encontrada!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='trues'>&times;</span></button></div>";
     $url_destino = pg . '/acesso/login';
     header("Location: $url_destino");
 }

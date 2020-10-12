@@ -33,17 +33,17 @@ if (!empty($id)) {
                     mysqli_query($conn, $result_niv_or);
                 }
             }
-            $_SESSION['msg_de_erro'] = "<div class='alert alert-success'>Nível de acesso apagado com sucesso!</div>";
+            $_SESSION['msg_de_erro'] = "<div class='alert alert-success'>Nível de acesso apagado com sucesso!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='trues'>&times;</span></button></div>";
             $url_destino = pg . '/listar/list_niv_aces';
             header("Location: $url_destino");
         } else {
-            $_SESSION['msg_de_erro'] = "<div class='alert alert-danger'>ERRO nível de acesso não foi apagado!</div>";
+            $_SESSION['msg_de_erro'] = "<div class='alert alert-danger'>ERRO nível de acesso não foi apagado!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='trues'>&times;</span></button></div>";
             $url_destino = pg . '/listar/list_niv_aces';
             header("Location: $url_destino");
         }
     }
 } else {
-    $_SESSION['msg_de_erro'] = "<div class='alert alert-danger'>Página não encontrada!</div>";
+    $_SESSION['msg_de_erro'] = "<div class='alert alert-danger'>Página não encontrada!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='trues'>&times;</span></button></div>";
     $url_destino = pg . '/acesso/login';
     header("Location: $url_destino");
 }

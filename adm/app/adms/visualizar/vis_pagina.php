@@ -67,7 +67,7 @@ if (!empty($id)) {
                                             echo "<a class='dropdown-item' href='" . pg . "/listar/list_pagina?id=" . $row_pag_vis['id'] . "'>Listar</a> ";
                                         }
                                         if ($btn_edit) {
-                                            echo "<a class='dropdown-item' href='" . pg . "/editar/list_npagina?id=" . $row_pag_vis['id'] . "'>Editar</a> ";
+                                            echo "<a class='dropdown-item' href='" . pg . "/editar/edit_pagina?id=" . $row_pag_vis['id'] . "'>Editar</a> ";
                                         }
                                         if ($btn_apagar) {
                                             echo "<a class='dropdown-item' href='" . pg . "/processa/apagar_pagina?id=" . $row_pag_vis['id'] . "'data-confirm='VOCÊ TEM CERTEZA QUE QUER EXCLUÍR O ITEM SELECIONADO?'>Apagar</a> ";

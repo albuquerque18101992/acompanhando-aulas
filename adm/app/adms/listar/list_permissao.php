@@ -83,9 +83,9 @@ if (!empty($id)) {
                             </div>
                         </div>
                         <?php
-                        if (isset($_SESSION['msg'])) {
-                            echo $_SESSION['msg'];
-                            unset($_SESSION['msg']);
+                        if (isset($_SESSION['msg_de_erro'])) {
+                            echo $_SESSION['msg_de_erro'];
+                            unset($_SESSION['msg_de_erro']);
                         }
                         ?>
                         <div class="table-responsive">
