@@ -43,108 +43,171 @@ include_once 'app/adms/include/head.php';
                 ?>
 
                 <form method="POST" action="<?php echo pg; ?>/processa/proc_cad_computer" autocomplete="off">
+                    <div class="row">
+                        <div class="form-group col-md-4">
+                            <label>
+                                <span tabindex="0" data-toggle="tooltip" title="Número de identificação do computador, geralmente atrás do equipamento." data-placement="top">
+                                    <i class="fa fa-question-circle" aria-hidden="true"></i>
+                                </span>
+                                Computadores
+                            </label>
+                            <input type="text" name="numero_serie_cpu" class="form-control" id="exampleInputEmail1" maxlength="19" placeholder="Número de Série" value="<?php
+                            if (isset($_SESSION['dados']['numero_serie_cpu'])) {
+                                echo $_SESSION['dados']['numero_serie_cpu'];
+                            }
+                            ?>">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label> 
+                                <span tabindex="0" data-toggle="tooltip" title="Número de identificação do computador, geralmente atrás do equipamento." data-placement="top">
+                                    <i class="fa fa-question-circle" aria-hidden="true"></i>
+                                </span>
+                                Monitores
+                            </label>
+                            <input type="text" name="numero_serie_monitor" class="form-control" id="exampleInputEmail1" maxlength="19" placeholder="Número de Série">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>
+                                <span tabindex="0" data-toggle="tooltip" title="Número de identificação do computador, geralmente atrás do equipamento." data-placement="top">
+                                    <i class="fa fa-question-circle" aria-hidden="true"></i>
+                                </span>
+                                N/S Mouse
+                            </label>
+                            <input type="text" name="numero_serie_mouse" class="form-control" id="exampleInputEmail1" maxlength="6" placeholder="Número de Série">
+                        </div>
+                    </div>
                     <br>
-                    <div class="formulario">
+                    <div class="row">
+                        <div class="form-group col-md-4">
+                            <label>
+                                <span tabindex="0" data-toggle="tooltip" title="Número de identificação do computador, geralmente atrás do equipamento." data-placement="top">
+                                    <i class="fa fa-question-circle" aria-hidden="true"></i>
+                                </span>
+                                N/S Teclado
+                            </label>
+                            <input type="text" name="numero_serie_teclado" class="form-control" id="exampleInputEmail1" maxlength="6" placeholder="Número de Série">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>
+                                <span tabindex="0" data-toggle="tooltip" title="Número de identificação do computador, geralmente atrás do equipamento." data-placement="top">
+                                    <i class="fa fa-question-circle" aria-hidden="true"></i>
+                                </span>
+                                Computadores
+                            </label>
+                            <input type="text" name="numero_ti_cpu" class="form-control" id="exampleInputEmail1" maxlength="6" placeholder="Número T.I">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>
+                                <span tabindex="0" data-toggle="tooltip" title="Número de identificação do computador, geralmente atrás do equipamento." data-placement="top">
+                                    <i class="fa fa-question-circle" aria-hidden="true"></i>
+                                </span>
+                                Monitores
+                            </label>
+                            <input type="text" name="numero_ti_monitor" class="form-control" id="exampleInputEmail1" maxlength="6" placeholder="Número T.I">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="select-caixas">
                         <div class="row">
-                            <div class="col-md-4">
-                                <label for=""><i class="fas fa-laptop-medical"></i> Computadores</label>
-                                <input type="text" name="numero_serie_cpu" class="form-control" id="exampleInputEmail1" maxlength="19" placeholder="Número de Série">
+                            <div class="form-group col-md-4">
+                                <?php
+                                $result_setor = "SELECT id, localizacao FROM adms_setor";
+                                $resultado_setor = mysqli_query($conn, $result_setor);
+                                ?>
+                                <label>
+                                    <span tabindex="0" data-toggle="tooltip" title="" data-placement="top">
+                                        <i class="fa fa-question-circle" aria-hidden="true"></i>
+                                    </span>
+                                    <span class="text-danger">*</span> Localização
+                                </label>
+                                <select name="localizacao" id="localizacao" class="form-control">
+                                    <option value="" selected disabled>Selecione</option>
+                                    <?php
+                                    while ($row_setor = mysqli_fetch_assoc($resultado_setor)) {
+                                        if (isset($_SESSION['dados']['adms_setores_id']) AND ( $_SESSION['dados']['adms_setores_id'] == $row_setor['id'])) {
+                                            echo "<option value='" . $row_setor['id'] . "' selected>" . $row_setor['localizacao'] . "</option>";
+                                        } else {
+                                            echo "<option value='" . $row_setor['id'] . "'>" . $row_setor['localizacao'] . "</option>";
+                                        }
+                                    }
+                                    ?>
+                                </select>
                             </div>
-                            <div class="col-md-4">
-                                <label for=""><i class="fas fa-tv"></i> Monitores</label>
-                                <input type="text" name="numero_serie_monitor" class="form-control" id="exampleInputEmail1" maxlength="19" placeholder="Número de Série">
+                            <div class="form-group col-md-4">
+                                <?php
+                                $result_fabricante = "SELECT id, marca FROM adms_fabricante";
+                                $resultado_fabricante = mysqli_query($conn, $result_fabricante);
+                                ?>
+                                <label>
+                                    <span tabindex="0" data-toggle="tooltip" title="" data-placement="top">
+                                        <i class="fa fa-question-circle" aria-hidden="true"></i>
+                                    </span>
+                                    <span class="text-danger">*</span> Fabricante
+                                </label>
+                                <select name="marca" id="marca" class="form-control">
+                                    <option value="" selected disabled>Selecione</option>
+                                    <?php
+                                    while ($row_fabricante = mysqli_fetch_assoc($resultado_fabricante)) {
+                                        if (isset($_SESSION['dados']['adms_fabricantes_id']) AND ( $_SESSION['dados']['adms_fabricantes_id'] == $row_fabricante['id'])) {
+                                            echo "<option value='" . $row_fabricante['id'] . "' selected>" . $row_fabricante['marca'] . "</option>";
+                                        } else {
+                                            echo "<option value='" . $row_fabricante['id'] . "'>" . $row_fabricante['marca'] . "</option>";
+                                        }
+                                    }
+                                    ?>
+                                </select>
                             </div>
-                            <div class="col-md-4">
-                                <label for=""><i class="fas fa-mouse"></i> N/S Mouse</label>
-                                <input type="text" name="numero_serie_mouse" class="form-control" id="exampleInputEmail1" maxlength="6" placeholder="Número de Série">
+                            <div class="form-group col-md-4">
+                                <?php
+                                $result_contrato = "SELECT id, descricao FROM adms_contrato";
+                                $resultado_contrato = mysqli_query($conn, $result_contrato);
+                                ?>
+                                <label>
+                                    <span tabindex="0" data-toggle="tooltip" title="" data-placement="top">
+                                        <i class="fa fa-question-circle" aria-hidden="true"></i>
+                                    </span>
+                                    <span class="text-danger">*</span> Tipo
+                                </label>
+                                <select name="marca" id="marca" class="form-control">
+                                    <option value="" selected disabled>Selecione</option>
+                                    <?php
+                                    while ($row_contrato = mysqli_fetch_assoc($resultado_contrato)) {
+                                        if (isset($_SESSION['dados']['adms_contratos_id']) AND ( $_SESSION['dados']['adms_contratos_id'] == $row_contrato['id'])) {
+                                            echo "<option value='" . $row_contrato['id'] . "' selected>" . $row_contrato['descricao'] . "</option>";
+                                        } else {
+                                            echo "<option value='" . $row_contrato['id'] . "'>" . $row_contrato['descricao'] . "</option>";
+                                        }
+                                    }
+                                    ?>
+                                </select>
                             </div>
                         </div>
-                        <br>
-                        <div class="row">
-                            <div class="col-md-4">
-                                <label for=""><i class="fas fa-keyboard"></i> N/S Teclado</label>
-                                <input type="text" name="numero_serie_teclado" class="form-control" id="exampleInputEmail1" maxlength="6" placeholder="Número de Série">
-                            </div>
-                            <div class="col-md-4">
-                                <label for=""><i class="fas fa-laptop-medical"></i> Computadores</label>
-                                <input type="text" name="numero_ti_cpu" class="form-control" id="exampleInputEmail1" maxlength="6" placeholder="Número T.I">
-                            </div>
-                            <div class="col-md-4">
-                                <label for=""><i class="fas fa-tv"></i> Monitores</label>
-                                <input type="text" name="numero_ti_monitor" class="form-control" id="exampleInputEmail1" maxlength="6" placeholder="Número T.I">
-                            </div>
-                        </div>
-                        <br>
-                        <div class="select-caixas">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <label for="exampleFormControlSelect1"><i class="fas fa-map-marker-alt"></i> Localização</label>
-                                    <select type="text" name="localizacao" class="form-control" id="formatar">
-                                        <option selected disabled>SELECIONAR</option>
-                                        <?php
-                                        $consult_local = "SELECT * FROM adms_setor ORDER BY localizacao";
-                                        $consulta_local = mysqli_query($conn, $consult_local);
-                                        while ($row_local = mysqli_fetch_assoc($consulta_local)) {
-                                            echo '<option value"' . $row_local['localizacao'] . '">' . $row_local['localizacao'] . '</option>';
-                                        }
-                                        ?>
-                                    </select>
-                                </div>
-                                <div class="col-md-4">
-                                    <label for="exampleFormControlSelect1"><i class="fas fa-award"></i> Fabricante</label>
-                                    <select type="text" name="" class="form-control" name="fabricante" id="formatar">
-                                        <option selected disabled>SELECIONAR</option>
-                                        <?php
-                                        $consult_fabricante = "SELECT * FROM adms_fabricante ORDER BY marca";
-                                        $consulta_fabricante = mysqli_query($conn, $consult_fabricante);
-                                        while ($row_fabricante = mysqli_fetch_assoc($consulta_fabricante)) {
-                                            echo '<option value="' . $row_fabricante['marca'] . '">' . $row_fabricante['marca'] . '</option>';
-                                        }
-                                        ?>
-                                    </select>
-                                </div>
-                                <div class="col-md-4">
-                                    <label for="exampleFormControlSelect1"><i class="far fa-folder-open"></i> Tipo</label>
-                                    <select type="text" name="contrato" class="form-control" name="tipo" id="formatar">
-                                        <option selected disabled>SELECIONAR</option>
-                                        <?php
-                                        $consult_tipo = "SELECT * FROM adms_contrato ORDER BY descricao";
-                                        $consulta_tipo = mysqli_query($conn, $consult_tipo);
-                                        while ($row_tipo_contrato = mysqli_fetch_assoc($consulta_tipo)) {
-                                            echo '<option value="' . $row_tipo_contrato['descricao'] . '">' . $row_tipo_contrato['descricao'] . '</option>';
-                                        }
-                                        ?>
-                                    </select>
-                                </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <div class="form-group">
+                                <label><i class="fas fa-university"></i> Unidade</label require>
+                                <select type="text" name="adms_unidade_id" class="form-control" id="unidade" onclick="formatar()">
+                                    <option selected disabled>Escolha Unidade</option required>
+                                    <?php
+                                    $consult = "SELECT * FROM adms_unidades ORDER BY nome_da_unidade";
+                                    $consulta = mysqli_query($conn, $consult);
+                                    while ($row_cat_post = mysqli_fetch_assoc($consulta)) {
+                                        echo '<option value="' . $row_cat_post['nome_da_unidade'] . '"> ' . $row_cat_post['nome_da_unidade'] . '</option>';
+                                    }
+                                    ?>
+                                </select>
                             </div>
                         </div>
-                        <br>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label><i class="fas fa-university"></i> Unidade</label require>
-                                    <select type="text" name="unidade" class="form-control" id="unidade" onclick="formatar()">
-                                        <option selected disabled>Escolha Unidade</option required>
-                                        <?php
-                                        $consult = "SELECT * FROM adms_unidades ORDER BY nome_da_unidade";
-                                        $consulta = mysqli_query($conn, $consult);
-                                        while ($row_cat_post = mysqli_fetch_assoc($consulta)) {
-                                            echo '<option value="' . $row_cat_post['nome_da_unidade'] . '"> ' . $row_cat_post['nome_da_unidade'] . '</option>';
-                                        }
-                                        ?>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <br>
+                    </div>
+                    <br>
 
-                        <div class="row">
-                            <div class="col-md-12">
-                                <label for="">Informações Pertinentes ao Equipamento</label>
-                                <textarea type="text-area" name="descricoes" maxlength="280" placeholder="Observções sobre o equipamento ." style="width:100%;height:100px; border-radius:5px"></textarea>
-                            </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label for="">Informações Pertinentes ao Equipamento</label>
+                            <textarea type="text-area" name="inform_computer" maxlength="280" placeholder="Observções sobre o equipamento ." style="width:100%;height:100px; border-radius:5px"></textarea>
                         </div>
-                        <br>
                     </div>
                     <input name="SendCadComputer" type="submit" class="btn btn-success" value="Cadastrar">
                 </form>
@@ -153,8 +216,5 @@ include_once 'app/adms/include/head.php';
         <?php
         include_once 'app/adms/include/rodape_lib.php';
         ?>
-
-
-
     </div>
 </body>

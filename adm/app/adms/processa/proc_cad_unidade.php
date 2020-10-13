@@ -20,7 +20,7 @@ if ($SendCadUnidade) {
     $dados_validos = vazio($dados);
     if (!$dados_validos) {
         $erro = true;
-        $_SESSION['msg_de_erro'] = "<div class='alert alert-danger'>Necessário preencher todos os campos para cadastrar a unidade!</div>";
+        $_SESSION['msg_de_erro'] = "<div class='alert alert-danger'><button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='trues'>&times;</span></button>Necessário preencher todos os campos para cadastrar a unidade!</div>";
     } else {
         //Proibir cadastro de unidade duplicada
         $result_unidades = "SELECT id FROM adms_unidades WHERE cnes='" . $dados_validos['cnes'] . "'";

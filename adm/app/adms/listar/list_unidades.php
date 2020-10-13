@@ -58,7 +58,7 @@ include_once 'app/adms/include/head.php';
                 if ($_SESSION['adms_niveis_acesso_id'] == 1) {
                     $resul_pg = "SELECT * FROM adms_unidades ORDER BY id ASC LIMIT $inicio, $qnt_result_pg";
                 } else {
-                    $resul_pg = "SELECT * FROM adms_unidades ORDER BY id ACS LIMIT $inicio, $qnt_result_pg";
+                     $resul_pg = "SELECT * FROM adms_unidades ORDER BY id ASC LIMIT $inicio, $qnt_result_pg";
                 }
                 $resultado_pg = mysqli_query($conn, $resul_pg);
                 if (($resultado_pg) and ( $resultado_pg->num_rows != 0)) {

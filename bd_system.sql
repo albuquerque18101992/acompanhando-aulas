@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 12-Out-2020 às 19:09
+-- Tempo de geração: 13-Out-2020 às 03:04
 -- Versão do servidor: 10.4.11-MariaDB
 -- versão do PHP: 7.4.1
 
@@ -131,7 +131,10 @@ INSERT INTO `adms_equipamentos` (`id`, `numero_serie_cpu`, `numero_serie_monitor
 (27, '214035', '413523', NULL, NULL, '1975', '1976', 26, 1, 1, 4, NULL, '2020-09-29 01:10:12', NULL),
 (28, '214858', '412788', NULL, NULL, '2284', '2283', 3, 1, 1, 4, NULL, '2020-09-29 01:10:12', NULL),
 (29, '4A1820K4L', '601A71177', NULL, NULL, '594', '593', 10, 2, 2, 4, NULL, '2020-09-29 01:10:12', NULL),
-(30, '214873', '413428', NULL, NULL, '2290', '2289', 39, 1, 1, 4, NULL, '2020-09-29 01:10:12', NULL);
+(30, '214873', '413428', NULL, NULL, '2290', '2289', 39, 1, 1, 4, NULL, '2020-09-29 01:10:12', NULL),
+(31, '206669', '414616', NULL, NULL, '2724', '2803', 1, 1, 1, 16, 'Apenas um kit de computador na unidade.', '2020-10-12 00:00:00', NULL),
+(32, '213466', '411977', NULL, NULL, '2722', '2723', 1, 1, 1, 17, 'Apenas um kit de computador na unidade.', '2020-10-12 00:00:00', NULL),
+(33, '213863', '412554', NULL, NULL, '1787', '1788', 1, 1, 1, 19, 'Apenas um kit de computador na unidade.', '2020-10-12 00:00:00', NULL);
 
 -- --------------------------------------------------------
 
@@ -247,7 +250,7 @@ INSERT INTO `adms_nivacs_pgs` (`id`, `permissao`, `ordem`, `dropdown`, `lib_menu
 (2, 1, 1, 2, 1, 1, 2, 1, '2020-09-29 00:00:00', '2020-10-08 21:09:37'),
 (3, 1, 1, 2, 1, 1, 3, 1, '2020-09-29 00:00:00', '0000-00-00 00:00:00'),
 (4, 1, 2, 2, 1, 2, 3, 5, '2020-07-31 14:04:15', '2020-10-12 00:03:31'),
-(5, 1, 2, 1, 1, 2, 2, 5, '2020-09-23 00:00:00', '2020-10-11 21:33:09'),
+(5, 1, 2, 1, 2, 2, 2, 5, '2020-09-23 00:00:00', '2020-10-12 14:46:59'),
 (6, 1, 2, 1, 1, 2, 1, 5, '2020-07-25 00:00:00', '2020-10-04 19:44:21'),
 (8, 1, 9, 2, 2, 2, 1, 11, '2020-07-30 00:00:00', '0000-00-00 00:00:00'),
 (9, 1, 10, 2, 2, 2, 1, 12, '2020-07-30 00:00:00', '0000-00-00 00:00:00'),
@@ -313,12 +316,6 @@ INSERT INTO `adms_nivacs_pgs` (`id`, `permissao`, `ordem`, `dropdown`, `lib_menu
 (72, 1, 9, 2, 2, 2, 2, 11, '0000-00-00 00:00:00', '2020-10-04 18:31:31'),
 (73, 2, 10, 2, 2, 2, 2, 12, '2020-09-23 00:00:00', '2020-10-04 18:21:30'),
 (74, 1, 11, 2, 2, 2, 2, 13, '2020-09-23 00:00:00', '0000-00-00 00:00:00'),
-(75, 1, 32, 1, 2, 3, 1, 34, '2020-09-24 13:52:27', '0000-00-00 00:00:00'),
-(76, 2, 32, 1, 1, 3, 2, 34, '2020-09-24 13:52:27', '0000-00-00 00:00:00'),
-(77, 2, 32, 1, 2, 3, 3, 34, '2020-09-24 13:52:27', '0000-00-00 00:00:00'),
-(78, 1, 33, 2, 2, 3, 1, 35, '2020-09-24 18:48:57', '2020-10-12 08:41:13'),
-(79, 1, 33, 2, 2, 3, 2, 35, '2020-09-24 18:48:57', '2020-10-08 20:03:59'),
-(80, 2, 33, 2, 2, 3, 3, 35, '2020-09-24 18:48:57', '2020-10-04 18:34:21'),
 (81, 1, 34, 2, 2, 3, 1, 36, '2020-09-29 11:23:49', '2020-10-12 08:41:32'),
 (82, 1, 34, 2, 2, 3, 2, 36, '2020-09-29 11:23:49', '2020-10-04 18:22:52'),
 (83, 2, 34, 2, 2, 3, 3, 36, '2020-09-29 11:23:49', '2020-10-04 18:34:18'),
@@ -332,7 +329,7 @@ INSERT INTO `adms_nivacs_pgs` (`id`, `permissao`, `ordem`, `dropdown`, `lib_menu
 (91, 2, 37, 2, 2, 3, 2, 39, '2020-10-04 18:59:28', '2020-10-08 19:51:40'),
 (92, 2, 37, 2, 2, 3, 3, 39, '2020-10-04 18:59:28', '2020-10-12 00:05:21'),
 (93, 2, 4, 2, 2, 2, 3, 6, '2020-07-31 14:04:15', '2020-10-04 18:33:41'),
-(94, 1, 4, 1, 1, 2, 2, 6, '2020-09-23 00:00:00', '2020-10-08 19:45:02'),
+(94, 1, 4, 1, 1, 2, 2, 6, '2020-09-23 00:00:00', '2020-10-12 14:47:35'),
 (95, 2, 6, 2, 2, 3, 3, 8, '2020-07-31 14:04:15', '2020-10-12 11:27:36'),
 (96, 2, 7, 2, 2, 2, 3, 9, '2020-07-31 14:04:15', '2020-10-04 18:33:44'),
 (97, 1, 7, 2, 2, 2, 1, 9, '2020-07-30 00:00:00', '2020-10-04 17:37:28'),
@@ -393,13 +390,11 @@ INSERT INTO `adms_nivacs_pgs` (`id`, `permissao`, `ordem`, `dropdown`, `lib_menu
 (154, 2, 31, 2, 2, 3, 4, 31, '2020-10-07 22:40:15', '2020-10-12 10:43:11'),
 (155, 2, 32, 2, 2, 3, 4, 32, '2020-10-07 22:40:16', '2020-10-12 10:43:00'),
 (156, 2, 33, 2, 2, 3, 4, 33, '2020-10-07 22:40:16', '2020-10-12 10:42:55'),
-(157, 2, 34, 1, 2, 3, 4, 34, '2020-10-07 22:40:16', '0000-00-00 00:00:00'),
-(158, 2, 35, 2, 2, 3, 4, 35, '2020-10-07 22:40:16', '2020-10-12 10:42:57'),
 (159, 2, 36, 2, 2, 3, 4, 36, '2020-10-07 22:40:16', '2020-10-12 10:42:59'),
 (160, 2, 37, 2, 2, 3, 4, 37, '2020-10-07 22:40:16', '2020-10-12 10:43:15'),
 (161, 2, 38, 2, 2, 3, 4, 38, '2020-10-07 22:40:16', '2020-10-12 10:43:23'),
 (162, 2, 39, 2, 2, 3, 4, 39, '2020-10-07 22:40:16', '2020-10-12 10:43:24'),
-(163, 1, 42, 2, 2, 3, 1, 41, '2020-10-08 12:54:54', '2020-10-12 08:40:17'),
+(163, 1, 42, 2, 2, 3, 1, 41, '2020-10-08 12:54:54', '2020-10-12 17:02:18'),
 (164, 1, 46, 1, 2, 3, 2, 41, '2020-10-08 12:54:54', '2020-10-12 00:06:33'),
 (165, 2, 46, 2, 2, 3, 3, 41, '2020-10-08 12:54:54', '2020-10-12 00:05:31'),
 (166, 2, 40, 2, 2, 3, 4, 41, '2020-10-08 12:54:54', '2020-10-12 10:43:20'),
@@ -439,10 +434,30 @@ INSERT INTO `adms_nivacs_pgs` (`id`, `permissao`, `ordem`, `dropdown`, `lib_menu
 (200, 2, 55, 2, 2, 3, 2, 50, '2020-10-12 09:51:42', '2020-10-12 10:42:16'),
 (201, 2, 55, 2, 2, 3, 3, 50, '2020-10-12 09:51:42', '2020-10-12 10:42:21'),
 (202, 2, 49, 2, 2, 3, 4, 50, '2020-10-12 09:51:43', '2020-10-12 10:42:27'),
-(207, 1, 52, 1, 2, 3, 1, 51, '2020-10-12 11:58:43', '0000-00-00 00:00:00'),
-(208, 2, 56, 1, 2, 3, 2, 51, '2020-10-12 11:58:43', '0000-00-00 00:00:00'),
-(209, 2, 56, 1, 2, 3, 3, 51, '2020-10-12 11:58:43', '0000-00-00 00:00:00'),
-(210, 2, 50, 1, 2, 3, 4, 51, '2020-10-12 11:58:43', '0000-00-00 00:00:00');
+(207, 1, 52, 2, 2, 3, 1, 51, '2020-10-12 11:58:43', '2020-10-12 14:46:45'),
+(208, 2, 56, 2, 2, 3, 2, 51, '2020-10-12 11:58:43', '2020-10-12 14:46:50'),
+(209, 2, 56, 2, 2, 3, 3, 51, '2020-10-12 11:58:43', '2020-10-12 14:46:55'),
+(210, 2, 50, 2, 2, 3, 4, 51, '2020-10-12 11:58:43', '2020-10-12 14:46:39'),
+(211, 1, 53, 1, 2, 3, 1, 52, '2020-10-12 14:46:27', '0000-00-00 00:00:00'),
+(212, 2, 57, 1, 2, 3, 2, 52, '2020-10-12 14:46:27', '0000-00-00 00:00:00'),
+(213, 2, 57, 1, 2, 3, 3, 52, '2020-10-12 14:46:27', '0000-00-00 00:00:00'),
+(214, 2, 51, 1, 2, 3, 4, 52, '2020-10-12 14:46:27', '0000-00-00 00:00:00'),
+(215, 1, 54, 1, 2, 3, 1, 53, '2020-10-12 15:21:06', '0000-00-00 00:00:00'),
+(216, 2, 58, 1, 2, 3, 2, 53, '2020-10-12 15:21:07', '0000-00-00 00:00:00'),
+(217, 2, 58, 1, 2, 3, 3, 53, '2020-10-12 15:21:07', '0000-00-00 00:00:00'),
+(218, 2, 52, 1, 2, 3, 4, 53, '2020-10-12 15:21:07', '0000-00-00 00:00:00'),
+(219, 1, 55, 1, 2, 3, 1, 53, '2020-10-12 16:49:22', '0000-00-00 00:00:00'),
+(220, 2, 59, 1, 2, 3, 2, 53, '2020-10-12 16:49:22', '0000-00-00 00:00:00'),
+(221, 2, 59, 1, 2, 3, 3, 53, '2020-10-12 16:49:23', '0000-00-00 00:00:00'),
+(222, 2, 53, 1, 2, 3, 4, 53, '2020-10-12 16:49:23', '0000-00-00 00:00:00'),
+(223, 1, 56, 1, 2, 3, 1, 54, '2020-10-12 16:51:27', '0000-00-00 00:00:00'),
+(224, 2, 60, 1, 2, 3, 2, 54, '2020-10-12 16:51:27', '0000-00-00 00:00:00'),
+(225, 2, 60, 1, 2, 3, 3, 54, '2020-10-12 16:51:27', '0000-00-00 00:00:00'),
+(226, 2, 54, 1, 2, 3, 4, 54, '2020-10-12 16:51:27', '0000-00-00 00:00:00'),
+(227, 1, 57, 1, 2, 3, 1, 55, '2020-10-12 16:52:11', '0000-00-00 00:00:00'),
+(228, 2, 61, 1, 2, 3, 2, 55, '2020-10-12 16:52:11', '0000-00-00 00:00:00'),
+(229, 2, 61, 1, 2, 3, 3, 55, '2020-10-12 16:52:11', '0000-00-00 00:00:00'),
+(230, 2, 55, 1, 2, 3, 4, 55, '2020-10-12 16:52:11', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -548,7 +563,11 @@ INSERT INTO `adms_paginas` (`id`, `nome_pagina`, `endereco`, `obs`, `keywords`, 
 (48, 'Apagar menu', 'processa/apagar_menu', 'Apagar a opção do menu da barra lateral.', 'Apagar menu', 'Apagar menu', 'Paulo Albuquerque', 1, '', 0, 4, '1', 2, 1, '2020-10-11 23:58:29', NULL),
 (49, 'Processa edita menu', 'processa/proc_edit_menu', 'Processa edita menu do sistema.', 'Processa edita menu', 'Processa edita menu', 'Paulo Albuquerque', 2, '', 47, 3, '1', 2, 1, '2020-10-12 07:31:23', '2020-10-12 08:31:42'),
 (50, 'Alterar ordem item menu', 'processa/proc_ordem_menu_item', 'Página para alterar a ordem do item no menu.', 'Alterar ordem item menu', 'Alterar ordem item menu', 'Paulo Albuquerque', 2, '', 0, 3, '1', 2, 1, '2020-10-12 09:51:42', NULL),
-(51, 'Cadastrar usuários', 'cadastrar/cad_usuario', 'Página para efetuar cadastros de usuários.', 'Cadastrar usuários', 'Cadastrar usuários', 'Paulo Albuquerque', 2, '', 0, 2, '1', 2, 1, '2020-10-12 11:58:43', NULL);
+(51, 'Cadastrar usuários', 'cadastrar/cad_usuario', 'Página para efetuar cadastros de usuários.', 'Cadastrar usuários', 'Cadastrar usuários', 'Paulo Albuquerque', 2, '', 0, 2, '1', 2, 1, '2020-10-12 11:58:43', NULL),
+(52, 'Processar o form cadastrar usuário', 'processa/proc_cad_usuario', 'Processar o form cadastrar usuário', 'Processar o form cadastrar usuário', 'Processar o form cadastrar usuário', 'Paulo Albuquerque', 2, '', 51, 2, '1', 2, 1, '2020-10-12 14:46:27', NULL),
+(53, 'Editar usuario', 'editar/edit_usuario', 'Editar usuário', 'Editar usuario', 'Editar usuario', 'Paulo Albuquerque', 2, '', 0, 3, '1', 2, 1, '2020-10-12 16:49:22', NULL),
+(54, 'Visuzliar usuario', 'visualizar/vis_usuario', 'Visuzliar usuários e informações a mais .', 'Visuzliar usuario', 'Visuzliar usuario', 'Paulo Albuquerque', 2, '', 0, 5, '1', 2, 1, '2020-10-12 16:51:27', NULL),
+(55, 'Apagar usuário', 'processa/apagar_usuario', 'Apagar usuários .', 'Apagar usuário', 'Apagar usuário', 'Paulo Albuquerque', 2, '', 0, 4, '1', 2, 1, '2020-10-12 16:52:11', NULL);
 
 -- --------------------------------------------------------
 
@@ -809,16 +828,17 @@ INSERT INTO `adms_unidades` (`id`, `nome_da_unidade`, `nome_gerente`, `cnes`, `e
 CREATE TABLE `adms_usuarios` (
   `id` int(11) NOT NULL,
   `nome` varchar(220) COLLATE utf8_unicode_ci NOT NULL,
-  `apelido` varchar(220) COLLATE utf8_unicode_ci DEFAULT NULL,
   `email` varchar(220) COLLATE utf8_unicode_ci NOT NULL,
   `usuario` varchar(220) COLLATE utf8_unicode_ci NOT NULL,
   `senha` varchar(220) COLLATE utf8_unicode_ci NOT NULL,
+  `cpf` varchar(80) COLLATE utf8_unicode_ci NOT NULL,
+  `apelido` varchar(220) COLLATE utf8_unicode_ci DEFAULT NULL,
   `recuperar_senha` varchar(220) COLLATE utf8_unicode_ci DEFAULT NULL,
   `chave_descadastro` varchar(220) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `imagem` varchar(220) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `adms_unidade_id` int(11) NOT NULL,
   `adms_niveis_acesso_id` int(11) NOT NULL,
+  `adms_unidade_id` int(11) NOT NULL,
   `adms_sits_usuario_id` int(11) NOT NULL,
+  `imagem` varchar(220) COLLATE utf8_unicode_ci DEFAULT NULL,
   `created` datetime NOT NULL,
   `modified` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -827,10 +847,10 @@ CREATE TABLE `adms_usuarios` (
 -- Extraindo dados da tabela `adms_usuarios`
 --
 
-INSERT INTO `adms_usuarios` (`id`, `nome`, `apelido`, `email`, `usuario`, `senha`, `recuperar_senha`, `chave_descadastro`, `imagem`, `adms_unidade_id`, `adms_niveis_acesso_id`, `adms_sits_usuario_id`, `created`, `modified`) VALUES
-(1, 'Paulo Albuquerque', 'Paulo', 'albuquerque.18101992@gmail.com', 'paulo', '$2y$10$ykmaQ7RRZEtL0MjnrEaHveNm1A4W9ZaE2Ik6R1YbZEI/5FL34D5Wa', NULL, NULL, 'imagem.jpg', 1, 1, 1, '2020-07-23 00:00:00', NULL),
-(2, 'willians', 'will', 'willians@willians.com.br', 'willians', '$2y$10$ykmaQ7RRZEtL0MjnrEaHveNm1A4W9ZaE2Ik6R1YbZEI/5FL34D5Wa', NULL, NULL, NULL, 24, 3, 1, '2020-07-31 13:29:50', NULL),
-(3, 'Adriano', 'adriano', 'adriano@adriano.com.br', 'adriano', '$2y$10$ykmaQ7RRZEtL0MjnrEaHveNm1A4W9ZaE2Ik6R1YbZEI/5FL34D5Wa', NULL, NULL, NULL, 4, 2, 1, '2020-09-21 00:00:00', NULL);
+INSERT INTO `adms_usuarios` (`id`, `nome`, `email`, `usuario`, `senha`, `cpf`, `apelido`, `recuperar_senha`, `chave_descadastro`, `adms_niveis_acesso_id`, `adms_unidade_id`, `adms_sits_usuario_id`, `imagem`, `created`, `modified`) VALUES
+(1, 'Paulo Albuquerque', 'albuquerque.18101992@gmail.com', 'paulo', '$2y$10$ykmaQ7RRZEtL0MjnrEaHveNm1A4W9ZaE2Ik6R1YbZEI/5FL34D5Wa', '408.754.818-09', 'Paulo', NULL, NULL, 1, 1, 1, 'imagem.jpg', '2020-07-23 00:00:00', NULL),
+(2, 'willians', 'willians@willians.com.br', 'willians', '$2y$10$ykmaQ7RRZEtL0MjnrEaHveNm1A4W9ZaE2Ik6R1YbZEI/5FL34D5Wa', '222.222.222-22', 'will', NULL, NULL, 3, 24, 1, NULL, '2020-07-31 13:29:50', NULL),
+(3, 'Adriano', 'adriano@adriano.com.br', 'adriano', '$2y$10$ykmaQ7RRZEtL0MjnrEaHveNm1A4W9ZaE2Ik6R1YbZEI/5FL34D5Wa', '333.333.333-33', 'adriano', NULL, NULL, 2, 4, 1, NULL, '2020-09-21 00:00:00', NULL);
 
 --
 -- Índices para tabelas despejadas
@@ -958,7 +978,7 @@ ALTER TABLE `adms_cors`
 -- AUTO_INCREMENT de tabela `adms_equipamentos`
 --
 ALTER TABLE `adms_equipamentos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT de tabela `adms_fabricante`
@@ -982,7 +1002,7 @@ ALTER TABLE `adms_menus`
 -- AUTO_INCREMENT de tabela `adms_nivacs_pgs`
 --
 ALTER TABLE `adms_nivacs_pgs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=211;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=231;
 
 --
 -- AUTO_INCREMENT de tabela `adms_niveis_acessos`
@@ -994,7 +1014,7 @@ ALTER TABLE `adms_niveis_acessos`
 -- AUTO_INCREMENT de tabela `adms_paginas`
 --
 ALTER TABLE `adms_paginas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- AUTO_INCREMENT de tabela `adms_robots`

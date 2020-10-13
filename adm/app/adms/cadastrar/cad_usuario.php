@@ -37,7 +37,7 @@ include_once 'app/adms/include/head.php';
                 }
                 ?>
 
-                <form method="POST" action="<?php echo pg; ?>/processa/proc_cad_usuario">
+                <form method="POST" action="<?php echo pg; ?>/processa/proc_cad_usuario" autocomplete="off">
 
                     <div class="form-row">
                         <div class="form-group col-md-6">
@@ -56,7 +56,7 @@ include_once 'app/adms/include/head.php';
                                 <span class="text-danger">*</span>
                                 Email
                             </label>
-                            <input name="email" type="text" class="form-control" id="email" placeholder="Email do usuário" value="<?php
+                            <input name="email" type="email" class="form-control" id="email" placeholder="Email do usuário" value="<?php
                             if (isset($_SESSION['dados']['email'])) {
                                 echo $_SESSION['dados']['email'];
                             }
@@ -65,7 +65,7 @@ include_once 'app/adms/include/head.php';
                     </div>
 
                     <div class="form-row">
-                        <div class="form-group col-md-4">
+                        <div class="form-group col-md-3">
                             <label>
                                 <span class="text-danger">*</span>
                                 User
@@ -76,20 +76,31 @@ include_once 'app/adms/include/head.php';
                             }
                             ?>">
                         </div>
-                        <div class="form-group col-md-4">
+                        <div class="form-group col-md-3">
                             <label>
                                 <span class="text-danger">*</span>
                                 Senha
                             </label>
-                            <input name="senha" type="password" class="form-control" id="email" placeholder="Senha precisa ser de minímo 6 caracteres" value="<?php
+                            <input name="senha" type="password" class="form-control" id="senha" maxlength="12" placeholder="Min 6, Máx 12 caracteres" value="<?php
                             if (isset($_SESSION['dados']['senha'])) {
                                 echo $_SESSION['dados']['senha'];
                             }
                             ?>">
                         </div>
-                        <div class="form-group col-md-4">
-                            <label><span class="text-danger">*</span> Apelido</label>
-                            <input name="endereco" type="text" class="form-control" id="email" placeholder="Apelido para melhor identificar" value="<?php
+                        <div class="form-group col-md-3">
+                            <label>
+                                <span class="text-danger">*</span>
+                                Documento
+                            </label>
+                            <input name="cpf" type="text" class="form-control" id="cpf" placeholder="CPF" maxlength="14" onkeypress="this.value = FormataCpf(event)" onpaste="return false;" required="on" value="<?php
+                            if (isset($_SESSION['dados']['cpf'])) {
+                                echo $_SESSION['dados']['cpf'];
+                            }
+                            ?>">
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label> Apelido</label>
+                            <input name="apelido" type="text" class="form-control" id="email" placeholder="Apelido para melhor identificar" value="<?php
                             if (isset($_SESSION['dados']['apelido'])) {
                                 echo $_SESSION['dados']['apelido'];
                             }
@@ -177,17 +188,3 @@ include_once 'app/adms/include/head.php';
 
     </div>
 </body>
-
-
-
-
-
-
-<div class="form-group col-md-4">
-    <label><span class="text-danger">*</span> Apelido</label>
-    <input name="endereco" type="text" class="form-control" id="email" placeholder="Apelido para melhor identificar" value="<?php
-           if (isset($_SESSION['dados']['apelido'])) {
-               echo $_SESSION['dados']['apelido'];
-           }
-           ?>">
-</div>

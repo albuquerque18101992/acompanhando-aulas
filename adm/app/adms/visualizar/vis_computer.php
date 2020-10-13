@@ -30,17 +30,17 @@ if (!empty($id)) {
                             <div class="p-2">
                                 <span class="d-none d-md-block">
                                     <?php
-                                    $btn_list = carregar_btn('listar/', $conn);
+                                    $btn_list = carregar_btn('listar/list_computer', $conn);
                                     if ($btn_list) {
-                                        echo "<a href='" . pg . "/listar/list_unidades' class='btn btn-outline-info btn-sm'>Listar</a> ";
+                                        echo "<a href='" . pg . "/listar/list_computer' class='btn btn-outline-info btn-sm'>Listar</a> ";
                                     }
-                                    $btn_edit = carregar_btn('editar/', $conn);
+                                    $btn_edit = carregar_btn('editar/edit_computer', $conn);
                                     if ($btn_edit) {
                                         echo "<a href='" . pg . "/editar/edit_computer?id=" . $row_pag_vis['id'] . "' class='btn btn-outline-warning btn-sm'>Editar </a> ";
                                     }
-                                    $btn_apagar = carregar_btn('processa/apagar_unidade', $conn);
+                                    $btn_apagar = carregar_btn('processa/apagar_computer', $conn);
                                     if ($btn_apagar) {
-                                        echo "<a href='" . pg . "/processa/apagar_unidade?id=" . $row_pag_vis['id'] . "' class='btn btn-outline-danger btn-sm' data-confirm='VOCÊ TEM CERTEZA QUE QUER EXCLUÍR O ITEM SELECIONADO?'>Apagar</a> ";
+                                        echo "<a href='" . pg . "/processa/apagar_computer?id=" . $row_pag_vis['id'] . "' class='btn btn-outline-danger btn-sm' data-confirm='VOCÊ TEM CERTEZA QUE QUER EXCLUÍR O ITEM SELECIONADO?'>Apagar</a> ";
                                     }
                                     ?>
                                 </span>
@@ -51,13 +51,13 @@ if (!empty($id)) {
                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="acoesListar">
                                         <?php
                                         if ($btn_list) {
-                                            echo "<a class='dropdown-item' href='" . pg . "/listar/?id=" . $row_pag_vis['id'] . "'>Listar</a> ";
+                                            echo "<a class='dropdown-item' href='" . pg . "/listar/list_computer?id=" . $row_pag_vis['id'] . "'>Listar</a> ";
                                         }
                                         if ($btn_edit) {
-                                            echo "<a class='dropdown-item' href='" . pg . "/editar/?id=" . $row_pag_vis['id'] . "'>Editar</a> ";
+                                            echo "<a class='dropdown-item' href='" . pg . "/editar/edit_computer?id=" . $row_pag_vis['id'] . "'>Editar</a> ";
                                         }
                                         if ($btn_apagar) {
-                                            echo "<a class='dropdown-item' href='" . pg . "/processa/?id=" . $row_pag_vis['id'] . "'data-confirm='VOCÊ TEM CERTEZA QUE QUER EXCLUÍR O ITEM SELECIONADO?'>Apagar</a> ";
+                                            echo "<a class='dropdown-item' href='" . pg . "/processa/apagar_computer?id=" . $row_pag_vis['id'] . "'data-confirm='VOCÊ TEM CERTEZA QUE QUER EXCLUÍR O ITEM SELECIONADO?'>Apagar</a> ";
                                         }
                                         ?>
                                     </div>
@@ -98,8 +98,8 @@ if (!empty($id)) {
 
                             <dt class="col-sm-3">Unidade da máquina </dt>
                             <dd class="col-sm-9"><?php echo $row_pag_vis['adms_unidade_id']; ?></dd>
-							
-							<dt class="col-sm-3">Informações sobre o equipamento</dt>
+
+                            <dt class="col-sm-3">Informações sobre o equipamento</dt>
                             <dd class="col-sm-9"><?php echo $row_pag_vis['inform_computer']; ?></dd>
 
 

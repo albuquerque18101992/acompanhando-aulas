@@ -20,7 +20,7 @@ if ($SendCadPg) {
     $dados_validos = vazio($dados);
     if (!$dados_validos) {
         $erro = true;
-        $_SESSION['msg_de_erro'] = "<div class='alert alert-danger'>Necessário preencher todos os campos para cadastrar a página!</div>";
+        $_SESSION['msg_de_erro'] = "<div class='alert alert-danger'><button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='trues'>&times;</span></button>Necessário preencher todos os campos para cadastrar a página!</div>";
     } else {
         //Proibir cadastro de página duplicado
         $result_paginas = "SELECT id FROM adms_paginas WHERE endereco='" . $dados_validos['endereco'] . "' AND adms_tps_pg_id='" . $dados_validos['adms_tps_pg_id'] . "'";
