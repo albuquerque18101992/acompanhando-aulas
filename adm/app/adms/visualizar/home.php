@@ -71,7 +71,7 @@ include_once 'app/adms/include/head.php';
                     <div class="col-lg-3 col-sm-6">
                         <div class="card bg-success text-white">
                             <div class="card-body">
-                                <i class="fa fa-hospital-o fa-2x"></i>
+                                <i class="fas fa-clinic-medical fa-2x"></i>
                                 <h6 class="card-title">Unidades</h6>
                                 <?php
                                 $result_unidades = "SELECT * FROM adms_unidades ";
