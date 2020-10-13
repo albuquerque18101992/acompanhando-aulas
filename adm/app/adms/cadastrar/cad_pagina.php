@@ -291,6 +291,5 @@ include_once 'app/adms/include/head.php';
         unset($_SESSION['dados']);
         include_once 'app/adms/include/rodape_lib.php';
         ?>
-        
     </div>
 </body>

@@ -193,7 +193,7 @@ include_once 'app/adms/include/head.php';
                                 <span class="text-danger">* </span>Campos Obrigatório
                             </p>
 
-                            <input name="SendCadUnidade" id="SendCadUnidade" type="submit" class="btn btn-success" value="Cadastrar">
+                            <input name="SendCadUnidade" type="submit" class="btn btn-success" value="Cadastrar">
                         </div>
                 </form>
             </div>

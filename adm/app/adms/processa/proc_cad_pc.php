@@ -5,8 +5,8 @@ if (!isset($seguranca)) {
     exit;
 }
 
-$SendCadComputer = filter_input(INPUT_POST, 'SendCadComputer', FILTER_SANITIZE_STRING);
-if ($SendCadComputer) {
+$SendCadPc = filter_input(INPUT_POST, 'SendCadPc', FILTER_SANITIZE_STRING);
+if ($SendCadPc) {
     $dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 
     //Reetirar a obrigatoriedade de preencher campo.
@@ -26,7 +26,7 @@ if ($SendCadComputer) {
     //Houve erro em algum campo será redirecionado para o login, não existe erro tenta o cadastro no banco de dados.
     if ($erro) {
         $url_destino = pg . '/cadastrar/cad_computer';
-        header("Location: $url_destino");
+        //header("Location: $url_destino");
     } else {
         $result_cad_computer = "INSERT INTO adms_equipamentos (numero_serie_cpu, numero_serie_monitor, numero_serie_mouse, numero_serie_teclado, numero_ti_cpu, numero_ti_monitor, adms_setores_id, adms_fabricantes_id, adms_contratos_id, adms_unidade_id, inform_computer, created) VALUES (
                         '" . $dados_validos['numero_serie_cpu'] . "',
@@ -46,16 +46,16 @@ if ($SendCadComputer) {
         if (mysqli_insert_id($conn)) {
             $_SESSION['msg_de_erro'] = "<div class='alert alert-success'>Equipamento cadastrado com sucesso!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='trues'>&times;</span></button></div>";
             $url_destino = pg . '/listar/list_computer';
-            header("Location: $url_destino");
+            //header("Location: $url_destino");
         } else {
             $_SESSION['msg_de_erro'] = "<div class='alert alert-danger'>Equipamento não cadastrado!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='trues'>&times;</span></button></div>";
             $url_destino = pg . '/cadastrar/cad_computer';
-            header("Location: $url_destino");
+            //header("Location: $url_destino");
         }
     }
 } else {
     $_SESSION['msg_de_erro'] = "<div class='alert alert-danger'>Página não encontrada!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='trues'>&times;</span></button></div>";
     $url_destino = pg . '/cadastrar/cad_computer';
-    header("Location: $url_destino");
+    //header("Location: $url_destino");
 }
 ?>

@@ -38,14 +38,13 @@ include_once 'app/adms/include/head.php';
                 ?>
 
                 <form method="POST" action="<?php echo pg; ?>/processa/proc_cad_usuario" autocomplete="off">
-
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label>
                                 <span class="text-danger">*</span>
                                 Nome
                             </label>
-                            <input name="nome" text="text" class="form-control" id="nome" placeholder="Nome do usuário" value="<?php
+                            <input name="nome" text="text" class="form-control" placeholder="Nome do usuário" value="<?php
                             if (isset($_SESSION['dados']['nome'])) {
                                 echo $_SESSION['dados']['nome'];
                             }
@@ -56,7 +55,7 @@ include_once 'app/adms/include/head.php';
                                 <span class="text-danger">*</span>
                                 Email
                             </label>
-                            <input name="email" type="email" class="form-control" id="email" placeholder="Email do usuário" value="<?php
+                            <input name="email" type="email" class="form-control" placeholder="Email do usuário" value="<?php
                             if (isset($_SESSION['dados']['email'])) {
                                 echo $_SESSION['dados']['email'];
                             }
@@ -70,7 +69,7 @@ include_once 'app/adms/include/head.php';
                                 <span class="text-danger">*</span>
                                 User
                             </label>
-                            <input name="usuario" text="text" class="form-control" id="nome" placeholder="User para logar" value="<?php
+                            <input name="usuario" text="text" class="form-control" placeholder="User para logar" value="<?php
                             if (isset($_SESSION['dados']['usuario'])) {
                                 echo $_SESSION['dados']['usuario'];
                             }
@@ -81,7 +80,7 @@ include_once 'app/adms/include/head.php';
                                 <span class="text-danger">*</span>
                                 Senha
                             </label>
-                            <input name="senha" type="password" class="form-control" id="senha" maxlength="12" placeholder="Min 6, Máx 12 caracteres" value="<?php
+                            <input name="senha" type="password" class="form-control" maxlength="12" placeholder="Min 6, Máx 12 caracteres" value="<?php
                             if (isset($_SESSION['dados']['senha'])) {
                                 echo $_SESSION['dados']['senha'];
                             }
@@ -92,7 +91,7 @@ include_once 'app/adms/include/head.php';
                                 <span class="text-danger">*</span>
                                 Documento
                             </label>
-                            <input name="cpf" type="text" class="form-control" id="cpf" placeholder="CPF" maxlength="14" onkeypress="this.value = FormataCpf(event)" onpaste="return false;" required="on" value="<?php
+                            <input name="cpf" type="text" class="form-control" placeholder="CPF" maxlength="14" onkeypress="this.value = FormataCpf(event)" onpaste="return false;" required="on" value="<?php
                             if (isset($_SESSION['dados']['cpf'])) {
                                 echo $_SESSION['dados']['cpf'];
                             }
@@ -100,7 +99,7 @@ include_once 'app/adms/include/head.php';
                         </div>
                         <div class="form-group col-md-3">
                             <label> Apelido</label>
-                            <input name="apelido" type="text" class="form-control" id="email" placeholder="Apelido para melhor identificar" value="<?php
+                            <input name="apelido" type="text" class="form-control" placeholder="Apelido para melhor identificar" value="<?php
                             if (isset($_SESSION['dados']['apelido'])) {
                                 echo $_SESSION['dados']['apelido'];
                             }
@@ -117,7 +116,7 @@ include_once 'app/adms/include/head.php';
                             <label>
                                 <span class="text-danger">*</span> Nível de acesso
                             </label>
-                            <select name="adms_niveis_acesso_id" id="depend_pg" class="form-control">
+                            <select name="adms_niveis_acesso_id" class="form-control">
                                 <option value="" selected disabled>Selecione</option>
                                 <?php
                                 while ($row_niv_ac = mysqli_fetch_assoc($resultado_niv_ac)) {
@@ -138,7 +137,7 @@ include_once 'app/adms/include/head.php';
                             <label>
                                 <span class="text-danger">*</span> Unidade do usuário
                             </label>
-                            <select name="adms_unidade_id" id="adms_unidade_id" class="form-control">
+                            <select name="adms_unidade_id" class="form-control">
                                 <option value="" selected disabled>Selecione</option>
                                 <?php
                                 while ($row_unidade = mysqli_fetch_assoc($resultado_unidade)) {
@@ -159,7 +158,7 @@ include_once 'app/adms/include/head.php';
                             <label>
                                 <span class="text-danger">*</span> Situação do usuário
                             </label>
-                            <select name="adms_sits_usuario_id" id="adms_sits_usuario_id" class="form-control">
+                            <select name="adms_sits_usuario_id"  class="form-control">
                                 <option value="" selected disabled>Selecione</option>
                                 <?php
                                 while ($row_sit_user = mysqli_fetch_assoc($resultado_sit_user)) {
