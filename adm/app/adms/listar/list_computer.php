@@ -33,9 +33,9 @@ include_once 'app/adms/include/head.php';
                     </div>
                     <div class="p-2">
                         <?php
-                        $btn_cad_computer = carregar_btn('cadastrar/cad_computer', $conn);
+                        $btn_cad_computer = carregar_btn('cadastrar/cad_pc', $conn);
                         if ($btn_cad_computer) {
-                            echo "<a href='" . pg . "/cadastrar/cad_computer' class='btn btn-outline-success btn-sm'>Cadastrar computador</a>";
+                            echo "<a href='" . pg . "/cadastrar/cad_pc' class='btn btn-outline-success btn-sm'>Cadastrar computador</a>";
                         }
                         ?>
                     </div>
@@ -76,9 +76,9 @@ include_once 'app/adms/include/head.php';
                         <table class="table table-hover table-hover table-bordered">
                             <thead>
                                 <tr>
-                                    <th>Localização</th>
-                                    <th class="d-none d-sm-table-cell">Computador</th>
-                                    <th class="d-none d-sm-table-cell">Monitor</th>
+                                    <th>Setor</th>
+                                    <th class="d-none d-sm-table-cell">Cpu T.I</th>
+                                    <th class="d-none d-sm-table-cell">Monitor T.I</th>
                                     <th class="d-none d-sm-table-cell">Unidade</th>
                                     <th class="text-center">Ações</th>
                                 </tr>
@@ -89,8 +89,8 @@ include_once 'app/adms/include/head.php';
                                     ?>
                                     <tr>
                                         <td><?php echo $row_pg['localizacao']; ?></td>
-                                        <td class="d-none d-sm-table-cell"><?php echo $row_pg['numero_serie_cpu']; ?></td>
-                                        <td class="d-none d-sm-table-cell"><?php echo $row_pg['numero_serie_monitor']; ?></td>
+                                        <td class="d-none d-sm-table-cell"><?php echo $row_pg['numero_ti_cpu']; ?></td>
+                                        <td class="d-none d-sm-table-cell"><?php echo $row_pg['numero_ti_monitor']; ?></td>
                                         <td class="d-none d-sm-table-cell"><?php echo $row_pg['nome_da_unidade']; ?></td>
                                         <td class="text-center">
                                             <span class="d-none d-md-block">
