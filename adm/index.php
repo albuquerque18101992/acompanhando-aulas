@@ -41,8 +41,8 @@ $resultado_pg = mysqli_query($conn, $result_pg);
             include 'app/adms/visualizar/home.php';
         }
     } else {
-        $_SESSION['msg_de_erro'] = "<div class='alert alert-danger'>Página não encontrada!</div>";
-        $url_destino = pg . '/acesso/login';
+        $_SESSION['msg_de_erro'] = "<div class='alert alert-danger'>INDEX ERRO Página não encontrada!</div>";
+        $url_destino = pg . 'cadastrar/cad_computer';
         header("Location: $url_destino");
     }
     ?>

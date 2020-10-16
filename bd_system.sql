@@ -1,11 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.2
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
+<<<<<<< HEAD
 -- Tempo de geração: 16-Out-2020 às 03:43
+=======
+-- Tempo de geração: 13-Out-2020 às 21:44
+>>>>>>> b6cc5bf65d8c29bdf2f300ca01ecba4c66f81320
 -- Versão do servidor: 10.4.11-MariaDB
--- versão do PHP: 7.4.1
+-- versão do PHP: 7.2.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -82,12 +86,12 @@ INSERT INTO `adms_cors` (`id`, `nome`, `cor`, `created`, `modified`) VALUES
 
 CREATE TABLE `adms_equipamentos` (
   `id` int(11) NOT NULL,
-  `numero_serie_cpu` varchar(70) NOT NULL,
-  `numero_serie_monitor` varchar(70) NOT NULL,
+  `numero_serie_cpu` varchar(70) DEFAULT NULL,
+  `numero_serie_monitor` varchar(70) DEFAULT NULL,
   `numero_serie_mouse` int(11) DEFAULT NULL,
   `numero_serie_teclado` int(11) DEFAULT NULL,
-  `numero_ti_cpu` varchar(70) NOT NULL,
-  `numero_ti_monitor` varchar(70) NOT NULL,
+  `numero_ti_cpu` varchar(70) DEFAULT NULL,
+  `numero_ti_monitor` varchar(70) DEFAULT NULL,
   `adms_setores_id` int(11) NOT NULL,
   `adms_fabricantes_id` int(11) NOT NULL,
   `adms_contratos_id` int(11) NOT NULL,
@@ -452,6 +456,7 @@ INSERT INTO `adms_nivacs_pgs` (`id`, `permissao`, `ordem`, `dropdown`, `lib_menu
 (226, 2, 54, 1, 2, 3, 4, 54, '2020-10-12 16:51:27', '0000-00-00 00:00:00'),
 (227, 1, 57, 1, 2, 3, 1, 55, '2020-10-12 16:52:11', '0000-00-00 00:00:00'),
 (228, 2, 61, 1, 2, 3, 2, 55, '2020-10-12 16:52:11', '0000-00-00 00:00:00'),
+<<<<<<< HEAD
 (229, 2, 61, 2, 2, 3, 3, 55, '2020-10-12 16:52:11', '2020-10-15 22:41:10'),
 (230, 2, 55, 1, 2, 3, 4, 55, '2020-10-12 16:52:11', '0000-00-00 00:00:00'),
 (231, 1, 58, 1, 2, 3, 1, 56, '2020-10-15 18:29:29', '0000-00-00 00:00:00'),
@@ -466,6 +471,18 @@ INSERT INTO `adms_nivacs_pgs` (`id`, `permissao`, `ordem`, `dropdown`, `lib_menu
 (240, 2, 64, 2, 2, 3, 2, 35, '2020-10-15 22:21:02', '2020-10-15 22:21:23'),
 (241, 2, 64, 2, 2, 3, 3, 35, '2020-10-15 22:21:02', '2020-10-15 22:41:03'),
 (242, 2, 58, 1, 2, 3, 4, 35, '2020-10-15 22:21:02', '0000-00-00 00:00:00');
+=======
+(229, 2, 61, 1, 2, 3, 3, 55, '2020-10-12 16:52:11', '0000-00-00 00:00:00'),
+(230, 2, 55, 1, 2, 3, 4, 55, '2020-10-12 16:52:11', '0000-00-00 00:00:00'),
+(231, 1, 58, 1, 2, 3, 1, 56, '2020-10-13 11:17:17', '0000-00-00 00:00:00'),
+(232, 2, 62, 1, 2, 3, 2, 56, '2020-10-13 11:17:17', '0000-00-00 00:00:00'),
+(233, 2, 62, 1, 2, 3, 3, 56, '2020-10-13 11:17:18', '0000-00-00 00:00:00'),
+(234, 2, 56, 1, 2, 3, 4, 56, '2020-10-13 11:17:18', '0000-00-00 00:00:00'),
+(235, 1, 59, 1, 2, 3, 1, 57, '2020-10-13 15:00:01', '0000-00-00 00:00:00'),
+(236, 2, 63, 1, 2, 3, 2, 57, '2020-10-13 15:00:01', '0000-00-00 00:00:00'),
+(237, 2, 63, 1, 2, 3, 3, 57, '2020-10-13 15:00:01', '0000-00-00 00:00:00'),
+(238, 2, 57, 1, 2, 3, 4, 57, '2020-10-13 15:00:01', '0000-00-00 00:00:00');
+>>>>>>> b6cc5bf65d8c29bdf2f300ca01ecba4c66f81320
 
 -- --------------------------------------------------------
 
@@ -553,6 +570,11 @@ INSERT INTO `adms_paginas` (`id`, `nome_pagina`, `endereco`, `obs`, `keywords`, 
 (30, 'Processar liberar pemissão', 'processa/proc_lib_per', 'Processar liberar pemissão', 'Processar liberar pemissão', 'Processar liberar pemissão', 'Paulo Albuquerque', 2, '', 0, 3, '1', 4, 1, '2020-09-17 18:58:25', NULL),
 (31, 'Processa editar unidade', 'processa/proc_edit_unidade', 'Processa editar unidade', 'Processa editar unidade', 'Processa editar unidade', 'Paulo Albuquerque', 2, '', 0, 3, '1', 4, 1, '2020-09-21 19:42:38', NULL),
 (32, 'Listar os Computadores', 'listar/list_computer', 'Listar Computadores ', 'Listar Computadores', 'Listar Computadores', 'Paulo Albuquerque', 2, 'fas fa-laptop-medical', 0, 2, '1', 4, 1, '2020-09-22 14:27:07', '2020-09-22 14:42:09'),
+<<<<<<< HEAD
+=======
+(33, 'Cadastrar Computadores', 'cadastrar/cad_computer', 'Cadastrar Computadores', 'Cadastrar Computadores', 'Cadastrar Computadores', 'Paulo Albuquerque', 2, '', 0, 2, '1', 4, 1, '2020-09-22 14:45:20', '2020-10-13 14:17:14'),
+(34, 'Processa cad Computador', 'processa/proc_cad_pc', 'Processa cadadastrar Computadores', 'Processa cad Computador', 'Processa cad Computador', 'Paulo Albuquerque', 2, '', 33, 2, '1', 4, 1, '2020-09-24 13:52:27', '2020-10-13 16:04:06'),
+>>>>>>> b6cc5bf65d8c29bdf2f300ca01ecba4c66f81320
 (35, 'Liberar menu', 'processa/proc_lib_menu', 'Pagina para liberar item de menu ', 'Liberar menu', 'Liberar menu', 'Paulo Albuquerque', 2, '', 0, 3, '1', 4, 1, '2020-09-24 18:48:57', '2020-09-24 20:25:58'),
 (36, 'Editar equipamentos', 'editar/edit_computer', 'Editar equipamentos já registrados', 'Editar computadores', 'Editar computadores', 'Paulo Albuquerque', 2, '', 0, 3, '1', 4, 1, '2020-09-29 11:23:49', NULL),
 (37, 'Apagar equipamento', 'processa/apagar_computer', '', 'Apagar equipamento', 'Apagar equipamento', 'Paulo Albuquerque', 2, '', 0, 4, '1', 4, 1, '2020-09-29 11:40:47', NULL),
@@ -574,8 +596,12 @@ INSERT INTO `adms_paginas` (`id`, `nome_pagina`, `endereco`, `obs`, `keywords`, 
 (53, 'Editar usuario', 'editar/edit_usuario', 'Editar usuário', 'Editar usuario', 'Editar usuario', 'Paulo Albuquerque', 2, '', 0, 3, '1', 2, 1, '2020-10-12 16:49:22', NULL),
 (54, 'Visuzliar usuario', 'visualizar/vis_usuario', 'Visuzliar usuários e informações a mais .', 'Visuzliar usuario', 'Visuzliar usuario', 'Paulo Albuquerque', 2, '', 0, 5, '1', 2, 1, '2020-10-12 16:51:27', NULL),
 (55, 'Apagar usuário', 'processa/apagar_usuario', 'Apagar usuários .', 'Apagar usuário', 'Apagar usuário', 'Paulo Albuquerque', 2, '', 0, 4, '1', 2, 1, '2020-10-12 16:52:11', NULL),
+<<<<<<< HEAD
 (56, 'Cadastrar PC', 'cadastrar/cad_pc', 'Página cadastrar PC', 'Cadastrar PC', 'Cadastrar PC', 'Paulo Albuquerque', 2, '', 0, 2, '1', 4, 1, '2020-10-15 18:29:29', '2020-10-15 21:56:56'),
 (57, 'Processa cadastrar pc', 'processa/proc_cad_pc', 'Arquivo para cadastrar os computadores no banco de dados', 'Processa cadastrar pc', 'v', 'Paulo Albuquerque', 2, '', 56, 2, '1', 2, 1, '2020-10-15 18:46:10', '2020-10-15 22:01:52');
+=======
+(56, 'Cadastrar notebooks', 'cadastrar/cad_notebooks', 'Página para controle de notebooks ', 'Cadastrar notebooks', 'Cadastrar notebooks', 'Paulo Albuquerque', 2, '', 0, 2, '1', 2, 1, '2020-10-13 11:17:17', NULL);
+>>>>>>> b6cc5bf65d8c29bdf2f300ca01ecba4c66f81320
 
 -- --------------------------------------------------------
 
@@ -858,7 +884,10 @@ CREATE TABLE `adms_usuarios` (
 INSERT INTO `adms_usuarios` (`id`, `nome`, `email`, `usuario`, `senha`, `cpf`, `apelido`, `recuperar_senha`, `chave_descadastro`, `adms_niveis_acesso_id`, `adms_unidade_id`, `adms_sits_usuario_id`, `imagem`, `created`, `modified`) VALUES
 (1, 'Paulo Albuquerque', 'albuquerque.18101992@gmail.com', 'paulo', '$2y$10$ykmaQ7RRZEtL0MjnrEaHveNm1A4W9ZaE2Ik6R1YbZEI/5FL34D5Wa', '408.754.818-09', 'Paulo', NULL, NULL, 1, 1, 1, 'imagem.jpg', '2020-07-23 00:00:00', NULL),
 (2, 'willians', 'willians@willians.com.br', 'willians', '$2y$10$ykmaQ7RRZEtL0MjnrEaHveNm1A4W9ZaE2Ik6R1YbZEI/5FL34D5Wa', '222.222.222-22', 'will', NULL, NULL, 3, 24, 1, NULL, '2020-07-31 13:29:50', NULL),
-(3, 'Adriano', 'adriano@adriano.com.br', 'adriano', '$2y$10$ykmaQ7RRZEtL0MjnrEaHveNm1A4W9ZaE2Ik6R1YbZEI/5FL34D5Wa', '333.333.333-33', 'adriano', NULL, NULL, 2, 4, 1, NULL, '2020-09-21 00:00:00', NULL);
+(3, 'Adriano', 'adriano@adriano.com.br', 'adriano', '$2y$10$ykmaQ7RRZEtL0MjnrEaHveNm1A4W9ZaE2Ik6R1YbZEI/5FL34D5Wa', '333.333.333-33', 'adriano', NULL, NULL, 2, 4, 1, NULL, '2020-09-21 00:00:00', NULL),
+(4, 'Leandro', 'leandro@leandro.com.br', 'leandro', '$2y$10$dwCx9JFbeeBPJl9uwEcSQeVCoDwgIwgaYIvQ10hpSuAhXyEFMezQe', '408.754.818-06', 'lele', NULL, NULL, 2, 1, 1, NULL, '2020-10-13 10:22:11', NULL),
+(5, 'teste', 'teste@teste.com.br', 'testeeee', '$2y$10$4FrlZnlAbBjr/wW7RpLZQ.z9KZ3uashOKHjrUQfnnP49tDWealY3W', '546.549.864-66', 'testando', NULL, NULL, 2, 3, 1, NULL, '2020-10-13 11:40:30', NULL),
+(6, 'flavio', 'falvio@lf.co.br', 'flavioo', '$2y$10$q1yh.SF1iqw7egsvl7I/yu26cHjPWDNKTr2A22LbGfeYW3rErm5ey', '654.654.564-55', '656', NULL, NULL, 3, 13, 1, NULL, '2020-10-13 16:02:01', NULL);
 
 --
 -- Índices para tabelas despejadas
@@ -1010,7 +1039,11 @@ ALTER TABLE `adms_menus`
 -- AUTO_INCREMENT de tabela `adms_nivacs_pgs`
 --
 ALTER TABLE `adms_nivacs_pgs`
+<<<<<<< HEAD
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=243;
+=======
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=239;
+>>>>>>> b6cc5bf65d8c29bdf2f300ca01ecba4c66f81320
 
 --
 -- AUTO_INCREMENT de tabela `adms_niveis_acessos`
@@ -1022,7 +1055,11 @@ ALTER TABLE `adms_niveis_acessos`
 -- AUTO_INCREMENT de tabela `adms_paginas`
 --
 ALTER TABLE `adms_paginas`
+<<<<<<< HEAD
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
+=======
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+>>>>>>> b6cc5bf65d8c29bdf2f300ca01ecba4c66f81320
 
 --
 -- AUTO_INCREMENT de tabela `adms_robots`
@@ -1070,7 +1107,7 @@ ALTER TABLE `adms_unidades`
 -- AUTO_INCREMENT de tabela `adms_usuarios`
 --
 ALTER TABLE `adms_usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
